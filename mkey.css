@@ -1,0 +1,13 @@
+.sailer-status{
+    width: 100px;
+}
+.container-key{
+    display: flex;
+}
+.container-key-item{
+    border: 1px solid #000;
+    width: 50%;
+}
+.range-sailer-status{
+    width: 1250px;
+}

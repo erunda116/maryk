@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="mkey.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+<form action="">
+    <input class="range-sailer-status" id="rangeSailerStatus" type="range" min="0" max="12" step="1" value="1">
+<div style="padding-left: 60px;">
+    <button class="sailer-status" value="sailer-1" data-level="1">консультант</button>
+    <button class="sailer-status" value="sailer-2" data-level="2">старший консультант</button>
+    <button class="sailer-status" value="sailer-2" data-level="3">Менеджер по продажам</button>
+    <button class="sailer-status" value="sailer-2" data-level="4">Старший Менеджер по продажам</button>
+    <button class="sailer-status" value="sailer-2" data-level="5">Будущий Директор по продажам</button>
+    <button class="sailer-status" value="sailer-3" data-level="6">Директор по продажам</button>
+    <button class="sailer-status" value="sailer-4" data-level="7">Старший Директор по продажам</button>
+    <button class="sailer-status" value="sailer-4" data-level="8">Будущий Ведущий Директор по продажам</button>
+    <button class="sailer-status" value="sailer-4" data-level="9">Ведущий Директор по продажам</button>
+    <button class="sailer-status" value="sailer-4" data-level="10">Элитный Ведущий Директор по продажам</button>
+    <button class="sailer-status" value="sailer-5" data-level="11">Национальный Директор по продажам</button>
+</div>
+    <div>
+        <label for="itog" id="itogLabel">Сумма дохода от личного бизнеса</label><input type="text" id="itog" value="0" disabled>
+    </div>
+    <div>
+        <label for="base">б.е.</label><input type="text" value="3500" id="base" disabled>
+    </div>
+
+
+
+    <div id="konsultant" class="container-key">
+        <div class="container-key-item">
+            <p>Объем</p>
+            <label for="konsultantVal">личных заказов</label><input type="text" value="0" id="konsultantVal">
+            <input type="text" id="konsultantNum" value="0" disabled>
+            <p>% скидки</p>
+            <select name="" id="konsultantDiscount">
+                <option value="0">0</option>
+                <option value="35">35</option>
+                <option value="40">40</option>
+                <option value="45">45</option>
+            </select>
+        </div>
+        <div class="container-key-item">
+            <p>Доход от личного бизнеса</p>
+            <input type="text" value="0" id="konsultantProfit" disabled>
+        </div>
+    </div>
+
+
+
+    <div id="bigkonsultant" class="container-key" style="display: none;">
+        <div class="container-key-item">
+            <p>Объем заказов</p>
+            <label for="bigkonsultantVal">личной группы</label><input type="text" value="0" id="bigkonsultantVal">
+            <input type="text" id="bigkonsultantNum" value="0" disabled>
+            <label for="bigkonsultantAct">количество активных консультантов</label><input type="text" value="0" id="bigkonsultantAct">
+            <p>%</p>
+            <input type="text" value="0" id="bigkonsultantDiscount" disabled>
+
+
+            <div id="director">
+                <label for="directorVal">бизнес-группы</label><input type="text" value="0" id="directorVal">
+                <input id="directorNum" type="text" value="0" disabled>
+                <p>%</p>
+                <input type="text" value="0" id="directorDiscount" disabled>
+            </div>
+        </div>
+        <div class="container-key-item">
+            <p>Дополнительная скидка от объёма заказов</p>
+            <label for="bigkonsultantDiscountDop">личной группы</label><input id="bigkonsultantDiscountDop" type="text" value="0" disabled>
+            <p>* Объем личных заказов должен быть не менее 1 б.е.</p>
+
+
+            <div id="director2">
+                <label for="director2Num1">бизнес-группы</label><input id="director2Num1" type="text" value="0" disabled>
+                <label for="director2Num2">Фиксированное комиссионное вознаграждение от объема заказов Бизнес-Группы</label><input id="director2Num2" type="text" value="0" disabled>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <div id="bigdirector" class="container-key" style="display: none;">
+        <div class="container-key-item">
+            <p>Объем заказов дочерних Бизнес-Групп</p>
+            <label for="bigdirectorVal">Количество дочерних Бизнес-Групп первой линии</label><input id="bigdirectorVal" type="text" value="0">
+            <p>%</p>
+            <input id="bigdirectorDiscount" type="text" value="0" disabled>
+            <div>здесь будет таблица</div>
+
+            <div id="biggestdirector">
+                <label for="biggestdirectorVal2">2 линии</label><input type="text" value="0" id="biggestdirectorVal2">
+                <input id="biggestdirectorNum21" value="0" type="text" disabled>
+                <input id="biggestdirectorNum22" value="0" type="text" disabled>
+
+                <label for="biggestdirectorVal3">3 линии</label><input type="text" value="0" id="biggestdirectorVal3">
+                <input id="biggestdirectorNum31" value="0" type="text" disabled>
+                <input id="biggestdirectorNum32" value="0" type="text" disabled>
+
+                <label for="">Количество дебютировавших дочерних Директоров по продажам 1-ой линии</label><input type="text" value="0" id="biggestdirectorAct">
+            </div>
+        </div>
+        <div class="container-key-item">
+            <p>Комиссионное вознаграждение от объема заказов дочерних Бизнес-Групп</p>
+            <label for="bigdirectorProfit">1 линии</label><input id="bigdirectorProfit" type="text" value="0">
+            <p>* Объем заказов личной Бизнес-Группы должен быть не менее 100 б.е.</p>
+
+            <div id="biggestdirector2">
+                <label for="biggestdirector2Num2">2 линии</label><input type="text" value="0" id="biggestdirector2Num2" disabled>
+                <label for="biggestdirector2Num3">3 линии</label><input type="text" value="0" id="biggestdirector2Num3" disabled>
+                <label for="biggestdirector2NumAct">Единовременный бонус за дебют нового дочернего Директора по продажам 1-й линии</label><input type="text" value="0" id="biggestdirector2NumAct" disabled>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</form>
+<script src="merykey.js"></script>
+</body>
+</html>

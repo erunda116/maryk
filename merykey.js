@@ -151,6 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             warning2.style.display = "none";
         }
+
         //console.log(nowSailerPosition);
     };
 
@@ -206,6 +207,32 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         //console.log(nowSailerPosition);
     };
+
+//re-calculate summ value than user change sail-level
+    function recalculate(sailPosition){
+        if(+sailPosition == 1){
+            itog.value = +konsultantProfit.value;
+        } else if(+sailPosition > 1 && +sailPosition <= 5){
+            itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value;
+        } else if(+sailPosition == 6){
+            itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
+                + +director2Num2.value;
+        } else if(+sailPosition > 6 && +sailPosition <= 10){
+
+
+
+            itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
+                + +bigdirectorProfit.value + +biggestdirector2Num2.value + +biggestdirector2Num3.value
+                + +director2Num2.value + +biggestdirector2NumAct.value;
+        } else if(+sailPosition == 11){
+
+
+
+            itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
+                + +bigdirectorProfit.value + +biggestdirector2Num2.value + +biggestdirector2Num3.value
+                + +director2Num2.value + +biggestdirector2NumAct.value;
+        }
+    }
 
 
     /*calculate table*/

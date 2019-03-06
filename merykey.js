@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             warning2.style.display = "none";
         }
-
+        recalculate(nowSailerPosition);
         //console.log(nowSailerPosition);
     };
 
@@ -205,6 +205,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 showBiggestdirect[y].style.display = "table-cell";
             }
         }
+        recalculate(this.value);
         //console.log(nowSailerPosition);
     };
 
@@ -218,16 +219,12 @@ document.addEventListener('DOMContentLoaded', function() {
             itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
                 + +director2Num2.value;
         } else if(+sailPosition > 6 && +sailPosition <= 10){
-
-
-
+            if(directorVal.value < 100) {
+                bigdirectorProfit.value = 0;
+            }
             itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
-                + +bigdirectorProfit.value + +biggestdirector2Num2.value + +biggestdirector2Num3.value
-                + +director2Num2.value + +biggestdirector2NumAct.value;
+                + +bigdirectorProfit.value + +director2Num2.value;
         } else if(+sailPosition == 11){
-
-
-
             itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
                 + +bigdirectorProfit.value + +biggestdirector2Num2.value + +biggestdirector2Num3.value
                 + +director2Num2.value + +biggestdirector2NumAct.value;
@@ -250,10 +247,10 @@ document.addEventListener('DOMContentLoaded', function() {
             bigkonsultantDiscountDop.value = bigkonsultantNum.value * bigkonsultantDiscount.value / 100 / tax * disc;
             warning1.style.display = "none";
         }
-
-        itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
-            + +bigdirectorProfit.value + +biggestdirector2Num2.value + +biggestdirector2Num3.value
-            + +director2Num2.value + +biggestdirector2NumAct.value;
+        recalculate(nowSailerPosition);
+        // itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
+        //     + +bigdirectorProfit.value + +biggestdirector2Num2.value + +biggestdirector2Num3.value
+        //     + +director2Num2.value + +biggestdirector2NumAct.value;
     };
 
     konsultantDiscount.onchange = function () {
@@ -261,9 +258,10 @@ document.addEventListener('DOMContentLoaded', function() {
         konsultantNum.value = roubleVal;
         konsultantProfit.value = +konsultantNum.value * +this.value / 100;
 
-        itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
-            + +bigdirectorProfit.value + +biggestdirector2Num2.value + +biggestdirector2Num3.value
-            + +director2Num2.value + +biggestdirector2NumAct.value;
+        recalculate(nowSailerPosition);
+        // itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
+        //     + +bigdirectorProfit.value + +biggestdirector2Num2.value + +biggestdirector2Num3.value
+        //     + +director2Num2.value + +biggestdirector2NumAct.value;
     };
 
     bigkonsultantVal.oninput = function () {
@@ -273,9 +271,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if(+konsultantVal.value >= 1) {
             bigkonsultantDiscountDop.value = bigkonsultantNum.value * bigkonsultantDiscount.value / 100 / tax * disc;
 
-            itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
-                + +bigdirectorProfit.value + +biggestdirector2Num2.value + +biggestdirector2Num3.value
-                + +director2Num2.value + +biggestdirector2NumAct.value;
+            recalculate(nowSailerPosition);
+            // itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
+            //     + +bigdirectorProfit.value + +biggestdirector2Num2.value + +biggestdirector2Num3.value
+            //     + +director2Num2.value + +biggestdirector2NumAct.value;
         }
     };
 
@@ -309,9 +308,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         bigkonsultantDiscountDop.value = bigkonsultantNum.value * bigkonsultantDiscount.value / 100 / tax * disc;
 
-        itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
-            + +bigdirectorProfit.value + +biggestdirector2Num2.value + +biggestdirector2Num3.value
-            + +director2Num2.value + +biggestdirector2NumAct.value;
+        recalculate(nowSailerPosition);
+        // itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
+        //     + +bigdirectorProfit.value + +biggestdirector2Num2.value + +biggestdirector2Num3.value
+        //     + +director2Num2.value + +biggestdirector2NumAct.value;
     };
 
     directorVal.oninput = function () {
@@ -372,9 +372,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
         director2Num1.value = directorNum.value * directorDiscount.value / 100 / tax * disc;
 
-        itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
-            + +bigdirectorProfit.value + +biggestdirector2Num2.value + +biggestdirector2Num3.value
-            + +director2Num2.value + +biggestdirector2NumAct.value;
+        recalculate(nowSailerPosition);
+        // itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
+        //     + +bigdirectorProfit.value + +biggestdirector2Num2.value + +biggestdirector2Num3.value
+        //     + +director2Num2.value + +biggestdirector2NumAct.value;
     };
 
     bigdirectorVal.oninput = function () {
@@ -394,10 +395,10 @@ document.addEventListener('DOMContentLoaded', function() {
         biggestdirectorNum21.value = roubleVal;
         biggestdirector2Num2.value = biggestdirectorNum21.value / 100 * biggestdirectorNum22.value / tax * disc;
 
-
-        itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
-            + +bigdirectorProfit.value + +biggestdirector2Num2.value + +biggestdirector2Num3.value
-            + +director2Num2.value + +biggestdirector2NumAct.value;
+        recalculate(nowSailerPosition);
+        // itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
+        //     + +bigdirectorProfit.value + +biggestdirector2Num2.value + +biggestdirector2Num3.value
+        //     + +director2Num2.value + +biggestdirector2NumAct.value;
     };
 
     biggestdirectorVal3.oninput = function () {
@@ -405,19 +406,19 @@ document.addEventListener('DOMContentLoaded', function() {
         biggestdirectorNum31.value = roubleVal;
         biggestdirector2Num3.value = biggestdirectorNum31.value / 100 * biggestdirectorNum32.value / tax * disc;
 
-
-        itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
-            + +bigdirectorProfit.value + +biggestdirector2Num2.value + +biggestdirector2Num3.value
-            + +director2Num2.value + +biggestdirector2NumAct.value;
+        recalculate(nowSailerPosition);
+        // itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
+        //     + +bigdirectorProfit.value + +biggestdirector2Num2.value + +biggestdirector2Num3.value
+        //     + +director2Num2.value + +biggestdirector2NumAct.value;
     };
 
     biggestdirectorAct.oninput = function () {
         biggestdirector2NumAct.value = +this.value * 210000;
 
-
-        itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
-            + +bigdirectorProfit.value + +biggestdirector2Num2.value + +biggestdirector2Num3.value
-            + +director2Num2.value + +biggestdirector2NumAct.value;
+        recalculate(nowSailerPosition);
+        // itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
+        //     + +bigdirectorProfit.value + +biggestdirector2Num2.value + +biggestdirector2Num3.value
+        //     + +director2Num2.value + +biggestdirector2NumAct.value;
     };
 
 
@@ -465,9 +466,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 bigdirectorProfit.value = itogComission;
             }
 
-            itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
-                + +bigdirectorProfit.value + +biggestdirector2Num2.value + +biggestdirector2Num3.value
-                + +director2Num2.value + +biggestdirector2NumAct.value;
+            recalculate(nowSailerPosition);
+            // itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
+            //     + +bigdirectorProfit.value + +biggestdirector2Num2.value + +biggestdirector2Num3.value
+            //     + +director2Num2.value + +biggestdirector2NumAct.value;
 
         }
 

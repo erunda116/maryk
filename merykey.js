@@ -75,10 +75,10 @@ document.addEventListener('DOMContentLoaded', function() {
         allInputs[i].onkeypress = function(e){
             if(this.classList.contains('table-name')){
                 //console.log(e.keyCode);
-                if (!(e.keyCode==95 || e.keyCode==45 || e.keyCode==1105 || e.keyCode==1025 || (e.keyCode>=1040 && e.keyCode<=1103) || (e.keyCode>=65 && e.keyCode<=90) || (e.keyCode>=65 && e.keyCode<=90) || (e.keyCode>=97 && e.keyCode<=122) || (e.keyCode>47 && e.keyCode<58))) return false;
+                if (!(e.which==95 || e.which==45 || e.which==1105 || e.which==1025 || (e.which>=1040 && e.which<=1103) || (e.which>=65 && e.which<=90) || (e.which>=65 && e.which<=90) || (e.which>=97 && e.which<=122) || (e.which>47 && e.which<58))) return false;
             } else {
-                //console.log(e.keyCode);
-                if (!(e.keyCode==8 || e.keyCode==46 || e.keyCode==44 ||(e.keyCode>47 && e.keyCode<58))) return false;
+                //console.log(e.which);
+                if (!(e.which==8 || e.which==46 || e.which==44 ||(e.which>47 && e.which<58))) return false;
             }
         }
     }

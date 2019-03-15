@@ -12,8 +12,8 @@
 <form action="">
     <input class="range-sailer-status" id="rangeSailerStatus" type="range" min="0" max="12" step="1" value="1">
 <div style="padding-left: 60px;">
-    <button class="sailer-status" value="sailer-1" data-level="1">консультант</button>
-    <button class="sailer-status" value="sailer-2" data-level="2">старший консультант</button>
+    <button class="sailer-status" value="sailer-1" data-level="1">Консультант</button>
+    <button class="sailer-status" value="sailer-2" data-level="2">старший Консультант</button>
     <button class="sailer-status" value="sailer-2" data-level="3">Менеджер по продажам</button>
     <button class="sailer-status" value="sailer-2" data-level="4">Старший Менеджер по продажам</button>
     <button class="sailer-status" value="sailer-2" data-level="5">Будущий Директор по продажам</button>
@@ -37,7 +37,7 @@
         <div class="container-key-item">
             <p>Объем</p>
             <label for="konsultantVal">личных заказов</label><input type="text" value="0" id="konsultantVal">
-            <input type="text" id="konsultantNum" value="0" disabled>
+            <input type="text" id="konsultantNum" value="0" disabled><span>₽</span>
             <span>% скидки</span>
             <select name="" id="konsultantDiscount">
                 <option value="0">0</option>
@@ -59,13 +59,13 @@
             <p>Объем заказов</p>
             <label for="bigkonsultantVal">личной группы</label><input type="text" value="0" id="bigkonsultantVal">
             <input type="text" id="bigkonsultantNum" value="0" disabled>
-            <label for="bigkonsultantAct">количество активных консультантов</label><input type="text" value="0" id="bigkonsultantAct">
+            <label for="bigkonsultantAct">количество активных Консультантов</label><input type="text" value="0" id="bigkonsultantAct">
             <span>%</span>
             <input type="text" value="0" id="bigkonsultantDiscount" disabled>
 
 
             <div id="director">
-                <label for="directorVal">бизнес-группы</label><input type="text" value="0" id="directorVal">
+                <label for="directorVal">Бизнес-Группы</label><input type="text" value="0" id="directorVal">
                 <input id="directorNum" type="text" value="0" disabled>
                 <span>%</span>
                 <input type="text" value="0" id="directorDiscount" disabled>
@@ -78,8 +78,8 @@
 
 
             <div id="director2">
-                <label for="director2Num1">бизнес-группы</label><input id="director2Num1" type="text" value="0" disabled>
-                <label for="director2Num2">Фиксированное комиссионное вознаграждение от объема заказов Бизнес-Группы</label><input id="director2Num2" type="text" value="0" disabled>
+                <label for="director2Num1">Бизнес-Группы</label><input id="director2Num1" type="text" value="0" disabled>
+                <label for="director2Num2" id="labelFordirector2Num2">Фиксированное комиссионное вознаграждение от объема заказов Бизнес-Группы</label><input id="director2Num2" type="text" value="0" disabled>
             </div>
         </div>
     </div>
@@ -99,7 +99,7 @@
             </div>
             <p>1-ой линии</p>
             <div style="border: 1px solid #000;">
-                <table>
+                <table id="tableFirstLineGroups">
                     <tr>
                         <th>Группа</th>
                         <th>Объем заказов</th>
@@ -151,6 +151,10 @@
 
 
 </form>
+<div>
+    <p>Доход не гарантирован Компанией и полностью зависит от активности и усилий отдельного Независимого Консультанта по красоте. Суммы дохода, представленные в Калькуляторе, являются примерными и основаны на средних статистических данных Компании. Данный Калькулятор создан исключительно как обучающий и мотивационный инструмент для развития бизнеса Независимых Консультантов по красоте.</p>
+    <p>Обращаем ваше внимание, что суммы вашего вознаграждения за конкретный месяц будут рассчитываться с учетом всех дифференцированных скидок, программ и иных факторов, применимых к вашим бизнес-результатам и результатам деятельности каждого члена вашей Бизнес-Группы. В связи с этим, сумма вашего комиссионного вознаграждения может отличаться в большую или меньшую сторону от примерных сумм дохода, рассчитанных при помощи данного Калькулятора.</p>
+</div>
 <script src="merykey.js"></script>
 </body>
 </html>

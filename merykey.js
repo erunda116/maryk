@@ -5,12 +5,21 @@ document.addEventListener('DOMContentLoaded', function() {
     var base = document.querySelector('#base'); //itog unit
     var itogLabel = document.querySelector('#itogLabel'); //itog label
     var rangeSailerStatus = document.querySelector('#rangeSailerStatus'); //range
+<<<<<<< HEAD
+=======
+    var heartRange = document.querySelector('#heartRange');
+>>>>>>> homevest
 
 //konsultant
     var konsultant = document.querySelector('#konsultant'); //консультант блок для показать\скрыть
     var konsultantVal = document.querySelector('#konsultantVal'); //консультант вводимое значение
     var konsultantNum = document.querySelector('#konsultantNum'); //консультант расчетное значение
+<<<<<<< HEAD
     var konsultantDiscount = document.querySelector('#konsultantDiscount'); //консультант select скидка
+=======
+    //var konsultantDiscount = document.querySelector('#konsultantDiscount'); //консультант select скидка
+    var konsultantDiscountRadio = document.querySelectorAll('input[name="radioBtn"]'); // консультант radio скидка
+>>>>>>> homevest
     var konsultantProfit = document.querySelector('#konsultantProfit'); //консультант доход
 
 
@@ -158,8 +167,14 @@ document.addEventListener('DOMContentLoaded', function() {
             labelFordirector2Num2.style.display = "none";
         }
         recalculatePersent(nowSailerPosition);
+<<<<<<< HEAD
         recalculate(nowSailerPosition);
         //console.log(nowSailerPosition);
+=======
+        changeHeart(nowSailerPosition);
+        recalculate(nowSailerPosition);
+        console.log(nowSailerPosition);
+>>>>>>> homevest
     };
 
     //range-change
@@ -219,8 +234,13 @@ document.addEventListener('DOMContentLoaded', function() {
             labelFordirector2Num2.style.display = "none";
         }
         recalculatePersent(this.value);
+<<<<<<< HEAD
         recalculate(this.value);
         //console.log(nowSailerPosition);
+=======
+        changeHeart(this.value);
+        recalculate(this.value);
+>>>>>>> homevest
     };
 
 //re-calculate summ value than user change sail-level
@@ -302,6 +322,35 @@ document.addEventListener('DOMContentLoaded', function() {
         director2Num1.value = Math.round(directorNum.value * directorDiscount.value / 100 / tax * disc);
     }
 
+<<<<<<< HEAD
+=======
+    /*heart with range*/
+    function changeHeart(pos){
+        if(pos == 1){
+            heartRange.style.left = "50px";
+        } else if(pos == 2){
+            heartRange.style.left = "163px";
+        } else if(pos == 3){
+            heartRange.style.left = "277px";
+        } else if(pos == 4){
+            heartRange.style.left = "392px";
+        } else if(pos == 5){
+            heartRange.style.left = "503px";
+        } else if(pos == 6){
+            heartRange.style.left = "617px";
+        } else if(pos == 7){
+            heartRange.style.left = "732px";
+        } else if(pos == 8){
+            heartRange.style.left = "846px";
+        } else if(pos == 9){
+            heartRange.style.left = "958px";
+        } else if(pos == 10){
+            heartRange.style.left = "1073px";
+        } else if(pos == 11){
+            heartRange.style.left = "1185px";
+        }
+    }
+>>>>>>> homevest
 
     /*calculate table*/
     //значение в рублях
@@ -309,7 +358,16 @@ document.addEventListener('DOMContentLoaded', function() {
     konsultantVal.oninput = function () {
             var roubleVal = +this.value * +base.value;
             konsultantNum.value = Math.round(roubleVal);
+<<<<<<< HEAD
             konsultantProfit.value = Math.round(konsultantNum.value * +konsultantDiscount.value / 100);
+=======
+            var nowCheckedRadio = document.querySelector('input[name="radioBtn"]:checked');
+            if(nowCheckedRadio != null){
+                konsultantProfit.value = Math.round(konsultantNum.value * +nowCheckedRadio.value / 100);
+            }
+            //konsultantProfit.value = Math.round(konsultantNum.value * +konsultantDiscount.value / 100);
+
+>>>>>>> homevest
 
         if(+this.value == 0){
             bigkonsultantDiscountDop.value = 0;
@@ -324,16 +382,38 @@ document.addEventListener('DOMContentLoaded', function() {
         //     + +director2Num2.value + +biggestdirector2NumAct.value;
     };
 
+<<<<<<< HEAD
     konsultantDiscount.onchange = function () {
+=======
+    for(var l = 0; l < konsultantDiscountRadio.length; l++){
+        konsultantDiscountRadio[l].addEventListener('change', calcDiscoutRadio);
+    }
+    function calcDiscoutRadio(){
+>>>>>>> homevest
         var roubleVal = +konsultantVal.value * +base.value;
         konsultantNum.value = Math.round(roubleVal);
         konsultantProfit.value = Math.round(+konsultantNum.value * +this.value / 100);
 
         recalculate(nowSailerPosition);
+<<<<<<< HEAD
         // itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
         //     + +bigdirectorProfit.value + +biggestdirector2Num2.value + +biggestdirector2Num3.value
         //     + +director2Num2.value + +biggestdirector2NumAct.value;
     };
+=======
+    }
+
+    //konsultantDiscount.onchange = function () {
+        // var roubleVal = +konsultantVal.value * +base.value;
+        // konsultantNum.value = Math.round(roubleVal);
+        // konsultantProfit.value = Math.round(+konsultantNum.value * +this.value / 100);
+        //
+        // recalculate(nowSailerPosition);
+        // itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
+        //     + +bigdirectorProfit.value + +biggestdirector2Num2.value + +biggestdirector2Num3.value
+        //     + +director2Num2.value + +biggestdirector2NumAct.value;
+    //};
+>>>>>>> homevest
 
     bigkonsultantVal.oninput = function () {
         var roubleVal = +this.value * +base.value;
@@ -485,6 +565,7 @@ document.addEventListener('DOMContentLoaded', function() {
     bigdirectorVal.onblur = function () {
         var allGropFirstLineTr = document.querySelectorAll('.table-rows-group');
         if(nowSailerPosition >= 7 || nowSailerPosition <= 10){
+<<<<<<< HEAD
             var innerContent = '<td><input type="text" value="" class="table-name"></td>\n' +
                 '                        <td><input type="text" value="" class="table-volume"></td>\n';
         } else if(nowSailerPosition == 7){
@@ -492,6 +573,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 '                        <td><input type="text" value="" class="table-volume"></td>\n' +
                 '                        <td><input type="text" disabled value="5" class="table-percent show-biggestdirect"></td>\n' +
                 '                        <td><input type="text" disabled value="" class="table-commission show-biggestdirect"></td>';
+=======
+            var innerContent = '<td><input class="change-inputs" type="text" value="" class="table-name"></td>\n' +
+                '                        <td><input class="change-inputs" type="text" value="" class="table-volume"></td>\n';
+        } else if(nowSailerPosition == 7){
+            var innerContent = '<td><input class="change-inputs" type="text" value="" class="table-name"></td>\n' +
+                '                        <td><input class="change-inputs" type="text" value="" class="table-volume"></td>\n' +
+                '                        <td><input class="results-inputs" type="text" disabled value="5" class="table-percent show-biggestdirect"></td>\n' +
+                '                        <td><input class="results-inputs" type="text" disabled value="" class="table-commission show-biggestdirect"></td>';
+>>>>>>> homevest
         }
         if(+this.value > allGropFirstLineTr.length){
             for(var j = allGropFirstLineTr.length; j < this.value; j++){

@@ -53,6 +53,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var biggestdirectorNum31 = document.querySelector('#biggestdirectorNum31'); //супердиректор расчетнон значение 3 линии 1
     var biggestdirectorNum32 = document.querySelector('#biggestdirectorNum32'); //супердиректор расчетнон значение 3 линии 2
     var biggestdirectorAct = document.querySelector('#biggestdirectorAct'); //супердиректор его подчиненные директоры
+    var biggestdirectorActVall = document.querySelector('#biggestdirectorActVall'); //изменение количества дебютировавших директоров
+    var amountDebut = document.querySelector('#amountDebut'); //сердце нижний range
 
     var biggestdirector2Num2 = document.querySelector('#biggestdirector2Num2'); //супердиректор расчетное последний блок 2 линия
     var biggestdirector2Num3 = document.querySelector('#biggestdirector2Num3'); //супердиректор расчетное последний блок 3 линия
@@ -66,7 +68,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var tableFirstLineGroups = document.querySelector('#tableFirstLineGroups'); // таблица 1 линиия
     var tableVolume = document.querySelectorAll('.table-volume'); //table groups
     var showBiggestdirect = document.querySelectorAll('.show-biggestdirect'); //table for biggest direct
-
+    var twoLine = document.querySelector('#twoLine'); //консультанты 2 линии
+    var thirdLine = document.querySelector('#thirdLine'); //консультанты 3 линии
 
 //warning-messages
     var warning1 = document.querySelector('#warning1');
@@ -85,6 +88,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (!(e.keyCode==8 || e.keyCode==46 || e.keyCode==44 ||(e.keyCode>47 && e.keyCode<58))) return false;
             }
         }
+
+        //changeSize(allInputs[i]);
     }
 
 //make constants
@@ -92,6 +97,17 @@ document.addEventListener('DOMContentLoaded', function() {
     var tax = 1.2;
     var disc = 0.6;
 
+    function changeSize(elem){
+        return elem.style.width = ((elem.value.length) * 13) + 'px';
+    }
+    // function makeNumber(str){
+    //     var num = +str.replace(/[^\d;]/g, '');
+    //     return num;
+    // }
+    // function addCurrency(num){
+    //     var str = num + ' ₽';
+    //     return str;
+    // }
 
     /*show/hide blocks*/
     var nowSailerPosition = '1';
@@ -109,6 +125,8 @@ document.addEventListener('DOMContentLoaded', function() {
             director.style.display = "none";
             bigdirector.style.display = "none";
             sailerStatus3Container.style.display = "none";
+            twoLine.style.display = "none";
+            thirdLine.style.display = "none";
         }
         if (this.value == 'sailer-2') {
             konsultant.style.display = "flex";
@@ -117,6 +135,8 @@ document.addEventListener('DOMContentLoaded', function() {
             director2.style.display = "none";
             bigdirector.style.display = "none";
             sailerStatus3Container.style.display = "none";
+            twoLine.style.display = "none";
+            thirdLine.style.display = "none";
         }
         if (this.value == 'sailer-3') {
             konsultant.style.display = "flex";
@@ -125,6 +145,8 @@ document.addEventListener('DOMContentLoaded', function() {
             director2.style.display = "block";
             bigdirector.style.display = "none";
             sailerStatus3Container.style.display = "flex";
+            twoLine.style.display = "none";
+            thirdLine.style.display = "none";
         }
         if (this.value == 'sailer-4') {
             konsultant.style.display = "flex";
@@ -136,6 +158,8 @@ document.addEventListener('DOMContentLoaded', function() {
             biggestdirector2.style.display = "none";
             hideThenKingDirector.style.display = "block";
             sailerStatus3Container.style.display = "flex";
+            twoLine.style.display = "none";
+            thirdLine.style.display = "none";
         }
         if (this.value == 'sailer-5') {
             konsultant.style.display = "flex";
@@ -146,6 +170,8 @@ document.addEventListener('DOMContentLoaded', function() {
             biggestdirector.style.display = "block";
             biggestdirector2.style.display = "block";
             sailerStatus3Container.style.display = "flex";
+            twoLine.style.display = "table-row";
+            thirdLine.style.display = "table-row";
 
             hideThenKingDirector.style.display = "none";
         }
@@ -156,18 +182,18 @@ document.addEventListener('DOMContentLoaded', function() {
             warning2.style.display = "block";
             director2Num2.style.display = "block";
             labelFordirector2Num2.style.display = "block";
-        } else{
+        } else if(nowSailerPosition == 11){
             for(var y = 0; y < showBiggestdirect.length; y++){
                 showBiggestdirect[y].style.display = "table-cell";
             }
             warning2.style.display = "none";
             director2Num2.style.display = "none";
             labelFordirector2Num2.style.display = "none";
+            console.log(bigdirectorVal.value);
         }
         recalculatePersent(nowSailerPosition);
         changeHeart(nowSailerPosition);
         recalculate(nowSailerPosition);
-        console.log(nowSailerPosition);
     };
 
     //range-change
@@ -178,6 +204,8 @@ document.addEventListener('DOMContentLoaded', function() {
             director.style.display = "none";
             bigdirector.style.display = "none";
             sailerStatus3Container.style.display = "none";
+            twoLine.style.display = "none";
+            thirdLine.style.display = "none";
         }
         if (+this.value > 1 && +this.value <= 5) {
             konsultant.style.display = "flex";
@@ -186,6 +214,8 @@ document.addEventListener('DOMContentLoaded', function() {
             director2.style.display = "none";
             bigdirector.style.display = "none";
             sailerStatus3Container.style.display = "none";
+            twoLine.style.display = "none";
+            thirdLine.style.display = "none";
         }
         if (+this.value == 6) {
             konsultant.style.display = "flex";
@@ -194,6 +224,8 @@ document.addEventListener('DOMContentLoaded', function() {
             director2.style.display = "block";
             bigdirector.style.display = "none";
             sailerStatus3Container.style.display = "flex";
+            twoLine.style.display = "none";
+            thirdLine.style.display = "none";
         }
         if (+this.value > 6 && +this.value <= 10) {
             konsultant.style.display = "flex";
@@ -204,6 +236,8 @@ document.addEventListener('DOMContentLoaded', function() {
             biggestdirector.style.display = "none";
             biggestdirector2.style.display = "none";
             sailerStatus3Container.style.display = "flex";
+            twoLine.style.display = "none";
+            thirdLine.style.display = "none";
         }
         if (this.value == 11) {
             konsultant.style.display = "flex";
@@ -213,6 +247,8 @@ document.addEventListener('DOMContentLoaded', function() {
             bigdirector.style.display = "flex";
             biggestdirector.style.display = "block";
             biggestdirector2.style.display = "block";
+            twoLine.style.display = "table-row";
+            thirdLine.style.display = "table-row";
         }
         nowSailerPosition = this.value;
         if(nowSailerPosition < 11){
@@ -295,7 +331,7 @@ document.addEventListener('DOMContentLoaded', function() {
             director2Num2.value = 0;
         }
 
-        if(+directorVal.value < 100){
+        if(+directorVal.value < 100 && sailPosition < 11){
             warning2.style.display = "block";
             if(nowSailerPosition < 11) {
                 bigdirectorProfit.value = 0;
@@ -351,7 +387,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if(nowCheckedRadio != null){
                 konsultantProfit.value = Math.round(konsultantNum.value * +nowCheckedRadio.value / 100);
             }
-            //konsultantProfit.value = Math.round(konsultantNum.value * +konsultantDiscount.value / 100);
 
 
         if(+this.value == 0){
@@ -365,6 +400,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
         //     + +bigdirectorProfit.value + +biggestdirector2Num2.value + +biggestdirector2Num3.value
         //     + +director2Num2.value + +biggestdirector2NumAct.value;
+        // changeSize(konsultantNum);
+        // changeSize(konsultantProfit);
     };
 
     for(var l = 0; l < konsultantDiscountRadio.length; l++){
@@ -483,7 +520,7 @@ document.addEventListener('DOMContentLoaded', function() {
             director2Num2.value = 0;
         }
 
-        if(+this.value < 100){
+        if(+this.value < 100 && nowSailerPosition < 11){
             warning2.style.display = "block";
             if(nowSailerPosition < 11) {
                 bigdirectorProfit.value = 0;
@@ -557,34 +594,47 @@ document.addEventListener('DOMContentLoaded', function() {
 
     };
 
+    // function insertAfter(elem, refElem) {
+    //     return refElem.parentNode.insertBefore(elem, refElem.nextSibling);
+    // }
+
+
     bigdirectorVal.onblur = function () {
         var allGropFirstLineTr = document.querySelectorAll('.table-rows-group');
         if(nowSailerPosition >= 7 || nowSailerPosition <= 10){
-            var innerContent = '<td><input type="text" value="" class="table-name change-inputs"></td>\n' +
+            var innerContent = '<td></td><td><input type="text" value="" class="table-name change-inputs"></td>\n' +
                 '                        <td><input type="text" value="" class="table-volume change-inputs"></td>\n';
         } else if(nowSailerPosition == 7){
-            var innerContent = '<td><input type="text" value="" class="table-name change-inputs"></td>\n' +
+            var innerContent = '<td></td><td><input type="text" value="" class="table-name change-inputs"></td>\n' +
                 '                        <td><input type="text" value="" class="table-volume change-inputs"></td>\n' +
                 '                        <td><input type="text" disabled value="5" class="results-inputs table-percent show-biggestdirect"></td>\n' +
                 '                        <td><input type="text" disabled value="" class="results-inputs table-commission show-biggestdirect"></td>';
         }
         if(+this.value > allGropFirstLineTr.length){
-            for(var j = allGropFirstLineTr.length; j < this.value; j++){
-                var newTr = document.createElement('tr');
-                newTr.className = "table-rows-group";
-                newTr.innerHTML = innerContent;
-                tableFirstLineGroups.appendChild(newTr);
+            if(+this.value <= 9) {
+                //var lastTrtest = document.querySelector('#lastTrtest');
+                for (var j = allGropFirstLineTr.length; j < this.value; j++) {
+                    var newTr = document.createElement('tr');
+                    newTr.className = "table-rows-group";
+                    newTr.innerHTML = innerContent;
+                    //lastTrtest.parentNode.insertBefore(newTr, lastTrtest);
+                    //insertAfter(newTr, lastTrtest);
+                    tableFirstLineGroups.appendChild(newTr);
+                }
             }
         }
         else if(+this.value < allGropFirstLineTr.length) {
             if(+this.value >= 5) {
                 var difference = allGropFirstLineTr.length - +this.value;
+            } else {
+                var difference = allGropFirstLineTr.length - 5;
+            }
                 for (var g = 0; g < difference; g++) {
                     var deleteElement = document.querySelector('.table-rows-group:last-child');
                     deleteElement.parentNode.removeChild(deleteElement);
                 }
             }
-        }
+
     };
 
 
@@ -665,8 +715,77 @@ document.addEventListener('DOMContentLoaded', function() {
         //     + +director2Num2.value + +biggestdirector2NumAct.value;
     };
 
+    function changeBottomRange(pos){
+        if(pos == 0){
+            amountDebut.style.left = "5px";
+            biggestdirectorActVall.style.left = "3px";
+        } else if(pos == 1){
+            amountDebut.style.left = "25px";
+            biggestdirectorActVall.style.left = "23px";
+        } else if(pos == 2){
+            amountDebut.style.left = "50px";
+            biggestdirectorActVall.style.left = "50px";
+        } else if(pos == 3){
+            amountDebut.style.left = "75px";
+            biggestdirectorActVall.style.left = "74px";
+        } else if(pos == 4){
+            amountDebut.style.left = "100px";
+            biggestdirectorActVall.style.left = "98px";
+        } else if(pos == 5){
+            amountDebut.style.left = "123px";
+            biggestdirectorActVall.style.left = "122px";
+        } else if(pos == 6){
+            amountDebut.style.left = "147px";
+            biggestdirectorActVall.style.left = "146px";
+        } else if(pos == 7){
+            amountDebut.style.left = "172px";
+            biggestdirectorActVall.style.left = "170px";
+        } else if(pos == 8){
+            amountDebut.style.left = "195px";
+            biggestdirectorActVall.style.left = "194px";
+        } else if(pos == 9){
+            amountDebut.style.left = "217px";
+            biggestdirectorActVall.style.left = "216px";
+        } else if(pos == 10){
+            amountDebut.style.left = "242px";
+            biggestdirectorActVall.style.left = "239px";
+        } else if(pos == 11){
+            amountDebut.style.left = "265px";
+            biggestdirectorActVall.style.left = "262px";
+        } else if(pos == 12){
+            amountDebut.style.left = "290px";
+            biggestdirectorActVall.style.left = "287px";
+        } else if(pos == 13){
+            amountDebut.style.left = "313px";
+            biggestdirectorActVall.style.left = "310px";
+        } else if(pos == 14){
+            amountDebut.style.left = "337px";
+            biggestdirectorActVall.style.left = "334px";
+        } else if(pos == 15){
+            amountDebut.style.left = "362px";
+            biggestdirectorActVall.style.left = "359px";
+        } else if(pos == 16){
+            amountDebut.style.left = "385px";
+            biggestdirectorActVall.style.left = "382px";
+        } else if(pos == 17){
+            amountDebut.style.left = "408px";
+            biggestdirectorActVall.style.left = "405px";
+        } else if(pos == 18){
+            amountDebut.style.left = "433px";
+            biggestdirectorActVall.style.left = "430px";
+        } else if(pos == 19){
+            amountDebut.style.left = "457px";
+            biggestdirectorActVall.style.left = "454px";
+        } else if(pos == 20){
+            amountDebut.style.left = "483px";
+            biggestdirectorActVall.style.left = "481px";
+        }
+    }
+
     biggestdirectorAct.oninput = function () {
         biggestdirector2NumAct.value = +this.value * 210000;
+        biggestdirectorActVall.innerHTML = this.value;
+        changeBottomRange(this.value);
         recalculate(nowSailerPosition);
     };
 

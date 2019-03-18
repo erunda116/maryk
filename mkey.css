@@ -25,6 +25,10 @@ body{
     font-family: 'HevBold';
     font-size: 22px;
     padding: 3px 10px;
+    /*width: 70px;*/
+}
+.results-inputs-right{
+    padding: 3px 0;
 }
 .change-inputs{
     border: 1px solid #dbdbdb;
@@ -35,11 +39,14 @@ body{
 label,
 .hev-rom{
     font-family: 'HevRoman';
+    margin: 0;
+    padding-bottom: 20px;
 }
 .mary-key-design{
     display: inline-flex;
     flex-direction: column;
     /*width: 40%;*/
+    padding-left: 20px;
 }
 
 /*headers*/
@@ -65,7 +72,7 @@ label,
 
 .container-key-item{
     border-bottom: 1px solid #ed7fa6;
-    /*padding: 10px;*/
+    padding: 15px 0;
 }
 .container-key-item:first-child{
     width: 65%;
@@ -73,6 +80,19 @@ label,
 }
 .container-key-item:last-child{
     width: 35%;
+}
+.container-key-item-flex{
+    display: flex;
+    align-items: center;
+}
+.mary-key-design-double{
+    border-bottom: 1px dashed #ed7fa6;
+    margin: 0 20px;
+    padding-left: 0;
+    padding-bottom: 15px;
+}
+.mary-key-design-double2{
+    padding-top: 20px;
 }
 
 /*ползунок*/
@@ -198,6 +218,9 @@ input[type=range]:focus::-ms-fill-upper {
     font-size: 14px;
     color: #000;
 }
+.sailer-status:hover{
+    cursor: pointer;
+}
 .sailer-status[value="sailer-1"],
 .sailer-status[value="sailer-2"]{
     background: #fbd6de;
@@ -240,6 +263,9 @@ input[type=range]:focus::-ms-fill-upper {
     border-radius: 50%;
     z-index: 10;
 }
+.radioBtn-container{
+    margin-left: 6px;
+}
 input[name="radioBtn"]{
     position: relative;
     left: -5px;
@@ -266,4 +292,11 @@ input[name="radioBtn"]:checked + .mary-key-radiolabel::before{
     font-size: 26px;
     color: #e74783;
     padding-right: 10px;
+}
+
+
+/*warning*/
+#warning1{
+    padding-left: 20px;
+    color: #e74783;
 }

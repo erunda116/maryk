@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var director2Num1 = document.querySelector('#director2Num1'); //директор расчетное значение 1
     var director2Num2 = document.querySelector('#director2Num2'); //директор расчетное значение 1
     var labelFordirector2Num2 = document.querySelector('#labelFordirector2Num2'); //директор расчетное значение label
-
+    var sailerStatus3Container = document.querySelector('#sailerStatus3Container'); //контейнер директор
 
 //bigdirector
     var bigdirector = document.querySelector('#bigdirector'); //супердиректор блок для показать\скрыть
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var sailerStatus = document.querySelectorAll('.sailer-status'); //sailer status
 
 //table
-    var tableFirstLineGroups = document.querySelector('#tableFirstLineGroups'); // таблица 1 линииg
+    var tableFirstLineGroups = document.querySelector('#tableFirstLineGroups'); // таблица 1 линиия
     var tableVolume = document.querySelectorAll('.table-volume'); //table groups
     var showBiggestdirect = document.querySelectorAll('.show-biggestdirect'); //table for biggest direct
 
@@ -108,6 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
             bigkonsultant.style.display = "none";
             director.style.display = "none";
             bigdirector.style.display = "none";
+            sailerStatus3Container.style.display = "none";
         }
         if (this.value == 'sailer-2') {
             konsultant.style.display = "flex";
@@ -115,6 +116,7 @@ document.addEventListener('DOMContentLoaded', function() {
             director.style.display = "none";
             director2.style.display = "none";
             bigdirector.style.display = "none";
+            sailerStatus3Container.style.display = "none";
         }
         if (this.value == 'sailer-3') {
             konsultant.style.display = "flex";
@@ -122,6 +124,7 @@ document.addEventListener('DOMContentLoaded', function() {
             director.style.display = "block";
             director2.style.display = "block";
             bigdirector.style.display = "none";
+            sailerStatus3Container.style.display = "flex";
         }
         if (this.value == 'sailer-4') {
             konsultant.style.display = "flex";
@@ -132,6 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
             biggestdirector.style.display = "none";
             biggestdirector2.style.display = "none";
             hideThenKingDirector.style.display = "block";
+            sailerStatus3Container.style.display = "flex";
         }
         if (this.value == 'sailer-5') {
             konsultant.style.display = "flex";
@@ -141,6 +145,7 @@ document.addEventListener('DOMContentLoaded', function() {
             bigdirector.style.display = "flex";
             biggestdirector.style.display = "block";
             biggestdirector2.style.display = "block";
+            sailerStatus3Container.style.display = "flex";
 
             hideThenKingDirector.style.display = "none";
         }
@@ -172,6 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
             bigkonsultant.style.display = "none";
             director.style.display = "none";
             bigdirector.style.display = "none";
+            sailerStatus3Container.style.display = "none";
         }
         if (+this.value > 1 && +this.value <= 5) {
             konsultant.style.display = "flex";
@@ -179,6 +185,7 @@ document.addEventListener('DOMContentLoaded', function() {
             director.style.display = "none";
             director2.style.display = "none";
             bigdirector.style.display = "none";
+            sailerStatus3Container.style.display = "none";
         }
         if (+this.value == 6) {
             konsultant.style.display = "flex";
@@ -186,6 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
             director.style.display = "block";
             director2.style.display = "block";
             bigdirector.style.display = "none";
+            sailerStatus3Container.style.display = "flex";
         }
         if (+this.value > 6 && +this.value <= 10) {
             konsultant.style.display = "flex";
@@ -195,6 +203,7 @@ document.addEventListener('DOMContentLoaded', function() {
             bigdirector.style.display = "flex";
             biggestdirector.style.display = "none";
             biggestdirector2.style.display = "none";
+            sailerStatus3Container.style.display = "flex";
         }
         if (this.value == 11) {
             konsultant.style.display = "flex";
@@ -411,15 +420,19 @@ document.addEventListener('DOMContentLoaded', function() {
             if(+this.value  <= 2){
                 nowSailerPosition = 2;
                 rangeSailerStatus.value = 2;
+                changeHeart(nowSailerPosition);
             } else if(+this.value  > 2 && +this.value  <= 4){
                 nowSailerPosition = 3;
                 rangeSailerStatus.value = 3;
+                changeHeart(nowSailerPosition);
             } else if(+this.value  > 4 && +this.value  <= 7){
                 nowSailerPosition = 4;
                 rangeSailerStatus.value = 4;
+                changeHeart(nowSailerPosition);
             } else if(+this.value  > 7){
                 nowSailerPosition = 5;
                 rangeSailerStatus.value = 5;
+                changeHeart(nowSailerPosition);
             }
         }
         bigkonsultantDiscountDop.value = Math.round(bigkonsultantNum.value * bigkonsultantDiscount.value / 100 / tax * disc);
@@ -494,6 +507,18 @@ document.addEventListener('DOMContentLoaded', function() {
         //     + +director2Num2.value + +biggestdirector2NumAct.value;
     };
 
+    //пересчет итога
+    function tableCalculate() {
+        var groupItog = 0;
+        for(var o = 0; o < tableVolume.length; o++){
+            groupItog += +tableVolume[o].value;
+            console.log(tableVolume[o].value);
+        }
+        if(+directorVal.value >= 100){
+            bigdirectorProfit.value = Math.round(groupItog * base.value * bigdirectorDiscount.value / 100 / tax * disc);
+        }
+    };
+
     bigdirectorVal.oninput = function () {
         if(+this.value <= 2){
             bigdirectorDiscount.value = 5;
@@ -509,34 +534,39 @@ document.addEventListener('DOMContentLoaded', function() {
             if(+this.value  <= 2){
                 nowSailerPosition = 7;
                 rangeSailerStatus.value = 7;
+                changeHeart(nowSailerPosition);
             }
             else if(+this.value  > 2 && +this.value  <= 4){
                 nowSailerPosition = 8;
                 rangeSailerStatus.value = 8;
+                changeHeart(nowSailerPosition);
             }
             else if(+this.value  > 4 && +this.value  <= 7){
                 nowSailerPosition = 9;
                 rangeSailerStatus.value = 9;
+                changeHeart(nowSailerPosition);
             }
             else if(+this.value  > 7){
                 nowSailerPosition = 10;
                 rangeSailerStatus.value = 10;
+                changeHeart(nowSailerPosition);
             }
         }
+
+        tableCalculate();
+
     };
 
-
-    //изменение количества бизнес групп
     bigdirectorVal.onblur = function () {
         var allGropFirstLineTr = document.querySelectorAll('.table-rows-group');
         if(nowSailerPosition >= 7 || nowSailerPosition <= 10){
-            var innerContent = '<td><input class="change-inputs" type="text" value="" class="table-name"></td>\n' +
-                '                        <td><input class="change-inputs" type="text" value="" class="table-volume"></td>\n';
+            var innerContent = '<td><input type="text" value="" class="table-name change-inputs"></td>\n' +
+                '                        <td><input type="text" value="" class="table-volume change-inputs"></td>\n';
         } else if(nowSailerPosition == 7){
-            var innerContent = '<td><input class="change-inputs" type="text" value="" class="table-name"></td>\n' +
-                '                        <td><input class="change-inputs" type="text" value="" class="table-volume"></td>\n' +
-                '                        <td><input class="results-inputs" type="text" disabled value="5" class="table-percent show-biggestdirect"></td>\n' +
-                '                        <td><input class="results-inputs" type="text" disabled value="" class="table-commission show-biggestdirect"></td>';
+            var innerContent = '<td><input type="text" value="" class="table-name change-inputs"></td>\n' +
+                '                        <td><input type="text" value="" class="table-volume change-inputs"></td>\n' +
+                '                        <td><input type="text" disabled value="5" class="results-inputs table-percent show-biggestdirect"></td>\n' +
+                '                        <td><input type="text" disabled value="" class="results-inputs table-commission show-biggestdirect"></td>';
         }
         if(+this.value > allGropFirstLineTr.length){
             for(var j = allGropFirstLineTr.length; j < this.value; j++){
@@ -546,45 +576,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 tableFirstLineGroups.appendChild(newTr);
             }
         }
-        else if(+this.value < allGropFirstLineTr.length){
-            var difference = allGropFirstLineTr.length - +this.value;
-            for(var g = 0; g < difference; g++){
-                var deleteElement = document.querySelector('.table-rows-group:last-child');
-                deleteElement.parentNode.removeChild(deleteElement);
+        else if(+this.value < allGropFirstLineTr.length) {
+            if(+this.value >= 5) {
+                var difference = allGropFirstLineTr.length - +this.value;
+                for (var g = 0; g < difference; g++) {
+                    var deleteElement = document.querySelector('.table-rows-group:last-child');
+                    deleteElement.parentNode.removeChild(deleteElement);
+                }
             }
         }
     };
 
-    biggestdirectorVal2.oninput = function () {
-        var roubleVal = +this.value * +base.value;
-        biggestdirectorNum21.value = Math.round(roubleVal);
-        biggestdirector2Num2.value = Math.round(biggestdirectorNum21.value / 100 * biggestdirectorNum22.value / tax * disc);
 
-        recalculate(nowSailerPosition);
-        // itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
-        //     + +bigdirectorProfit.value + +biggestdirector2Num2.value + +biggestdirector2Num3.value
-        //     + +director2Num2.value + +biggestdirector2NumAct.value;
-    };
-
-    biggestdirectorVal3.oninput = function () {
-        var roubleVal = +this.value * +base.value;
-        biggestdirectorNum31.value = Math.round(roubleVal);
-        biggestdirector2Num3.value = Math.round(biggestdirectorNum31.value / 100 * biggestdirectorNum32.value / tax * disc);
-
-        recalculate(nowSailerPosition);
-        // itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
-        //     + +bigdirectorProfit.value + +biggestdirector2Num2.value + +biggestdirector2Num3.value
-        //     + +director2Num2.value + +biggestdirector2NumAct.value;
-    };
-
-    biggestdirectorAct.oninput = function () {
-        biggestdirector2NumAct.value = +this.value * 210000;
-
-        recalculate(nowSailerPosition);
-        // itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
-        //     + +bigdirectorProfit.value + +biggestdirector2Num2.value + +biggestdirector2Num3.value
-        //     + +director2Num2.value + +biggestdirector2NumAct.value;
-    };
 
 
 
@@ -617,7 +620,7 @@ document.addEventListener('DOMContentLoaded', function() {
             thisGroupCommission.value = Math.round(+this.value * base.value * thisGroupPercent.value / 100 / tax * disc);
 
             //profit right block
-            if(nowSailerPosition < 11 && directorVal.value >= 100){
+            if(nowSailerPosition < 11 && +directorVal.value >= 100){
                 var volumeItog = 0;
                 for(var n = 0; n < allVolume.length; n++){
                     volumeItog += +allVolume[n].value;
@@ -636,9 +639,36 @@ document.addEventListener('DOMContentLoaded', function() {
             //     + +bigdirectorProfit.value + +biggestdirector2Num2.value + +biggestdirector2Num3.value
             //     + +director2Num2.value + +biggestdirector2NumAct.value;
 
-        }
+        };
 
     }
+
+    biggestdirectorVal2.oninput = function () {
+        var roubleVal = +this.value * +base.value;
+        biggestdirectorNum21.value = Math.round(roubleVal);
+        biggestdirector2Num2.value = Math.round(biggestdirectorNum21.value / 100 * biggestdirectorNum22.value / tax * disc);
+
+        recalculate(nowSailerPosition);
+        // itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
+        //     + +bigdirectorProfit.value + +biggestdirector2Num2.value + +biggestdirector2Num3.value
+        //     + +director2Num2.value + +biggestdirector2NumAct.value;
+    };
+
+    biggestdirectorVal3.oninput = function () {
+        var roubleVal = +this.value * +base.value;
+        biggestdirectorNum31.value = Math.round(roubleVal);
+        biggestdirector2Num3.value = Math.round(biggestdirectorNum31.value / 100 * biggestdirectorNum32.value / tax * disc);
+
+        recalculate(nowSailerPosition);
+        // itog.value = +konsultantProfit.value + +bigkonsultantDiscountDop.value + +director2Num1.value
+        //     + +bigdirectorProfit.value + +biggestdirector2Num2.value + +biggestdirector2Num3.value
+        //     + +director2Num2.value + +biggestdirector2NumAct.value;
+    };
+
+    biggestdirectorAct.oninput = function () {
+        biggestdirector2NumAct.value = +this.value * 210000;
+        recalculate(nowSailerPosition);
+    };
 
 });
 

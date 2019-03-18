@@ -55,6 +55,7 @@
                 <div>
                     <input class="change-inputs" type="text" value="0" id="konsultantVal">
                     <input type="text" id="konsultantNum" class="results-inputs" value="0" disabled>
+                    <!--<span class="currency-rouble">₽</span>-->
                 </div>
             </div>
             <div class="mary-key-design">
@@ -179,61 +180,94 @@
             <span>%</span>
             <input id="bigdirectorDiscount" type="text" value="0" disabled>
             </div>
-            <p>1-ой линии</p>
-            <div style="border: 1px solid #000;">
-                <table id="tableFirstLineGroups">
+            <div>
+                <table id="tableFirstLineGroups" class="table-mary-key">
                     <tr>
+                        <th></th>
                         <th>Группа</th>
                         <th>Объем заказов</th>
                         <th class="show-biggestdirect">%</th>
                         <th class="show-biggestdirect">Комиссия</th>
                     </tr>
                     <tr class="table-rows-group">
+                        <td>1-ой линии</td>
                         <td><input type="text" value="" class="table-name change-inputs"></td>
                         <td><input type="text" value="" class="table-volume change-inputs"></td>
                         <td><input type="text" disabled value="5" class="results-inputs table-percent show-biggestdirect"></td>
                         <td><input type="text" disabled value="" class="results-inputs table-commission show-biggestdirect"></td>
                     </tr>
                     <tr class="table-rows-group">
+                        <td></td>
                         <td><input type="text" value="" class="table-name change-inputs"></td>
                         <td><input type="text" value="" class="table-volume change-inputs"></td>
                         <td><input type="text" disabled value="5" class="results-inputs table-percent show-biggestdirect"></td>
                         <td><input type="text" disabled value="" class="results-inputs table-commission show-biggestdirect"></td>
                     </tr>
                     <tr class="table-rows-group">
+                        <td></td>
                         <td><input type="text" value="" class="table-name change-inputs"></td>
                         <td><input type="text" value="" class="table-volume change-inputs"></td>
                         <td><input type="text" disabled value="5" class="results-inputs table-percent show-biggestdirect"></td>
                         <td><input type="text" disabled value="" class="results-inputs table-commission show-biggestdirect"></td>
                     </tr>
                     <tr class="table-rows-group">
+                        <td></td>
                         <td><input type="text" value="" class="table-name change-inputs"></td>
                         <td><input type="text" value="" class="table-volume change-inputs"></td>
                         <td><input type="text" disabled value="5" class="results-inputs table-percent show-biggestdirect"></td>
                         <td><input type="text" disabled value="" class="results-inputs table-commission show-biggestdirect"></td>
                     </tr>
-                    <tr class="table-rows-group">
+                    <tr class="table-rows-group" id="lastTrtest">
+                        <td></td>
                         <td><input type="text" value="" class="table-name change-inputs"></td>
                         <td><input type="text" value="" class="table-volume change-inputs"></td>
                         <td><input type="text" disabled value="5" class="results-inputs table-percent show-biggestdirect"></td>
                         <td><input type="text" disabled value="" class="results-inputs table-commission show-biggestdirect"></td>
                     </tr>
+                        <tr id="twoLine">
+                            <td>2-ой линии</td>
+                            <td><input type="text" value="" class="table-name change-inputs"></td>
+                            <td><input class="change-inputs" type="text" value="0" id="biggestdirectorVal2"></td>
+                            <td><input class="results-inputs table-percent-biggest" id="biggestdirectorNum22" value="3" type="text" disabled></td>
+                            <td><input class="results-inputs" id="biggestdirectorNum21" value="0" type="text" disabled></td>
+                        </tr>
+                        <tr id="thirdLine">
+                            <td>3-ей линии</td>
+                            <td><input type="text" value="" class="table-name change-inputs"></td>
+                            <td><input class="change-inputs" type="text" value="0" id="biggestdirectorVal3"></td>
+                            <td><input class="results-inputs table-percent-biggest" id="biggestdirectorNum32" value="2" type="text" disabled></td>
+                            <td><input class="results-inputs" id="biggestdirectorNum31" value="0" type="text" disabled></td>
+                        </tr>
+
+                        <!--<div class="mary-key-design">-->
+                            <!--<label for="biggestdirectorAct">Количество дебютировавших дочерних Директоров по продажам 1-ой линии</label>-->
+                            <!--<div class="range-container-small">-->
+                                <!--<span class="heart-range" id="amountDebut"></span>-->
+                                <!--<input type="range" min="0" max="20" step="1" value="0" id="biggestdirectorAct">-->
+                                <!--<span id="biggestdirectorActVall">0</span>-->
+                            <!--</div>-->
+                        <!--</div>-->
                 </table>
             </div>
 
             <div id="biggestdirector">
-                <label for="biggestdirectorVal2">2 линии</label>
-                <input class="change-inputs" type="text" value="0" id="biggestdirectorVal2">
-                <input class="results-inputs" id="biggestdirectorNum21" value="0" type="text" disabled>
-                <input class="results-inputs" id="biggestdirectorNum22" value="3" type="text" disabled><br>
+                <!--<label for="biggestdirectorVal2">2 линии</label>-->
+                <!--<input class="change-inputs" type="text" value="0" id="biggestdirectorVal2">-->
+                <!--<input class="results-inputs" id="biggestdirectorNum21" value="0" type="text" disabled>-->
+                <!--<input class="results-inputs" id="biggestdirectorNum22" value="3" type="text" disabled><br>-->
 
-                <label for="biggestdirectorVal3">3 линии</label>
-                <input class="change-inputs" type="text" value="0" id="biggestdirectorVal3">
-                <input class="results-inputs" id="biggestdirectorNum31" value="0" type="text" disabled>
-                <input class="results-inputs" id="biggestdirectorNum32" value="2" type="text" disabled><br>
-
-                <label for="biggestdirectorAct">Количество дебютировавших дочерних Директоров по продажам 1-ой линии</label>
-                <input type="text" value="0" id="biggestdirectorAct">
+                <!--<label for="biggestdirectorVal3">3 линии</label>-->
+                <!--<input class="change-inputs" type="text" value="0" id="biggestdirectorVal3">-->
+                <!--<input class="results-inputs" id="biggestdirectorNum31" value="0" type="text" disabled>-->
+                <!--<input class="results-inputs" id="biggestdirectorNum32" value="2" type="text" disabled><br>-->
+                <div class="mary-key-design">
+                    <label for="biggestdirectorAct">Количество дебютировавших дочерних Директоров по продажам 1-ой линии</label>
+                    <div class="range-container-small">
+                        <span class="heart-range" id="amountDebut"></span>
+                        <input type="range" min="0" max="20" step="1" value="0" id="biggestdirectorAct">
+                        <span id="biggestdirectorActVall">0</span>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="container-key-item">
@@ -244,15 +278,17 @@
                     <input class="results-inputs results-inputs-right" id="bigdirectorProfit" disabled type="text" value="0">
                 </div>
             </div>
-            <p id="warning2">* Объем заказов личной Бизнес-Группы должен быть не менее 100 б.е.</p>
+            <p id="warning2" style="display: block;">* Объем заказов личной Бизнес-Группы должен быть не менее 100 б.е.</p>
 
             <div id="biggestdirector2">
                 <label for="biggestdirector2Num2"></label>
                 <input class="results-inputs" type="text" value="0" id="biggestdirector2Num2" disabled><br>
                 <label for="biggestdirector2Num3"></label>
                 <input class="results-inputs" type="text" value="0" id="biggestdirector2Num3" disabled><br>
-                <label for="biggestdirector2NumAct">Единовременный бонус за дебют нового дочернего Директора по продажам 1-й линии</label>
-                <input class="results-inputs" type="text" value="0" id="biggestdirector2NumAct" disabled>
+                <div class="mary-key-design">
+                    <label for="biggestdirector2NumAct">Единовременный бонус за дебют нового дочернего Директора по продажам 1-й линии</label>
+                    <input class="results-inputs" type="text" value="0" id="biggestdirector2NumAct" disabled>
+                </div>
             </div>
         </div>
     </div>

@@ -65,7 +65,7 @@
                 <!--<option value="40">40</option>-->
                 <!--<option value="45">45</option>-->
             <!--</select>-->
-                <div>
+                <div class="radioBtn-container">
                     <input type="radio" value="0" name="radioBtn" id="select-discount1"><label class="mary-key-radiolabel" for="select-discount1">0</label>
                     <input type="radio" value="35" name="radioBtn" id="select-discount2"><label class="mary-key-radiolabel" for="select-discount2">35</label>
                     <input type="radio" value="40" name="radioBtn" id="select-discount3"><label class="mary-key-radiolabel" for="select-discount3">40</label>
@@ -76,7 +76,7 @@
         <div class="container-key-item">
             <div class="mary-key-design">
                 <label for="konsultantProfit">Доход от личного бизнеса</label>
-                <input class="results-inputs" type="text" value="0" id="konsultantProfit" disabled>
+                <input class="results-inputs results-inputs-right" type="text" value="0" id="konsultantProfit" disabled>
             </div>
         </div>
     </div>
@@ -95,14 +95,50 @@
                 <label for="bigkonsultantAct">количество активных Консультантов</label>
                 <input type="text" class="change-inputs" value="0" id="bigkonsultantAct">
             </div>
-            <span>%</span>
-            <input type="text" class="results-inputs" value="0" id="bigkonsultantDiscount" disabled>
+            <span style="display: none;">%</span>
+            <input style="display: none;" type="text" class="results-inputs" value="0" id="bigkonsultantDiscount" disabled>
 
 
+            <!--<div id="director">-->
+                <!--<div>-->
+                    <!--<div class="mary-key-design">-->
+                        <!--<label for="directorVal">Бизнес-Группы</label>-->
+                        <!--<div>-->
+                            <!--<input class="change-inputs" type="text" value="0" id="directorVal">-->
+                            <!--<input class="results-inputs" id="directorNum" type="text" value="0" disabled>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="mary-key-design">-->
+                        <!--<span class="hev-rom">%</span>-->
+                        <!--<input class="results-inputs" type="text" value="0" id="directorDiscount" disabled>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="container-key-item">
+            <div class="mary-key-design">
+                <label for="bigkonsultantDiscountDop">Дополнительная скидка от объёма заказов личной группы</label>
+                <input class="results-inputs results-inputs-right" id="bigkonsultantDiscountDop" type="text" value="0" disabled>
+            </div>
+            <span id="warning1">* Объем личных заказов должен быть не менее 1 б.е.</span>
+
+
+            <!--<div id="director2">-->
+                <!--<div class="mary-key-design">-->
+                    <!--<label for="director2Num1">Бизнес-Группы</label>-->
+                    <!--<input class="results-inputs" id="director2Num1" type="text" value="0" disabled>-->
+                <!--</div>-->
+                <!--<label for="director2Num2" id="labelFordirector2Num2">Фиксированное комиссионное вознаграждение от объема заказов Бизнес-Группы</label>-->
+                <!--<input id="director2Num2" type="text" value="0" disabled>-->
+            <!--</div>-->
+        </div>
+    </div>
+    <div class="container-key" id="sailerStatus3Container" style="display: none;">
+        <div class="container-key-item container-key-item-flex">
             <div id="director">
                 <div>
                     <div class="mary-key-design">
-                        <label for="directorVal">Бизнес-Группы</label>
+                        <label for="directorVal">Объём заказов Бизнес-Группы</label>
                         <div>
                             <input class="change-inputs" type="text" value="0" id="directorVal">
                             <input class="results-inputs" id="directorNum" type="text" value="0" disabled>
@@ -110,26 +146,21 @@
                     </div>
                     <div class="mary-key-design">
                         <span class="hev-rom">%</span>
-                        <input class="results-inputs" type="text" value="0" id="directorDiscount" disabled>
+                        <input class="results-inputs results-inputs-right" type="text" value="0" id="directorDiscount" disabled>
                     </div>
                 </div>
             </div>
         </div>
         <div class="container-key-item">
-            <div class="mary-key-design">
-                <label for="bigkonsultantDiscountDop">Дополнительная скидка от объёма заказов личной группы</label>
-                <input class="results-inputs" id="bigkonsultantDiscountDop" type="text" value="0" disabled>
-            </div>
-            <span id="warning1">* Объем личных заказов должен быть не менее 1 б.е.</span>
-
-
             <div id="director2">
-                <div class="mary-key-design">
-                    <label for="director2Num1">Бизнес-Группы</label>
-                    <input class="results-inputs" id="director2Num1" type="text" value="0" disabled>
+                <div class="mary-key-design mary-key-design-double">
+                    <label for="director2Num1">Дополнительная скидка от объёма заказов Бизнес-Группы</label>
+                    <input class="results-inputs results-inputs-right" id="director2Num1" type="text" value="0" disabled>
                 </div>
-                <label for="director2Num2" id="labelFordirector2Num2">Фиксированное комиссионное вознаграждение от объема заказов Бизнес-Группы</label>
-                <input id="director2Num2" type="text" value="0" disabled>
+                <div class="mary-key-design mary-key-design-double2">
+                    <label for="director2Num2" id="labelFordirector2Num2">Фиксированное комиссионное вознаграждение от объема заказов Бизнес-Группы</label>
+                    <input id="director2Num2" class="results-inputs results-inputs-right" type="text" value="0" disabled>
+                </div>
             </div>
         </div>
     </div>
@@ -143,7 +174,8 @@
         <div class="container-key-item">
             <p class="hev-rom">Объем заказов дочерних Бизнес-Групп</p>
             <div id="hideThenKingDirector">
-            <label for="bigdirectorVal">Количество дочерних Бизнес-Групп первой линии</label><input id="bigdirectorVal" type="text" value="0">
+            <label for="bigdirectorVal">Количество дочерних Бизнес-Групп первой линии</label>
+                <input id="bigdirectorVal" type="text" value="2">
             <span>%</span>
             <input id="bigdirectorDiscount" type="text" value="0" disabled>
             </div>
@@ -157,16 +189,34 @@
                         <th class="show-biggestdirect">Комиссия</th>
                     </tr>
                     <tr class="table-rows-group">
-                        <td><input class="change-inputs" type="text" value="" class="table-name"></td>
-                        <td><input class="change-inputs" type="text" value="" class="table-volume"></td>
-                        <td><input class="results-inputs" type="text" disabled value="5" class="table-percent show-biggestdirect"></td>
-                        <td><input class="results-inputs" type="text" disabled value="" class="table-commission show-biggestdirect"></td>
+                        <td><input type="text" value="" class="table-name change-inputs"></td>
+                        <td><input type="text" value="" class="table-volume change-inputs"></td>
+                        <td><input type="text" disabled value="5" class="results-inputs table-percent show-biggestdirect"></td>
+                        <td><input type="text" disabled value="" class="results-inputs table-commission show-biggestdirect"></td>
                     </tr>
                     <tr class="table-rows-group">
-                        <td><input class="change-inputs" type="text" value="" class="table-name"></td>
-                        <td><input class="change-inputs" type="text" value="" class="table-volume"></td>
-                        <td><input class="results-inputs" type="text" disabled value="5" class="table-percent show-biggestdirect"></td>
-                        <td><input class="results-inputs" type="text" disabled value="" class="table-commission show-biggestdirect"></td>
+                        <td><input type="text" value="" class="table-name change-inputs"></td>
+                        <td><input type="text" value="" class="table-volume change-inputs"></td>
+                        <td><input type="text" disabled value="5" class="results-inputs table-percent show-biggestdirect"></td>
+                        <td><input type="text" disabled value="" class="results-inputs table-commission show-biggestdirect"></td>
+                    </tr>
+                    <tr class="table-rows-group">
+                        <td><input type="text" value="" class="table-name change-inputs"></td>
+                        <td><input type="text" value="" class="table-volume change-inputs"></td>
+                        <td><input type="text" disabled value="5" class="results-inputs table-percent show-biggestdirect"></td>
+                        <td><input type="text" disabled value="" class="results-inputs table-commission show-biggestdirect"></td>
+                    </tr>
+                    <tr class="table-rows-group">
+                        <td><input type="text" value="" class="table-name change-inputs"></td>
+                        <td><input type="text" value="" class="table-volume change-inputs"></td>
+                        <td><input type="text" disabled value="5" class="results-inputs table-percent show-biggestdirect"></td>
+                        <td><input type="text" disabled value="" class="results-inputs table-commission show-biggestdirect"></td>
+                    </tr>
+                    <tr class="table-rows-group">
+                        <td><input type="text" value="" class="table-name change-inputs"></td>
+                        <td><input type="text" value="" class="table-volume change-inputs"></td>
+                        <td><input type="text" disabled value="5" class="results-inputs table-percent show-biggestdirect"></td>
+                        <td><input type="text" disabled value="" class="results-inputs table-commission show-biggestdirect"></td>
                     </tr>
                 </table>
             </div>
@@ -187,9 +237,13 @@
             </div>
         </div>
         <div class="container-key-item">
-            <p class="hev-rom">Комиссионное вознаграждение от объема заказов дочерних Бизнес-Групп</p>
-            <label for="bigdirectorProfit"></label>
-            <input class="results-inputs" id="bigdirectorProfit" disabled type="text" value="0">
+            <div class="mary-key-design">
+                <p class="hev-rom">Комиссионное вознаграждение от объема заказов дочерних Бизнес-Групп</p>
+                <div>
+                    <label for="bigdirectorProfit"></label>
+                    <input class="results-inputs results-inputs-right" id="bigdirectorProfit" disabled type="text" value="0">
+                </div>
+            </div>
             <p id="warning2">* Объем заказов личной Бизнес-Группы должен быть не менее 100 б.е.</p>
 
             <div id="biggestdirector2">

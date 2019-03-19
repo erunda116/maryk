@@ -19,7 +19,7 @@ body{
     margin: 0 auto;
 }
 .results-inputs{
-    /*border: none;*/
+    border: none;
     background: transparent;
     color: #ed7fa6;
     font-family: 'HevBold';
@@ -399,3 +399,71 @@ input[name="radioBtn"]:checked + .mary-key-radiolabel::before{
 .last-block-big-dir-last-item{
 
 }
+
+@media screen and (min-width: 768px) and (max-width: 1250px) {
+    .wrapper{
+        width: 768px;
+    }
+    .range-container {
+        display: none;
+    }
+    .buttons-container {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .sailer-status{
+        width: 370px;
+        height: 30px;
+        margin: 0 7px 10px;
+    }
+    .table-commission,
+    #biggestdirectorNum21,
+    #biggestdirectorNum31{
+        width: 70px;
+    }
+    .notshowfrom768{
+        display: none !important;
+    }
+}
+@media screen and (max-width: 767px) {
+    .wrapper{
+        width: 100%;
+    }
+    .range-container {
+        display: none;
+    }
+    .buttons-container {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .sailer-status{
+        width: 320px;
+        height: 40px;
+        margin: 0 0px 10px;
+    }
+    .top-after-btns{
+        flex-wrap: wrap;
+    }
+    #itogLabel{
+        display: block;
+    }
+    .container-key{
+        flex-wrap: wrap;
+    }
+    .container-key-item:first-child{
+        border-right: none;
+    }
+    .container-key-item:first-child,
+    .container-key-item:last-child{
+        width: 100%;
+    }
+    .table-commission,
+    #biggestdirectorNum21,
+    #biggestdirectorNum31{
+        width: 70px;
+    }
+    .notshowfrom768{
+        display: none !important;
+    }
+}
+

@@ -218,6 +218,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         recalculatePersent(nowSailerPosition);
         changeHeart(nowSailerPosition);
+        calculatebigdirectorProfit();
         recalculate(nowSailerPosition);
     };
 
@@ -303,6 +304,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         recalculatePersent(this.value);
         changeHeart(this.value);
+        calculatebigdirectorProfit();
         recalculate(this.value);
     };
 
@@ -759,7 +761,6 @@ document.addEventListener('DOMContentLoaded', function() {
     for(var j = 0; j < tableVolume.length; j++){
             tableVolume[j].oninput = function () {
                 if(+nowSailerPosition == 11) {
-                    console.log(this);
                     var comissionSum = 0;
                         var allComissions = document.querySelectorAll('.table-commission'); //комиссия у главного директора
                         var percent = this.parentNode.nextElementSibling.children[0]; // считаем процент
@@ -777,9 +778,9 @@ document.addEventListener('DOMContentLoaded', function() {
                             comissionSum += +allComissions[k].value;
                         }
                         bigdirectorProfit.value = comissionSum;
-
-
                      recalculate(nowSailerPosition);
+                    changeSize(bigdirectorProfit);
+                    changeSize(this.parentNode.nextElementSibling.nextElementSibling.children[0]);
                 };
             };
 
@@ -878,7 +879,18 @@ document.addEventListener('DOMContentLoaded', function() {
         changeSize(biggestdirector2NumAct);
     };
 
-    //numericGroups();
+    function calculatebigdirectorProfit(){
+        if(+nowSailerPosition < 11){
+            bigdirectorProfit.value = Math.round(+firstLineVolume.value * base.value * firstLinePercent.value / 100 / tax * disc);
+        } else {
+            var summ = 0;
+            var tableComission = document.querySelectorAll('.table-commission');
+            for(var p = 0; p < tableComission.length; p++){
+                summ += +tableComission[p].value;
+            }
+            bigdirectorProfit.value = summ;
+        }
+    }
 });
 
 

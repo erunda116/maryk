@@ -12,10 +12,11 @@
     src: url(fonts/MaryKayScriptCyrillicBold.otf);
 }
 body{
-
+    margin: 0;
+    padding: 0;
 }
 .wrapper{
-    width: 1250px;
+    width: 952px;
     margin: 0 auto;
 }
 .results-inputs{
@@ -48,6 +49,9 @@ label,
     flex-direction: column;
     /*width: 40%;*/
     padding-left: 20px;
+}
+.mary-key-design-first-column{
+    width: 40%;
 }
 .currency-rouble{
     font-size: 20px;
@@ -103,7 +107,7 @@ label,
 
 /*ползунок*/
 .range-container{
-    width: 1250px;
+    width: 952px;
     position: relative;
     margin-top: 20px;
 }
@@ -117,7 +121,7 @@ label,
     height: 12px;
     position: absolute;
     top: -10px;
-    left: 50px;
+    left: 37px;
     background: url('image/heart.png');
 }
 #amountDebut.heart-range{
@@ -154,7 +158,7 @@ input[type=range]::-webkit-slider-thumb {
     box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
     border: 0px solid #000000;
     height: 10px;
-    width: 113px;
+    width: 85px;
     border-radius: 7px;
     background: #ed7fa6;
     cursor: pointer;
@@ -180,7 +184,7 @@ input[type=range]::-moz-range-thumb {
     box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
     border: 0px solid #000000;
     height: 10px;
-    width: 113px;
+    width: 85px;
     border-radius: 7px;
     background: #ed7fa6;
     cursor: pointer;
@@ -211,7 +215,7 @@ input[type=range]::-ms-thumb {
     box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
     border: 0px solid #000000;
     height: 10px;
-    width: 113px;
+    width: 85px;
     border-radius: 7px;
     background: #ed7fa6;
     cursor: pointer;
@@ -261,12 +265,13 @@ input#biggestdirectorAct[type=range]::-moz-range-thumb {
     justify-content: space-between;
 }
 .sailer-status{
-    width: 113px;
-    height: 100px;
+    width: 85px;
+    height: 80px;
     border: none;
     font-family: 'HevBold';
-    font-size: 14px;
+    font-size: 11px;
     color: #000;
+    padding: 0;
 }
 .sailer-status:hover{
     cursor: pointer;
@@ -362,6 +367,7 @@ input[name="radioBtn"]:checked + .mary-key-radiolabel::before{
 {
     padding-left: 20px;
     /*color: #e74783;*/
+    color: #f00;
     font-size: 14px;
     font-family: 'HevRoman';
     width: 80%;
@@ -437,7 +443,7 @@ input[name="radioBtn"]:checked + .mary-key-radiolabel::before{
     content: '';
     display: block;
     height: 1px;
-    width: 1200px;
+    width: 900px;
     position: absolute;
     top: 30px;
     left: 25px;
@@ -446,6 +452,9 @@ input[name="radioBtn"]:checked + .mary-key-radiolabel::before{
 
 
 /*dop info*/
+#director{
+    width: 100%;
+}
 #directorDiscount{
     width: 70px;
 }
@@ -469,59 +478,61 @@ input[name="radioBtn"]:checked + .mary-key-radiolabel::before{
 #biggestdirectorActVallMobile{
     display: none;
 }
-
+#bigkonsultantDiscount{
+    width: 30px;
+}
 @media screen and (min-width: 768px) and (max-width: 1250px) {
-    .wrapper{
-        width: 100%;
-    }
-    .container-key-item:first-child{
-        width: 70%;
-    }
-    .container-key-item:last-child{
-        width: 30%;
-    }
-    .range-container {
-        display: none;
-    }
-    .buttons-container {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    .sailer-status{
-        width: 350px;
-        height: 30px;
-        margin: 0 7px 10px;
-    }
-    .table-commission,
-    #biggestdirectorNum21,
-    #biggestdirectorNum31{
-        width: 70px;
-    }
-    .notshowfrom768{
-        display: none !important;
-    }
-    #biggestdirector:before{
-        content: '';
-        display: block;
-        height: 1px;
-        width: 135%;
-        position: absolute;
-        top: 30px;
-        left: 4%;
-        border-top: 1px dashed #e74783;
-    }
-    .mary-key-design,
-    .table-header-p-container,
-    .last-block-big-dir-item,
-    .last-block-big-bottom{
-        padding-left: 10px;
-    }
-    #tableFirstLineGroups{
-        margin-left: 10px;
-    }
-    #biggestdirectorActVallMobile{
-        display: none;
-    }
+    /*.wrapper{*/
+        /*width: 100%;*/
+    /*}*/
+    /*.container-key-item:first-child{*/
+        /*width: 70%;*/
+    /*}*/
+    /*.container-key-item:last-child{*/
+        /*width: 30%;*/
+    /*}*/
+    /*.range-container {*/
+        /*display: none;*/
+    /*}*/
+    /*.buttons-container {*/
+        /*justify-content: center;*/
+        /*flex-wrap: wrap;*/
+    /*}*/
+    /*.sailer-status{*/
+        /*width: 350px;*/
+        /*height: 30px;*/
+        /*margin: 0 7px 10px;*/
+    /*}*/
+    /*.table-commission,*/
+    /*#biggestdirectorNum21,*/
+    /*#biggestdirectorNum31{*/
+        /*width: 70px;*/
+    /*}*/
+    /*.notshowfrom768{*/
+        /*display: none !important;*/
+    /*}*/
+    /*#biggestdirector:before{*/
+        /*content: '';*/
+        /*display: block;*/
+        /*height: 1px;*/
+        /*width: 135%;*/
+        /*position: absolute;*/
+        /*top: 30px;*/
+        /*left: 4%;*/
+        /*border-top: 1px dashed #e74783;*/
+    /*}*/
+    /*.mary-key-design,*/
+    /*.table-header-p-container,*/
+    /*.last-block-big-dir-item,*/
+    /*.last-block-big-bottom{*/
+        /*padding-left: 10px;*/
+    /*}*/
+    /*#tableFirstLineGroups{*/
+        /*margin-left: 10px;*/
+    /*}*/
+    /*#biggestdirectorActVallMobile{*/
+        /*display: none;*/
+    /*}*/
 }
 @media screen and (max-width: 767px) {
     .wrapper{

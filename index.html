@@ -27,7 +27,7 @@
     </div>
 <div class="buttons-container">
     <button class="sailer-status" value="sailer-1" data-level="1">Консультант</button>
-    <button class="sailer-status" value="sailer-2" data-level="2">старший Консультант</button>
+    <button class="sailer-status" value="sailer-2" data-level="2">Старший Консультант</button>
     <button class="sailer-status" value="sailer-2" data-level="3">Менеджер по продажам</button>
     <button class="sailer-status" value="sailer-2" data-level="4">Старший Менеджер по продажам</button>
     <button class="sailer-status" value="sailer-2" data-level="5">Будущий Директор по продажам</button>
@@ -50,11 +50,13 @@
             <!--<span class="currency-rouble">₽</span>-->
         </div>
     </div>
-
+    <div>
+        <p>* Для расчета дополнительной скидки/комиссионного вознаграждения берется средняя скидка на продукцию 40%</p>
+    </div>
 <div class="calculate-wrapper">
     <div id="konsultant" class="container-key">
         <div class="container-key-item">
-            <div class="mary-key-design">
+            <div class="mary-key-design mary-key-design-first-column">
                 <label for="konsultantVal">Объем личных заказов</label>
                 <div>
                     <input class="change-inputs" type="text" value="0" id="konsultantVal">
@@ -92,7 +94,7 @@
 
     <div id="bigkonsultant" class="container-key" style="display: none;">
         <div class="container-key-item">
-            <div class="mary-key-design">
+            <div class="mary-key-design mary-key-design-first-column">
                 <label for="bigkonsultantVal">Объем заказов личной группы</label>
                 <div>
                     <input type="text" class="change-inputs" value="0" id="bigkonsultantVal">
@@ -101,11 +103,14 @@
                 </div>
             </div>
             <div class="mary-key-design">
-                <label for="bigkonsultantAct">количество активных Консультантов</label>
-                <input type="text" class="change-inputs" value="0" id="bigkonsultantAct">
+                <label for="bigkonsultantAct">Количество активных Консультантов</label>
+                <div>
+                    <input type="text" class="change-inputs" value="0" id="bigkonsultantAct">
+                    <input type="text" class="results-inputs" value="0" id="bigkonsultantDiscount" disabled>
+                    <label for="bigkonsultantDiscount"> % скидки</label>
+                </div>
             </div>
-            <span style="display: none;">%</span>
-            <input style="display: none;" type="text" class="results-inputs" value="0" id="bigkonsultantDiscount" disabled>
+            <!--<input type="text" class="results-inputs" value="0" id="bigkonsultantDiscount" disabled>-->
 
 
             <!--<div id="director">-->
@@ -132,7 +137,7 @@
                     <span class="currency-rouble">₽</span>
                 </div>
             </div>
-            <span id="warning1">* Объем личных заказов должен быть не менее 1 б.е.</span>
+            <span id="warning1" style="display: block;">* Объем личных заказов должен быть не менее 1 б.е.</span>
 
 
             <!--<div id="director2">-->
@@ -148,8 +153,8 @@
     <div class="container-key" id="sailerStatus3Container" style="display: none;">
         <div class="container-key-item container-key-item-flex">
             <div id="director">
-                <div>
-                    <div class="mary-key-design">
+                <div style="display: flex; width: 100%;">
+                    <div class="mary-key-design mary-key-design-first-column">
                         <label for="directorVal">Объём заказов Бизнес-Группы</label>
                         <div>
                             <input class="change-inputs" type="text" value="0" id="directorVal">
@@ -349,8 +354,9 @@
 
 </form>
 <div>
-    <p>Доход не гарантирован Компанией и полностью зависит от активности и усилий отдельного Независимого Консультанта по красоте. Суммы дохода, представленные в Калькуляторе, являются примерными и основаны на средних статистических данных Компании. Данный Калькулятор создан исключительно как обучающий и мотивационный инструмент для развития бизнеса Независимых Консультантов по красоте.</p>
-    <p>Обращаем ваше внимание, что суммы вашего вознаграждения за конкретный месяц будут рассчитываться с учетом всех дифференцированных скидок, программ и иных факторов, применимых к вашим бизнес-результатам и результатам деятельности каждого члена вашей Бизнес-Группы. В связи с этим, сумма вашего комиссионного вознаграждения может отличаться в большую или меньшую сторону от примерных сумм дохода, рассчитанных при помощи данного Калькулятора.</p>
+    <p>** Доход не гарантирован Компанией и полностью зависит от активности и усилий отдельного Независимого Консультанта по красоте. Суммы дохода, представленные в Калькуляторе, являются примерными и основаны на средних статистических данных Компании. Данный Калькулятор создан исключительно как обучающий и мотивационный инструмент для развития бизнеса Независимых Консультантов по красоте.</p>
+    <p>*** Обращаем ваше внимание, что суммы вашего вознаграждения за конкретный месяц будут рассчитываться с учетом всех дифференцированных скидок, программ и иных факторов, применимых к вашим бизнес-результатам и результатам деятельности каждого члена вашей Бизнес-Группы. В связи с этим, сумма вашего комиссионного вознаграждения может отличаться в большую или меньшую сторону от примерных сумм дохода, рассчитанных при помощи данного Калькулятора.</p>
+    <p>**** % дополнительной скидки/комиссионного вознаграждения начисляется от объема заказов в оптовых ценах</p>
 </div>
 </div>
 <script src="merykey.js"></script>

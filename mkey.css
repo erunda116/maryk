@@ -53,6 +53,9 @@ label,
 .mary-key-design-first-column{
     width: 40%;
 }
+.mary-key-design-bonus-block{
+    padding-top: 30px;
+}
 .currency-rouble{
     font-size: 20px;
     color: #ed7fa6;
@@ -424,6 +427,10 @@ input[name="radioBtn"]:checked + .mary-key-radiolabel::before{
 .last-block-big-dir-item2{
     border-top: 1px solid #e74783;
 }
+.last-block-big-dir-item-bonus{
+    padding: 0 20px 20px;
+}
+
 .last-block-big-dir-last-item{
 
 }

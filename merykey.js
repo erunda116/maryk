@@ -13,6 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
     var konsultantNum = document.querySelector('#konsultantNum'); //консультант расчетное значение
     //var konsultantDiscount = document.querySelector('#konsultantDiscount'); //консультант select скидка
     var konsultantDiscountRadio = document.querySelectorAll('input[name="radioBtn"]'); // консультант radio скидка
+    var selectDiscount1 = document.querySelector('#select-discount1'); // консультант radio скидка 0%
+    var selectDiscount2 = document.querySelector('#select-discount2'); // консультант radio скидка 35%
+    var selectDiscount3 = document.querySelector('#select-discount3'); // консультант radio скидка 40%
+    var selectDiscount4 = document.querySelector('#select-discount4'); // консультант radio скидка 45%
     var konsultantProfit = document.querySelector('#konsultantProfit'); //консультант доход
 
 
@@ -65,6 +69,9 @@ document.addEventListener('DOMContentLoaded', function() {
     //var hideThenKingDirector =  document.querySelector('#hideThenKingDirector'); //супердиректор количество консультов
     var stylesDouble = document.querySelector('#stylesDouble'); //стили
     var director2Num2Span = document.querySelector('#director2Num2Span'); //стили span
+    var biggestdirectorBounusNd = document.querySelector('#biggestdirectorBounusNd'); //бонус количество конс супер директор
+    var biggestdirectorBounusResult = document.querySelector('#biggestdirectorBounusResult'); //бонус супер директор
+
 
     var sailerStatus = document.querySelectorAll('.sailer-status'); //sailer status
 
@@ -137,6 +144,8 @@ document.addEventListener('DOMContentLoaded', function() {
     base.value = 3500;
     var tax = 1.2;
     var disc = 0.6;
+    var bonusForNdNev = 210000;
+    var bonusForNdDev = 42000;
 
     //для значка рубль меняем ширину input
     function changeSize(elem){
@@ -154,6 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
         changeSize(biggestdirector2Num2);
         changeSize(biggestdirector2Num3);
         changeSize(biggestdirector2NumAct);
+        changeSize(biggestdirectorBounusResult);
         //changeSize(itog);
     }
     init();
@@ -259,6 +269,7 @@ document.addEventListener('DOMContentLoaded', function() {
         recalculatePersent(nowSailerPosition);
         changeHeart(nowSailerPosition);
         calculatebigdirectorProfit();
+        changeItogLabel(nowSailerPosition);
         recalculate(nowSailerPosition);
     };
 
@@ -351,6 +362,7 @@ document.addEventListener('DOMContentLoaded', function() {
         recalculatePersent(this.value);
         changeHeart(this.value);
         calculatebigdirectorProfit();
+        changeItogLabel(nowSailerPosition);
         recalculate(this.value);
     };
 
@@ -380,9 +392,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 + returnNumFor(bigdirectorProfit.value) + returnNumFor(director2Num2.value)), 0, '.', ' ') + ' ₽';
         } else if(+sailPosition == 11){
             bigkonsultantDiscountDop.value = numberFormat(Math.round(returnNumFor(bigkonsultantNum.value) * bigkonsultantDiscount.value / 100 / tax * disc), 0, ',', ' ');
+
             itog.value = numberFormat(Math.round(returnNumFor(konsultantProfit.value) + returnNumFor(bigkonsultantDiscountDop.value) + returnNumFor(director2Num1.value)
                 + returnNumFor(bigdirectorProfit.value) + returnNumFor(biggestdirector2Num2.value) + returnNumFor(biggestdirector2Num3.value)
-                + returnNumFor(director2Num2.value) + returnNumFor(biggestdirector2NumAct.value)), 0, '.', ' ') + ' ₽';
+                + returnNumFor(director2Num2.value) + returnNumFor(biggestdirector2NumAct.value)
+                +returnNumFor(biggestdirectorBounusResult.value) ), 0, '.', ' ') + ' ₽';
         }
         //changeSize(itog);
     }
@@ -506,6 +520,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else{
                     konsultantProfit.value = 0;
                 }
+            } else {
+                if(+this.value >= 1 && +this.value < 3){
+                    //console.log(allRadioButtons);
+                    selectDiscount2.checked="checked";
+                }
+                //console.log(allRadioButtons);
+                // if(+this.value >= 1) {
+                //     konsultantProfit.value = numberFormat(Math.round(returnNumFor(konsultantNum.value) * +nowCheckedRadio.value / 100), 0, '.', ' ');
+                // } else{
+                //     konsultantProfit.value = 0;
+                // }
             }
 
 
@@ -979,13 +1004,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+
     biggestdirectorAct.oninput = function () {
-        biggestdirector2NumAct.value = numberFormat((+this.value * 210000), 0, ',', ' ');
+        biggestdirector2NumAct.value = numberFormat((+this.value * bonusForNdNev), 0, ',', ' ');
         biggestdirectorActVall.innerHTML = this.value;
         biggestdirectorActVallMobile.innerHTML = this.value;
         changeBottomRange(this.value);
         recalculate(nowSailerPosition);
         changeSize(biggestdirector2NumAct);
+    };
+
+    biggestdirectorBounusNd.oninput = function () {
+        biggestdirectorBounusResult.value = numberFormat((+this.value * bonusForNdDev), 0, ',', ' ');
+        recalculate(nowSailerPosition);
+        changeSize(biggestdirectorBounusResult);
     };
 
     function calculatebigdirectorProfit(){
@@ -998,6 +1030,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 summ += returnNumFor(tableComission[p].value);
             }
             bigdirectorProfit.value = summ;
+        }
+    }
+
+    //меняем подпись в зависимости от newSailerPosition
+    function changeItogLabel(pos){
+        if(+pos == 1){
+            itogLabel.innerHTML = 'Сумма дохода от личного бизнеса';
+        } else if(+pos > 1 && +pos <= 5){
+            itogLabel.innerHTML = 'Сумма дополнительной скидки и дохода от личного бизнеса';
+        } else if(+pos > 5 && +pos <= 11){
+            itogLabel.innerHTML = 'Сумма комиссионного вознаграждения и дохода от личного бизнеса';
         }
     }
 });

@@ -42,13 +42,13 @@
         <div class="top-after-btns-item">
             <label class="base-Label" for="base">Базовая единица</label>
             <input type="text" value="" id="base" class="results-inputs" disabled>
-            <span class="currency-rouble">б.е.</span>
+            <span class="currency-rouble">₽</span>
         </div>
-        <div class="top-after-btns-item">
-            <label for="itog" id="itogLabel">Сумма дохода от личного бизнеса</label>
-            <input class="results-inputs" type="text" id="itog" value="0 ₽" disabled>
-            <!--<span class="currency-rouble">₽</span>-->
-        </div>
+        <!--<div class="top-after-btns-item">-->
+            <!--<label for="itog" id="itogLabel">Сумма дохода от личного бизнеса</label>-->
+            <!--<input class="results-inputs" type="text" id="itog" value="0 ₽" disabled>-->
+            <!--&lt;!&ndash;<span class="currency-rouble">₽</span>&ndash;&gt;-->
+        <!--</div>-->
     </div>
     <div>
         <p>* Для расчета дополнительной скидки/комиссионного вознаграждения берется средняя скидка на продукцию 40%</p>
@@ -313,6 +313,10 @@
                         <span id="biggestdirectorActVallMobile">0</span>
                     </div>
                 </div>
+                <div class="mary-key-design mary-key-design-bonus-block">
+                    <label for="biggestdirectorBounusNd">Кол-во дочерних Директоров по продажам с совокупным объемом заказов Бизнес-Группы 1 500 б.е. и более за 12 месяцев с даты дебюта</label>
+                    <input class="change-inputs" type="text" id="biggestdirectorBounusNd">
+                </div>
             </div>
         </div>
         <div class="container-key-item last-block-big-dir">
@@ -344,12 +348,22 @@
                         <span class="currency-rouble">₽</span>
                     </div>
                 </div>
+                <div class="last-block-big-dir-item-bonus">
+                    <label for="biggestdirectorBounusResult">Ежегодный бонус за развитие дочернего Директора по продажам 1-й линии</label>
+                    <div><input id="biggestdirectorBounusResult" class="results-inputs" value="0" type="text"><span class="currency-rouble">₽</span></div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-
+<div>
+    <div class="top-after-btns-item">
+        <label for="itog" id="itogLabel">Сумма дохода от личного бизнеса</label>
+        <input class="results-inputs" type="text" id="itog" value="0 ₽" disabled>
+        <!--<span class="currency-rouble">₽</span>-->
+    </div>
+</div>
 
 
 </form>

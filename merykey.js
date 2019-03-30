@@ -18,7 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var selectDiscount3 = document.querySelector('#select-discount3'); // консультант radio скидка 40%
     var selectDiscount4 = document.querySelector('#select-discount4'); // консультант radio скидка 45%
     var konsultantProfit = document.querySelector('#konsultantProfit'); //консультант доход
-
+    var radioBtnContainer = document.querySelector('#radioBtnContainer'); // контейнер радиокнопок
+    var radioBtnContainerTooltip = document.querySelector('#radioBtnContainer .radioBtn-container-tooltip'); //подсказка радиокнопок
 
 //from master-konsultant to pre-director
     var bigkonsultant = document.querySelector('#bigkonsultant'); //блок для показать\скрыть
@@ -513,17 +514,43 @@ document.addEventListener('DOMContentLoaded', function() {
     konsultantVal.oninput = function () {
             var roubleVal = +this.value * +base.value;
             konsultantNum.value = numberFormat(Math.round(roubleVal), 0, ',', ' ');
-            var nowCheckedRadio = document.querySelector('input[name="radioBtn"]:checked');
-            if(nowCheckedRadio != null){
-                if(+this.value >= 1) {
-                    konsultantProfit.value = numberFormat(Math.round(returnNumFor(konsultantNum.value) * +nowCheckedRadio.value / 100), 0, '.', ' ');
-                } else{
-                    konsultantProfit.value = 0;
-                }
-            } else {
-                if(+this.value >= 1 && +this.value < 3){
-                    //console.log(allRadioButtons);
+            // var nowCheckedRadio = document.querySelector('input[name="radioBtn"]:checked');
+            // if(nowCheckedRadio != null){
+            //     if(+this.value >= 1) {
+            //         konsultantProfit.value = numberFormat(Math.round(returnNumFor(konsultantNum.value) * +nowCheckedRadio.value / 100), 0, '.', ' ');
+            //     } else{
+            //         konsultantProfit.value = 0;
+            //     }
+            // }
+            //else {
+                if(+this.value < 1){
+                    selectDiscount1.checked="checked";
+                    konsultantProfit.value = numberFormat(Math.round(returnNumFor(konsultantNum.value) * +selectDiscount1.value / 100), 0, '.', ' ');
+                    selectDiscount1.disabled = true;
+                    selectDiscount2.disabled = true;
+                    selectDiscount3.disabled = true;
+                    selectDiscount4.disabled = true;
+                } else if(+this.value >= 1 && +this.value < 3){
                     selectDiscount2.checked="checked";
+                    konsultantProfit.value = numberFormat(Math.round(returnNumFor(konsultantNum.value) * +selectDiscount2.value / 100), 0, '.', ' ');
+                    selectDiscount1.disabled = true;
+                    selectDiscount2.disabled = true;
+                    selectDiscount3.disabled = true;
+                    selectDiscount4.disabled = true;
+                } else if(+this.value >= 3 && +this.value < 8){
+                    selectDiscount3.checked="checked";
+                    konsultantProfit.value = numberFormat(Math.round(returnNumFor(konsultantNum.value) * +selectDiscount3.value / 100), 0, '.', ' ');
+                    selectDiscount1.disabled = true;
+                    selectDiscount2.disabled = true;
+                    selectDiscount3.disabled = true;
+                    selectDiscount4.disabled = true;
+                } else if(+this.value >= 8){
+                    selectDiscount4.checked="checked";
+                    konsultantProfit.value = numberFormat(Math.round(returnNumFor(konsultantNum.value) * +selectDiscount4.value / 100), 0, '.', ' ');
+                    selectDiscount1.disabled = false;
+                    selectDiscount2.disabled = false;
+                    selectDiscount3.disabled = false;
+                    selectDiscount4.disabled = false;
                 }
                 //console.log(allRadioButtons);
                 // if(+this.value >= 1) {
@@ -531,7 +558,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // } else{
                 //     konsultantProfit.value = 0;
                 // }
-            }
+            //}
 
 
         if(+this.value == 0 && nowSailerPosition != 11){
@@ -578,7 +605,14 @@ document.addEventListener('DOMContentLoaded', function() {
         //     + +director2Num2.value + +biggestdirector2NumAct.value;
     //};
 
-
+    radioBtnContainer.onmouseover = function () {
+        if(+konsultantVal.value >= 8){
+            radioBtnContainerTooltip.style.display = "block";
+        }
+    };
+    radioBtnContainer.onmouseleave = function () {
+            radioBtnContainerTooltip.style.display = "none";
+    };
 
     bigkonsultantVal.oninput = function () {
         var roubleVal = +this.value * +base.value;

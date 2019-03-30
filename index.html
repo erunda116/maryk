@@ -72,11 +72,35 @@
                 <!--<option value="40">40</option>-->
                 <!--<option value="45">45</option>-->
             <!--</select>-->
-                <div class="radioBtn-container">
-                    <input type="radio" value="0" name="radioBtn" id="select-discount1"><label class="mary-key-radiolabel" for="select-discount1">0</label>
-                    <input type="radio" value="35" name="radioBtn" id="select-discount2"><label class="mary-key-radiolabel" for="select-discount2">35</label>
-                    <input type="radio" value="40" name="radioBtn" id="select-discount3"><label class="mary-key-radiolabel" for="select-discount3">40</label>
-                    <input type="radio" value="45" name="radioBtn" id="select-discount4"><label class="mary-key-radiolabel" for="select-discount4">45</label>
+                <div class="radioBtn-container" id="radioBtnContainer">
+                    <input type="radio" disabled value="0" name="radioBtn" id="select-discount1"><label class="mary-key-radiolabel" for="select-discount1">0</label>
+                    <input type="radio" disabled value="35" name="radioBtn" id="select-discount2"><label class="mary-key-radiolabel" for="select-discount2">35</label>
+                    <input type="radio" disabled value="40" name="radioBtn" id="select-discount3"><label class="mary-key-radiolabel" for="select-discount3">40</label>
+                    <input type="radio" disabled value="45" name="radioBtn" id="select-discount4"><label class="mary-key-radiolabel" for="select-discount4">45</label>
+                    <div class="radioBtn-container-tooltip">
+                        <table class="radioBtn-tooltip__table">
+                            <tr>
+                                <td>Скидка</td>
+                                <td>Заказ, б.е.</td>
+                            </tr>
+                            <tr>
+                                <td>0%</td>
+                                <td>0 – 0.99</td>
+                            </tr>
+                            <tr>
+                                <td>35%</td>
+                                <td>1.00 – 2.99</td>
+                            </tr>
+                            <tr>
+                                <td>40%</td>
+                                <td>3.00 – 7.99</td>
+                            </tr>
+                            <tr>
+                                <td>45%</td>
+                                <td>От 8.00 при наличии заказа от 8.00 б.е. в прошлом месяце</td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

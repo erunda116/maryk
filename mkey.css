@@ -323,7 +323,26 @@ input#biggestdirectorAct[type=range]::-moz-range-thumb {
 }
 .radioBtn-container{
     margin-left: 6px;
+    position: relative;
 }
+.radioBtn-container-tooltip{
+    display: none;
+    position: absolute;
+    /*border: 1px solid #ed7fa6;*/
+    background: #fff;
+}
+.radioBtn-tooltip__table{
+    border-collapse: collapse;
+    /*border: 1px solid #ed7fa6;*/
+}
+.radioBtn-tooltip__table td{
+    border: 1px solid #ed7fa6;
+    padding: 5px;
+    text-align: center;
+}
+/*.radioBtn-container:hover > .radioBtn-container-tooltip{*/
+    /*display: block;*/
+/*}*/
 input[name="radioBtn"]{
     position: relative;
     left: -5px;

@@ -1,0 +1,7 @@
+/*labels length*/
+.ie-labels{
+    max-width: 250px;
+}
+.ie-label-long{
+    max-width: 600px;
+}

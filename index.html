@@ -64,7 +64,7 @@
                         <div>
                             <input class="change-inputs" type="text" value="0" id="konsultantVal">
                             <span class="b-ed">б.е.</span>
-                            <input type="text" id="konsultantNum" class="results-inputs" value="0" disabled>
+                            <input type="text" id="konsultantNum" class="results-inputs-small results-inputs" value="0" disabled>
                             <span class="currency-rouble">₽</span>
                         </div>
                     </div>
@@ -130,7 +130,7 @@
                         <div>
                             <input type="text" class="change-inputs" value="0" id="bigkonsultantVal">
                             <span class="b-ed">б.е.</span>
-                            <input type="text" class="results-inputs" id="bigkonsultantNum" value="0" disabled>
+                            <input type="text" class="results-inputs results-inputs-small" id="bigkonsultantNum" value="0" disabled>
                             <span class="currency-rouble">₽</span>
                         </div>
                     </div>
@@ -191,7 +191,7 @@
                                 <div>
                                     <input class="change-inputs" type="text" value="0" id="directorVal">
                                     <span class="b-ed">б.е.</span>
-                                    <input class="results-inputs" id="directorNum" type="text" value="0" disabled>
+                                    <input class="results-inputs results-inputs-small" id="directorNum" type="text" value="0" disabled>
                                     <span class="currency-rouble">₽</span>
                                 </div>
                             </div>
@@ -225,118 +225,194 @@
 
 
 
-
-
             <div id="bigdirector" class="container-key" style="display: none;">
-                <div class="container-key-item table-div-container">
-                    <div class="table-header-p-container">
+                <div class="container-key-item table-div-container" style="padding-bottom: 20px;">
+                    <div class="table-header-p-container" style="padding-bottom: 38px;">
                         <p class="hev-rom">Объем заказов дочерних<br> Бизнес-Групп</p>
                     </div>
-                    <!--<div id="hideThenKingDirector">-->
-                    <!--<label for="bigdirectorVal">Количество дочерних Бизнес-Групп первой линии</label>-->
-                    <!--<input id="bigdirectorVal" type="text" value="1">-->
-                    <!--<span>%</span>-->
-                    <!--<input id="bigdirectorDiscount" type="text" value="5" disabled>-->
-                    <!--</div>-->
-                    <div>
-                        <table id="tableFirstLineGroups" class="table-mary-key">
-                            <tr>
-                                <th class="notshowfrom768"></th>
-                                <th>Группа</th>
-                                <th>Кол-во</th>
-                                <th>Объем заказов</th>
-                                <th>%</th>
-                                <th class="show-biggestdirect">Комиссия</th>
-                            </tr>
-                            <tr class="table-rows-group" id="firstTrNotBigDirector" style="display: none;"><!--НЕ BIG BOSS-->
-                                <td class="notshowfrom768">1-ой линии</td>
-                                <td><input type="text" value="" class="change-inputs"></td>
-                                <td><input id="firstLineAmount" type="text" value="1" class="change-inputs"></td>
-                                <td><input id="firstLineVolume" type="text" value="" class="change-inputs"></td>
-                                <td><input id="firstLinePercent" type="text" disabled value="5" class="results-inputs"></td>
-                                <td class="show-biggestdirect"><input id="firstLineCommision" type="text" disabled value="" class="results-inputs"></td>
-                            </tr>
 
-                            <tr class="table-rows-group">
-                                <td class="show-biggestdirect notshowfrom768">1-ой линии</td>
-                                <td class="show-biggestdirect"><input type="text" value="1" class="table-name change-inputs"></td>
-                                <td class="show-biggestdirect"><input type="text" value="" class="change-inputs"></td>
-                                <td class="show-biggestdirect"><input type="text" value="" class="table-volume change-inputs"></td>
-                                <td class="show-biggestdirect"><input type="text" disabled value="5" class="results-inputs table-percent"></td>
-                                <td class="show-biggestdirect last-td"><input type="text" disabled value="0" class="results-inputs table-commission"></td>
-                            </tr>
-                            <tr class="table-rows-group">
-                                <td class="show-biggestdirect notshowfrom768"></td>
-                                <td class="show-biggestdirect"><input type="text" value="2" class="table-name change-inputs"></td>
-                                <td class="show-biggestdirect"><input type="text" value="" class="change-inputs"></td>
-                                <td class="show-biggestdirect"><input type="text" value="" class="table-volume change-inputs"></td>
-                                <td class="show-biggestdirect"><input type="text" disabled value="5" class="results-inputs table-percent"></td>
-                                <td class="show-biggestdirect last-td"><input type="text" disabled value="0" class="results-inputs table-commission"></td>
-                            </tr>
-                            <tr class="table-rows-group">
-                                <td class="show-biggestdirect notshowfrom768"></td>
-                                <td class="show-biggestdirect"><input type="text" value="3" class="table-name change-inputs"></td>
-                                <td class="show-biggestdirect"><input type="text" value="" class="change-inputs"></td>
-                                <td class="show-biggestdirect"><input type="text" value="" class="table-volume change-inputs"></td>
-                                <td class="show-biggestdirect"><input type="text" disabled value="5" class="results-inputs table-percent"></td>
-                                <td class="show-biggestdirect last-td"><input type="text" disabled value="0" class="results-inputs table-commission"></td>
-                            </tr>
-                            <tr class="table-rows-group">
-                                <td class="show-biggestdirect notshowfrom768"></td>
-                                <td class="show-biggestdirect"><input type="text" value="4" class="table-name change-inputs"></td>
-                                <td class="show-biggestdirect"><input type="text" value="" class="change-inputs"></td>
-                                <td class="show-biggestdirect"><input type="text" value="" class="table-volume change-inputs"></td>
-                                <td class="show-biggestdirect"><input type="text" disabled value="5" class="results-inputs table-percent"></td>
-                                <td class="show-biggestdirect last-td"><input type="text" disabled value="0" class="results-inputs table-commission"></td>
-                            </tr>
-                            <tr class="table-rows-group">
-                                <td class="show-biggestdirect notshowfrom768"></td>
-                                <td class="show-biggestdirect"><input type="text" value="5" class="table-name change-inputs"></td>
-                                <td class="show-biggestdirect"><input type="text" value="" class="change-inputs"></td>
-                                <td class="show-biggestdirect"><input type="text" value="" class="table-volume change-inputs"></td>
-                                <td class="show-biggestdirect"><input type="text" disabled value="5" class="results-inputs table-percent"></td>
-                                <td class="show-biggestdirect last-td"><input type="text" disabled value="0" class="results-inputs table-commission"></td>
-                            </tr>
-
-
-                            <tr id="twoLine">
-                                <td class="notshowfrom768">2-ой линии</td>
-                                <td><input type="text" value="1" class="table-name change-inputs next-line"></td>
-                                <td><input type="text" value="" class="change-inputs"></td>
-                                <td><input class="change-inputs" type="text" value="0" id="biggestdirectorVal2"></td>
-                                <td><input class="results-inputs table-percent-biggest" id="biggestdirectorNum22" value="3" type="text" disabled></td>
-                                <td class="last-td"><input class="results-inputs" id="biggestdirectorNum21" value="0" type="text" disabled></td>
-                            </tr>
-                            <tr id="thirdLine">
-                                <td class="notshowfrom768">3-ей линии</td>
-                                <td><input type="text" value="1" class="table-name change-inputs next-line"></td>
-                                <td><input type="text" value="" class="change-inputs"></td>
-                                <td><input class="change-inputs" type="text" value="0" id="biggestdirectorVal3"></td>
-                                <td><input class="results-inputs table-percent-biggest" id="biggestdirectorNum32" value="2" type="text" disabled></td>
-                                <td class="last-td"><input class="results-inputs" id="biggestdirectorNum31" value="0" type="text" disabled></td>
-                            </tr>
-
-                            <!--<div class="mary-key-design">-->
-                            <!--<label for="biggestdirectorAct">Количество дебютировавших дочерних Директоров по продажам 1-ой линии</label>-->
-                            <!--<div class="range-container-small">-->
-                            <!--<span class="heart-range" id="amountDebut"></span>-->
-                            <!--<input type="range" min="0" max="20" step="1" value="0" id="biggestdirectorAct">-->
-                            <!--<span id="biggestdirectorActVall">0</span>-->
-                            <!--</div>-->
-                            <!--</div>-->
-                        </table>
+                    <div class="table-small-container">
+                    <table id="tableShort" class="table-mary-key">
+                        <tr>
+                            <th class="notshowfrom768"></th>
+                            <th>Дочерние<br>директора</th>
+                            <th>Объем<br>заказов</th>
+                            <th>%</th>
+                        </tr>
+                        <tr class="table-rows-group-sm">
+                            <td class="notshowfrom768">1-ой линии</td>
+                            <td class=""><input type="text" value="Директор 1" class="table-name change-inputs"></td>
+                            <td class=""><input type="text" value="" class="table-volume-sm change-inputs"></td>
+                            <td class="" rowspan="2" id="tableShortChangeRowspan"><input id="tableShortDiscount" type="text" style="width: 40px;" disabled value="5" class="results-inputs">
+                            </td>
+                        </tr>
+                        <tr class="table-rows-group-sm" id="lastTrtest">
+                            <td class="notshowfrom768"></td>
+                            <td class=""><input type="text" value="Директор 2" class="table-name change-inputs"></td>
+                            <td class=""><input type="text" value="" class="table-volume-sm change-inputs"></td>
+                        </tr>
+                    </table>
+                        <div class="table-btn-container">
+                        <button class="table-btn" id="tableShortPlus">+</button>
+                        <button class="table-btn" id="tableShortMinus">-</button>
+                        </div>
                     </div>
 
-                    <div id="biggestdirector">
-                        <!--<label for="biggestdirectorVal2">2 линии</label>-->
-                        <!--<input class="change-inputs" type="text" value="0" id="biggestdirectorVal2">-->
-                        <!--<input class="results-inputs" id="biggestdirectorNum21" value="0" type="text" disabled>-->
-                        <!--<input class="results-inputs" id="biggestdirectorNum22" value="3" type="text" disabled><br>-->
+                </div>
 
-                        <!--<label for="biggestdirectorVal3">3 линии</label>-->
-                        <!--<input class="change-inputs" type="text" value="0" id="biggestdirectorVal3">-->
-                        <!--<input class="results-inputs" id="biggestdirectorNum31" value="0" type="text" disabled>-->
-                        <!--<input class="results-inputs" id="biggestdirectorNum32" value="2" type="text" disabled><br>-->
+
+
+                <div class="container-key-item small-commiss">
+                <div class="last-block-big-dir-item" id="stylesBorderDelete050">
+                    <p class="hev-rom">Комиссионное вознаграждение от объема заказов дочерних Бизнес-Групп</p>
+                </div>
+                <div class="last-block-big-dir-item-2">
+                    <label for="bigdirectorProfit"></label>
+                    <input class="results-inputs results-inputs-right" id="bigdirectorProfit" disabled type="text" value="0">
+                    <span class="currency-rouble">₽</span>
+                </div>
+                <p id="warning2" style="display: block;">* Объем заказов личной Бизнес-Группы должен быть не менее 100 б.е.</p>
+                </div>
+            </div>
+
+
+
+
+            <div id="biggestdirector" class="container-key border-bottom-class-table" style="display: none;">
+                <div class="row-class">
+                    <div class="cell-class table-header-p-container">
+                        <p class="hev-rom">Объем заказов дочерних<br> Бизнес-Групп</p>
+                    </div>
+                    <div class="cell-class last-block-big-dir-item border-bottom-class-table" id="stylesBorderDelete">
+                        <p class="hev-rom">Комиссионное вознаграждение от объема заказов дочерних Бизнес-Групп</p>
+                    </div>
+                </div>
+                <div class="row-class">
+                    <div class="cell-class">
+                        <div class="table-big-container">
+                            <table id="tableFirstLineGroups" class="table-mary-key">
+                                <tr>
+                                    <th class="notshowfrom768"></th>
+                                    <th>Дочерние<br>директора</th>
+                                    <!--<th>Кол-во</th>-->
+                                    <th>Объем<br>заказов</th>
+                                    <th>%</th>
+                                    <th class="show-biggestdirect">Комиссия</th>
+                                </tr>
+
+                                <tr class="table-rows-group">
+                                    <td class="show-biggestdirect notshowfrom768">1-ой<br>линии</td>
+                                    <td class="show-biggestdirect"><input type="text" value="Директор 1" class="table-name change-inputs"></td>
+                                    <!--<td class="show-biggestdirect"><input type="text" value="" class="change-inputs"></td>-->
+                                    <td class="show-biggestdirect"><input type="text" value="" class="table-volume change-inputs"></td>
+                                    <td class="show-biggestdirect"><input type="text" disabled value="5" class="results-inputs table-percent"></td>
+                                    <td class="show-biggestdirect last-td"><input type="text" disabled value="0" class="results-inputs table-commission"></td>
+                                </tr>
+                                <tr class="table-rows-group">
+                                    <td class="show-biggestdirect notshowfrom768"></td>
+                                    <td class="show-biggestdirect"><input type="text" value="Директор 2" class="table-name change-inputs"></td>
+                                    <!--<td class="show-biggestdirect"><input type="text" value="" class="change-inputs"></td>-->
+                                    <td class="show-biggestdirect"><input type="text" value="" class="table-volume change-inputs"></td>
+                                    <td class="show-biggestdirect"><input type="text" disabled value="5" class="results-inputs table-percent"></td>
+                                    <td class="show-biggestdirect last-td"><input type="text" disabled value="0" class="results-inputs table-commission"></td>
+                                </tr>
+                                <tr class="table-rows-group">
+                                    <td class="show-biggestdirect notshowfrom768"></td>
+                                    <td class="show-biggestdirect"><input type="text" value="Директор 3" class="table-name change-inputs"></td>
+                                    <!--<td class="show-biggestdirect"><input type="text" value="" class="change-inputs"></td>-->
+                                    <td class="show-biggestdirect"><input type="text" value="" class="table-volume change-inputs"></td>
+                                    <td class="show-biggestdirect"><input type="text" disabled value="5" class="results-inputs table-percent"></td>
+                                    <td class="show-biggestdirect last-td"><input type="text" disabled value="0" class="results-inputs table-commission"></td>
+                                </tr>
+                                <tr class="table-rows-group">
+                                    <td class="show-biggestdirect notshowfrom768"></td>
+                                    <td class="show-biggestdirect"><input type="text" value="Директор 4" class="table-name change-inputs"></td>
+                                    <!--<td class="show-biggestdirect"><input type="text" value="" class="change-inputs"></td>-->
+                                    <td class="show-biggestdirect"><input type="text" value="" class="table-volume change-inputs"></td>
+                                    <td class="show-biggestdirect"><input type="text" disabled value="5" class="results-inputs table-percent"></td>
+                                    <td class="show-biggestdirect last-td"><input type="text" disabled value="0" class="results-inputs table-commission"></td>
+                                </tr>
+                                <tr class="table-rows-group">
+                                    <td class="show-biggestdirect notshowfrom768"></td>
+                                    <td class="show-biggestdirect"><input type="text" value="Директор 5" class="table-name change-inputs"></td>
+                                    <!--<td class="show-biggestdirect"><input type="text" value="" class="change-inputs"></td>-->
+                                    <td class="show-biggestdirect"><input type="text" value="" class="table-volume change-inputs"></td>
+                                    <td class="show-biggestdirect"><input type="text" disabled value="5" class="results-inputs table-percent"></td>
+                                    <td class="show-biggestdirect last-td"><input type="text" disabled value="0" class="results-inputs table-commission"></td>
+                                </tr>
+                                <tr class="table-rows-group">
+                                    <td class="show-biggestdirect notshowfrom768"></td>
+                                    <td class="show-biggestdirect"><input type="text" value="Директор 6" class="table-name change-inputs"></td>
+                                    <!--<td class="show-biggestdirect"><input type="text" value="" class="change-inputs"></td>-->
+                                    <td class="show-biggestdirect"><input type="text" value="" class="table-volume change-inputs"></td>
+                                    <td class="show-biggestdirect"><input type="text" disabled value="5" class="results-inputs table-percent"></td>
+                                    <td class="show-biggestdirect last-td"><input type="text" disabled value="0" class="results-inputs table-commission"></td>
+                                </tr>
+                                <tr class="table-rows-group">
+                                    <td class="show-biggestdirect notshowfrom768"></td>
+                                    <td class="show-biggestdirect"><input type="text" value="Директор 7" class="table-name change-inputs"></td>
+                                    <!--<td class="show-biggestdirect"><input type="text" value="" class="change-inputs"></td>-->
+                                    <td class="show-biggestdirect"><input type="text" value="" class="table-volume change-inputs"></td>
+                                    <td class="show-biggestdirect"><input type="text" disabled value="5" class="results-inputs table-percent"></td>
+                                    <td class="show-biggestdirect last-td"><input type="text" disabled value="0" class="results-inputs table-commission"></td>
+                                </tr>
+                                <tr class="table-rows-group" id="lastTrtestBig">
+                                    <td class="show-biggestdirect notshowfrom768"></td>
+                                    <td class="show-biggestdirect"><input type="text" value="Директор 8" class="table-name change-inputs"></td>
+                                    <!--<td class="show-biggestdirect"><input type="text" value="" class="change-inputs"></td>-->
+                                    <td class="show-biggestdirect"><input type="text" value="" class="table-volume change-inputs"></td>
+                                    <td class="show-biggestdirect"><input type="text" disabled value="5" class="results-inputs table-percent"></td>
+                                    <td class="show-biggestdirect last-td"><input type="text" disabled value="0" class="results-inputs table-commission"></td>
+                                </tr>
+
+
+                                <tr id="twoLine">
+                                    <td class="notshowfrom768">2-ой<br>линии</td>
+                                    <td><input type="text" value="1" class="table-name change-inputs next-line"></td>
+                                    <!--<td><input type="text" value="" class="change-inputs"></td>-->
+                                    <td><input class="change-inputs" type="text" value="0" id="biggestdirectorVal2"></td>
+                                    <td><input class="results-inputs table-percent-biggest" id="biggestdirectorNum22" value="3" type="text" disabled></td>
+                                    <td class="last-td"><input class="results-inputs" id="biggestdirectorNum21" value="0" type="text" disabled></td>
+                                </tr>
+                                <tr id="thirdLine">
+                                    <td class="notshowfrom768">3-ей<br>линии</td>
+                                    <td><input type="text" value="1" class="table-name change-inputs next-line"></td>
+                                    <!--<td><input type="text" value="" class="change-inputs"></td>-->
+                                    <td><input class="change-inputs" type="text" value="0" id="biggestdirectorVal3"></td>
+                                    <td><input class="results-inputs table-percent-biggest" id="biggestdirectorNum32" value="2" type="text" disabled></td>
+                                    <td class="last-td"><input class="results-inputs" id="biggestdirectorNum31" value="0" type="text" disabled></td>
+                                </tr>
+                            </table>
+                            <div class="table-btn-container">
+                                <button class="table-btn" id="tableFirstLineGroupsPlus">+</button>
+                                <button class="table-btn" id="tableFirstLineGroupsMinus">-</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cell-class" style="vertical-align: bottom; position: relative;">
+
+                        <div class="top-big-table-result">
+                            <label for="bigdirectorProfitBig"></label>
+                            <input class="results-inputs results-inputs-right" id="bigdirectorProfitBig" disabled type="text" value="0">
+                            <span class="currency-rouble">₽</span>
+                        </div>
+
+                        <div class="last-block-big-dir-item" style="border-top: 1px solid #e74783;">
+                            <label for="biggestdirector2Num2"></label>
+                            <input class="results-inputs" type="text" value="0" id="biggestdirector2Num2" disabled>
+                            <span class="currency-rouble">₽</span>
+                        </div>
+
+                        <div class="last-block-big-dir-item">
+                            <label for="biggestdirector2Num3"></label>
+                            <input class="results-inputs" type="text" value="0" id="biggestdirector2Num3" disabled>
+                            <span class="currency-rouble">₽</span>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row-class">
+                    <div class="cell-class">
                         <div class="mary-key-design">
                             <label for="biggestdirectorAct">Количество дебютировавших дочерних Директоров по продажам 1-ой линии</label>
                             <div class="range-container-small">
@@ -346,34 +422,8 @@
                                 <span id="biggestdirectorActVallMobile">0</span>
                             </div>
                         </div>
-                        <div class="mary-key-design mary-key-design-bonus-block">
-                            <label class="ie-label-long" for="biggestdirectorBounusNd">Кол-во дочерних Директоров по продажам с совокупным объемом заказов Бизнес-Группы 1 500 б.е. и более за 12 месяцев с даты дебюта</label>
-                            <input class="change-inputs" type="text" id="biggestdirectorBounusNd">
-                        </div>
                     </div>
-                </div>
-                <div class="container-key-item last-block-big-dir">
-                    <div class="last-block-big-dir-item" id="stylesBorderDelete">
-                        <p class="hev-rom">Комиссионное вознаграждение от объема заказов дочерних Бизнес-Групп</p>
-                    </div>
-                    <div class="last-block-big-dir-item-2">
-                        <label for="bigdirectorProfit"></label>
-                        <input class="results-inputs results-inputs-right" id="bigdirectorProfit" disabled type="text" value="0">
-                        <span class="currency-rouble">₽</span>
-                    </div>
-                    <p id="warning2" style="display: block;">* Объем заказов личной Бизнес-Группы должен быть не менее 100 б.е.</p>
-
-                    <div id="biggestdirector2" class="last-block-big-dir-last-item">
-                        <div class="last-block-big-dir-item last-block-big-dir-item2">
-                            <label for="biggestdirector2Num2"></label>
-                            <input class="results-inputs" type="text" value="0" id="biggestdirector2Num2" disabled>
-                            <span class="currency-rouble">₽</span>
-                        </div>
-                        <div class="last-block-big-dir-item">
-                            <label for="biggestdirector2Num3"></label>
-                            <input class="results-inputs" type="text" value="0" id="biggestdirector2Num3" disabled>
-                            <span class="currency-rouble">₽</span>
-                        </div>
+                    <div class="cell-class">
                         <div class="last-block-big-bottom">
                             <label for="biggestdirector2NumAct">Единовременный бонус за дебют нового дочернего Директора по продажам 1-й линии</label>
                             <div>
@@ -381,15 +431,189 @@
                                 <span class="currency-rouble">₽</span>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="row-class">
+                    <div class="cell-class">
+                        <div class="mary-key-design mary-key-design-bonus-block">
+                            <label class="ie-label-long" for="biggestdirectorBounusNd">Кол-во дочерних Директоров по продажам с совокупным объемом заказов Бизнес-Группы 1 500 б.е. и более за 12 месяцев с даты дебюта</label>
+                            <input class="change-inputs" type="text" id="biggestdirectorBounusNd">
+                        </div>
+                    </div>
+                    <div class="cell-class">
                         <div class="last-block-big-dir-item-bonus">
                             <label for="biggestdirectorBounusResult">Ежегодный бонус за развитие дочернего Директора по продажам 1-й линии</label>
-                            <div><input id="biggestdirectorBounusResult" class="results-inputs" value="0" type="text"><span class="currency-rouble">₽</span></div>
+                            <div><input id="biggestdirectorBounusResult" disabled class="results-inputs" value="0" type="text"><span class="currency-rouble">₽</span></div>
                         </div>
                     </div>
                 </div>
-            </div>
+
+
+            <!--<div class="container-key-item small-commiss">-->
+                <!--<div class="table-header-p-container">-->
+                    <!--<p class="hev-rom">Объем заказов дочерних<br> Бизнес-Групп</p>-->
+                <!--</div>-->
+                <!--<div class="table-big-container">-->
+                <!--<table id="tableFirstLineGroups" class="table-mary-key">-->
+                    <!--<tr>-->
+                        <!--<th class="notshowfrom768"></th>-->
+                        <!--<th>Дочерние<br>директора</th>-->
+                        <!--&lt;!&ndash;<th>Кол-во</th>&ndash;&gt;-->
+                        <!--<th>Объем<br>заказов</th>-->
+                        <!--<th>%</th>-->
+                        <!--<th class="show-biggestdirect">Комиссия</th>-->
+                    <!--</tr>-->
+
+                    <!--<tr class="table-rows-group">-->
+                        <!--<td class="show-biggestdirect notshowfrom768">1-ой линии</td>-->
+                        <!--<td class="show-biggestdirect"><input type="text" value="1" class="table-name change-inputs"></td>-->
+                        <!--&lt;!&ndash;<td class="show-biggestdirect"><input type="text" value="" class="change-inputs"></td>&ndash;&gt;-->
+                        <!--<td class="show-biggestdirect"><input type="text" value="" class="table-volume change-inputs"></td>-->
+                        <!--<td class="show-biggestdirect"><input type="text" disabled value="5" class="results-inputs table-percent"></td>-->
+                        <!--<td class="show-biggestdirect last-td"><input type="text" disabled value="0" class="results-inputs table-commission"></td>-->
+                    <!--</tr>-->
+                    <!--<tr class="table-rows-group">-->
+                        <!--<td class="show-biggestdirect notshowfrom768"></td>-->
+                        <!--<td class="show-biggestdirect"><input type="text" value="2" class="table-name change-inputs"></td>-->
+                        <!--&lt;!&ndash;<td class="show-biggestdirect"><input type="text" value="" class="change-inputs"></td>&ndash;&gt;-->
+                        <!--<td class="show-biggestdirect"><input type="text" value="" class="table-volume change-inputs"></td>-->
+                        <!--<td class="show-biggestdirect"><input type="text" disabled value="5" class="results-inputs table-percent"></td>-->
+                        <!--<td class="show-biggestdirect last-td"><input type="text" disabled value="0" class="results-inputs table-commission"></td>-->
+                    <!--</tr>-->
+                    <!--<tr class="table-rows-group">-->
+                        <!--<td class="show-biggestdirect notshowfrom768"></td>-->
+                        <!--<td class="show-biggestdirect"><input type="text" value="3" class="table-name change-inputs"></td>-->
+                        <!--&lt;!&ndash;<td class="show-biggestdirect"><input type="text" value="" class="change-inputs"></td>&ndash;&gt;-->
+                        <!--<td class="show-biggestdirect"><input type="text" value="" class="table-volume change-inputs"></td>-->
+                        <!--<td class="show-biggestdirect"><input type="text" disabled value="5" class="results-inputs table-percent"></td>-->
+                        <!--<td class="show-biggestdirect last-td"><input type="text" disabled value="0" class="results-inputs table-commission"></td>-->
+                    <!--</tr>-->
+                    <!--<tr class="table-rows-group">-->
+                        <!--<td class="show-biggestdirect notshowfrom768"></td>-->
+                        <!--<td class="show-biggestdirect"><input type="text" value="4" class="table-name change-inputs"></td>-->
+                        <!--&lt;!&ndash;<td class="show-biggestdirect"><input type="text" value="" class="change-inputs"></td>&ndash;&gt;-->
+                        <!--<td class="show-biggestdirect"><input type="text" value="" class="table-volume change-inputs"></td>-->
+                        <!--<td class="show-biggestdirect"><input type="text" disabled value="5" class="results-inputs table-percent"></td>-->
+                        <!--<td class="show-biggestdirect last-td"><input type="text" disabled value="0" class="results-inputs table-commission"></td>-->
+                    <!--</tr>-->
+                    <!--<tr class="table-rows-group">-->
+                        <!--<td class="show-biggestdirect notshowfrom768"></td>-->
+                        <!--<td class="show-biggestdirect"><input type="text" value="5" class="table-name change-inputs"></td>-->
+                        <!--&lt;!&ndash;<td class="show-biggestdirect"><input type="text" value="" class="change-inputs"></td>&ndash;&gt;-->
+                        <!--<td class="show-biggestdirect"><input type="text" value="" class="table-volume change-inputs"></td>-->
+                        <!--<td class="show-biggestdirect"><input type="text" disabled value="5" class="results-inputs table-percent"></td>-->
+                        <!--<td class="show-biggestdirect last-td"><input type="text" disabled value="0" class="results-inputs table-commission"></td>-->
+                    <!--</tr>-->
+                    <!--<tr class="table-rows-group">-->
+                        <!--<td class="show-biggestdirect notshowfrom768"></td>-->
+                        <!--<td class="show-biggestdirect"><input type="text" value="6" class="table-name change-inputs"></td>-->
+                        <!--&lt;!&ndash;<td class="show-biggestdirect"><input type="text" value="" class="change-inputs"></td>&ndash;&gt;-->
+                        <!--<td class="show-biggestdirect"><input type="text" value="" class="table-volume change-inputs"></td>-->
+                        <!--<td class="show-biggestdirect"><input type="text" disabled value="5" class="results-inputs table-percent"></td>-->
+                        <!--<td class="show-biggestdirect last-td"><input type="text" disabled value="0" class="results-inputs table-commission"></td>-->
+                    <!--</tr>-->
+                    <!--<tr class="table-rows-group">-->
+                        <!--<td class="show-biggestdirect notshowfrom768"></td>-->
+                        <!--<td class="show-biggestdirect"><input type="text" value="7" class="table-name change-inputs"></td>-->
+                        <!--&lt;!&ndash;<td class="show-biggestdirect"><input type="text" value="" class="change-inputs"></td>&ndash;&gt;-->
+                        <!--<td class="show-biggestdirect"><input type="text" value="" class="table-volume change-inputs"></td>-->
+                        <!--<td class="show-biggestdirect"><input type="text" disabled value="5" class="results-inputs table-percent"></td>-->
+                        <!--<td class="show-biggestdirect last-td"><input type="text" disabled value="0" class="results-inputs table-commission"></td>-->
+                    <!--</tr>-->
+                    <!--<tr class="table-rows-group" id="lastTrtestBig">-->
+                        <!--<td class="show-biggestdirect notshowfrom768"></td>-->
+                        <!--<td class="show-biggestdirect"><input type="text" value="8" class="table-name change-inputs"></td>-->
+                        <!--&lt;!&ndash;<td class="show-biggestdirect"><input type="text" value="" class="change-inputs"></td>&ndash;&gt;-->
+                        <!--<td class="show-biggestdirect"><input type="text" value="" class="table-volume change-inputs"></td>-->
+                        <!--<td class="show-biggestdirect"><input type="text" disabled value="5" class="results-inputs table-percent"></td>-->
+                        <!--<td class="show-biggestdirect last-td"><input type="text" disabled value="0" class="results-inputs table-commission"></td>-->
+                    <!--</tr>-->
+
+
+                    <!--<tr id="twoLine">-->
+                        <!--<td class="notshowfrom768">2-ой линии</td>-->
+                        <!--<td><input type="text" value="1" class="table-name change-inputs next-line"></td>-->
+                        <!--&lt;!&ndash;<td><input type="text" value="" class="change-inputs"></td>&ndash;&gt;-->
+                        <!--<td><input class="change-inputs" type="text" value="0" id="biggestdirectorVal2"></td>-->
+                        <!--<td><input class="results-inputs table-percent-biggest" id="biggestdirectorNum22" value="3" type="text" disabled></td>-->
+                        <!--<td class="last-td"><input class="results-inputs" id="biggestdirectorNum21" value="0" type="text" disabled></td>-->
+                    <!--</tr>-->
+                    <!--<tr id="thirdLine">-->
+                        <!--<td class="notshowfrom768">3-ей линии</td>-->
+                        <!--<td><input type="text" value="1" class="table-name change-inputs next-line"></td>-->
+                        <!--&lt;!&ndash;<td><input type="text" value="" class="change-inputs"></td>&ndash;&gt;-->
+                        <!--<td><input class="change-inputs" type="text" value="0" id="biggestdirectorVal3"></td>-->
+                        <!--<td><input class="results-inputs table-percent-biggest" id="biggestdirectorNum32" value="2" type="text" disabled></td>-->
+                        <!--<td class="last-td"><input class="results-inputs" id="biggestdirectorNum31" value="0" type="text" disabled></td>-->
+                    <!--</tr>-->
+                <!--</table>-->
+                    <!--<div class="table-btn-container">-->
+                    <!--<button class="table-btn" id="tableFirstLineGroupsPlus">+</button>-->
+                    <!--<button class="table-btn" id="tableFirstLineGroupsMinus">-</button>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <!--<div class="mary-key-design">-->
+                    <!--<label for="biggestdirectorAct">Количество дебютировавших дочерних Директоров по продажам 1-ой линии</label>-->
+                    <!--<div class="range-container-small">-->
+                        <!--<span class="heart-range" id="amountDebut"></span>-->
+                        <!--<input type="range" min="0" max="20" step="1" value="0" id="biggestdirectorAct">-->
+                        <!--<span id="biggestdirectorActVall">0</span>-->
+                        <!--<span id="biggestdirectorActVallMobile">0</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="mary-key-design mary-key-design-bonus-block">-->
+                    <!--<label class="ie-label-long" for="biggestdirectorBounusNd">Кол-во дочерних Директоров по продажам с совокупным объемом заказов Бизнес-Группы 1 500 б.е. и более за 12 месяцев с даты дебюта</label>-->
+                    <!--<input class="change-inputs" type="text" id="biggestdirectorBounusNd">-->
+                <!--</div>-->
+            <!--</div>-->
+
+
+            <!--<div class="container-key-item small-commiss">-->
+                <!--<div class="last-block-big-dir-item" id="stylesBorderDelete">-->
+                    <!--<p class="hev-rom">Комиссионное вознаграждение от объема заказов дочерних Бизнес-Групп</p>-->
+                <!--</div>-->
+                <!--<div class="last-block-big-dir-item-2">-->
+                    <!--<label for="bigdirectorProfitBig"></label>-->
+                    <!--<input class="results-inputs results-inputs-right" id="bigdirectorProfitBig" disabled type="text" value="0">-->
+                    <!--<span class="currency-rouble">₽</span>-->
+                <!--</div>-->
+
+                <!--<div class="last-block-big-dir-item last-block-big-dir-item2">-->
+                    <!--<label for="biggestdirector2Num2"></label>-->
+                    <!--<input class="results-inputs" type="text" value="0" id="biggestdirector2Num2" disabled>-->
+                    <!--<span class="currency-rouble">₽</span>-->
+                <!--</div>-->
+
+                <!--<div class="last-block-big-dir-item">-->
+                    <!--<label for="biggestdirector2Num3"></label>-->
+                    <!--<input class="results-inputs" type="text" value="0" id="biggestdirector2Num3" disabled>-->
+                    <!--<span class="currency-rouble">₽</span>-->
+                <!--</div>-->
+
+                <!--<div class="last-block-big-bottom">-->
+                    <!--<label for="biggestdirector2NumAct">Единовременный бонус за дебют нового дочернего Директора по продажам 1-й линии</label>-->
+                    <!--<div>-->
+                        <!--<input class="results-inputs" type="text" value="0" id="biggestdirector2NumAct" disabled>-->
+                        <!--<span class="currency-rouble">₽</span>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <!--<div class="last-block-big-dir-item-bonus">-->
+                    <!--<label for="biggestdirectorBounusResult">Ежегодный бонус за развитие дочернего Директора по продажам 1-й линии</label>-->
+                    <!--<div><input id="biggestdirectorBounusResult" class="results-inputs" value="0" type="text"><span class="currency-rouble">₽</span></div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+
         </div>
 
+
+
+
+
+
+        </div>
         <div>
             <div class="top-after-btns-item">
                 <label for="itog" id="itogLabel">Сумма дохода от личного бизнеса</label>

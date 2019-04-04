@@ -45,51 +45,59 @@ document.addEventListener('DOMContentLoaded', function() {
     var sailerStatus3Container = document.querySelector('#sailerStatus3Container'); //контейнер директор
 
 //bigdirector
-    var bigdirector = document.querySelector('#bigdirector'); //супердиректор блок для показать\скрыть
-    //var bigdirectorVal = document.querySelector('#bigdirectorVal'); //вводимое значение
-    //var bigdirectorDiscount = document.querySelector('#bigdirectorDiscount'); //директор скидка
-    var bigdirectorProfit = document.querySelector('#bigdirectorProfit'); //директор 1 линия
+     var bigdirector = document.querySelector('#bigdirector'); //супердиректор блок для показать\скрыть
+     var tableShort = document.querySelector('#tableShort'); //таблица директоров маленькая
+     var tableShortPlus = document.querySelector('#tableShortPlus'); //таблица директоров плюс строка
+     var tableShortMinus = document.querySelector('#tableShortMinus'); //таблица директоров минус строка
+     var bigdirectorProfit = document.querySelector('#bigdirectorProfit'); //директор 1 линия
+     var tableVolumeSm = document.querySelectorAll('.table-volume-sm'); //table объем
+     var tableShortDiscount = document.querySelector('#tableShortDiscount'); //скидка
+//     //var bigdirectorVal = document.querySelector('#bigdirectorVal'); //вводимое значение
+//     //var bigdirectorDiscount = document.querySelector('#bigdirectorDiscount'); //директор скидка
 
 //biggestdirector
-    var biggestdirector = document.querySelector('#biggestdirector'); //супердиректор блок для показать\скрыть
-    var biggestdirector2 = document.querySelector('#biggestdirector2'); //супердиректор2 блок для показать\скрыть
-    var biggestdirectorVal2 = document.querySelector('#biggestdirectorVal2'); //супердиректор вводимое значение 2 лини
-    var biggestdirectorVal3 = document.querySelector('#biggestdirectorVal3'); //супердиректор вводимое значение 3 линии
-    var biggestdirectorNum21 = document.querySelector('#biggestdirectorNum21'); //супердиректор расчетнон значение 2 линии 1
-    var biggestdirectorNum22 = document.querySelector('#biggestdirectorNum22'); //супердиректор расчетнон значение 2 линии 2
-    var biggestdirectorNum31 = document.querySelector('#biggestdirectorNum31'); //супердиректор расчетнон значение 3 линии 1
-    var biggestdirectorNum32 = document.querySelector('#biggestdirectorNum32'); //супердиректор расчетнон значение 3 линии 2
-    var biggestdirectorAct = document.querySelector('#biggestdirectorAct'); //супердиректор его подчиненные директоры
-    var biggestdirectorActVall = document.querySelector('#biggestdirectorActVall'); //изменение количества дебютировавших директоров
-    var biggestdirectorActVallMobile = document.querySelector('#biggestdirectorActVallMobile'); //изменение количества дебютировавших директоров mobile
-    var amountDebut = document.querySelector('#amountDebut'); //сердце нижний range
-    var stylesBorderDelete = document.querySelector('#stylesBorderDelete'); //убираем границу если не НД
-
-
-    var biggestdirector2Num2 = document.querySelector('#biggestdirector2Num2'); //супердиректор расчетное последний блок 2 линия
-    var biggestdirector2Num3 = document.querySelector('#biggestdirector2Num3'); //супердиректор расчетное последний блок 3 линия
-    var biggestdirector2NumAct = document.querySelector('#biggestdirector2NumAct'); //супердиректор расчетное последний блок консульт
-    //var hideThenKingDirector =  document.querySelector('#hideThenKingDirector'); //супердиректор количество консультов
-    var stylesDouble = document.querySelector('#stylesDouble'); //стили
-    var director2Num2Span = document.querySelector('#director2Num2Span'); //стили span
-    var biggestdirectorBounusNd = document.querySelector('#biggestdirectorBounusNd'); //бонус количество конс супер директор
-    var biggestdirectorBounusResult = document.querySelector('#biggestdirectorBounusResult'); //бонус супер директор
+     var biggestdirector = document.querySelector('#biggestdirector'); //супердиректор блок для показать\скрыть
+//     var biggestdirector2 = document.querySelector('#biggestdirector2'); //супердиректор2 блок для показать\скрыть
+     var biggestdirectorVal2 = document.querySelector('#biggestdirectorVal2'); //супердиректор вводимое значение 2 лини
+     var biggestdirectorVal3 = document.querySelector('#biggestdirectorVal3'); //супердиректор вводимое значение 3 линии
+     var biggestdirectorNum21 = document.querySelector('#biggestdirectorNum21'); //супердиректор расчетнон значение 2 линии 1
+     var biggestdirectorNum22 = document.querySelector('#biggestdirectorNum22'); //супердиректор расчетнон значение 2 линии 2
+     var biggestdirectorNum31 = document.querySelector('#biggestdirectorNum31'); //супердиректор расчетнон значение 3 линии 1
+     var biggestdirectorNum32 = document.querySelector('#biggestdirectorNum32'); //супердиректор расчетнон значение 3 линии 2
+     var biggestdirectorAct = document.querySelector('#biggestdirectorAct'); //супердиректор его подчиненные директоры
+     var biggestdirectorActVall = document.querySelector('#biggestdirectorActVall'); //изменение количества дебютировавших директоров
+     var biggestdirectorActVallMobile = document.querySelector('#biggestdirectorActVallMobile'); //изменение количества дебютировавших директоров mobile
+     var amountDebut = document.querySelector('#amountDebut'); //сердце нижний range
+     var bigdirectorProfitBig = document.querySelector('#bigdirectorProfitBig'); //директор 1 линия
+//     var stylesBorderDelete = document.querySelector('#stylesBorderDelete'); //убираем границу если не НД
+//
+//
+     var biggestdirector2Num2 = document.querySelector('#biggestdirector2Num2'); //супердиректор расчетное последний блок 2 линия
+     var biggestdirector2Num3 = document.querySelector('#biggestdirector2Num3'); //супердиректор расчетное последний блок 3 линия
+     var biggestdirector2NumAct = document.querySelector('#biggestdirector2NumAct'); //супердиректор расчетное последний блок консульт
+//     //var hideThenKingDirector =  document.querySelector('#hideThenKingDirector'); //супердиректор количество консультов
+//     var stylesDouble = document.querySelector('#stylesDouble'); //стили
+//     var director2Num2Span = document.querySelector('#director2Num2Span'); //стили span
+     var biggestdirectorBounusNd = document.querySelector('#biggestdirectorBounusNd'); //бонус количество конс супер директор
+     var biggestdirectorBounusResult = document.querySelector('#biggestdirectorBounusResult'); //бонус супер директор
 
 
     var sailerStatus = document.querySelectorAll('.sailer-status'); //sailer status
 
-//table
-    var tableFirstLineGroups = document.querySelector('#tableFirstLineGroups'); // таблица 1 линиия
-    var tableVolume = document.querySelectorAll('.table-volume'); //table groups
-    var showBiggestdirect = document.querySelectorAll('.show-biggestdirect'); //table for biggest direct
-    var twoLine = document.querySelector('#twoLine'); //консультанты 2 линии
-    var thirdLine = document.querySelector('#thirdLine'); //консультанты 3 линии
-    var allComissions = document.querySelectorAll('.table-commission'); //комиссия у главного директора
-    var firstLineAmount = document.querySelector('#firstLineAmount'); //количество 1 линия
-    var firstLinePercent = document.querySelector('#firstLinePercent'); // процент 1 линия
-    var firstLineVolume = document.querySelector('#firstLineVolume'); // объем 1 линия
-    var firstLineCommision = document.querySelector('#firstLineCommision'); // комиссия 1 линия
-    var firstTrNotBigDirector = document.querySelector('#firstTrNotBigDirector'); //для не нац директорва 1 линия
+//table big
+     var tableFirstLineGroups = document.querySelector('#tableFirstLineGroups'); // таблица 1 линиия
+     var tableFirstLineGroupsPlus = document.querySelector('#tableFirstLineGroupsPlus'); // таблица добавить строку
+     var tableFirstLineGroupsMinus = document.querySelector('#tableFirstLineGroupsMinus'); // таблица удалить строку
+     var tableVolume = document.querySelectorAll('.table-volume'); //table groups
+//     var showBiggestdirect = document.querySelectorAll('.show-biggestdirect'); //table for biggest direct
+     var twoLine = document.querySelector('#twoLine'); //консультанты 2 линии
+//     var thirdLine = document.querySelector('#thirdLine'); //консультанты 3 линии
+     var allComissions = document.querySelectorAll('.table-commission'); //комиссия у главного директора
+//     var firstLineAmount = document.querySelector('#firstLineAmount'); //количество 1 линия
+//     var firstLinePercent = document.querySelector('#firstLinePercent'); // процент 1 линия
+//     var firstLineVolume = document.querySelector('#firstLineVolume'); // объем 1 линия
+//     var firstLineCommision = document.querySelector('#firstLineCommision'); // комиссия 1 линия
+//     var firstTrNotBigDirector = document.querySelector('#firstTrNotBigDirector'); //для не нац директорва 1 линия
 
 //warning-messages
     var warning1 = document.querySelector('#warning1');
@@ -98,18 +106,48 @@ document.addEventListener('DOMContentLoaded', function() {
 
 //mask only numbers and dot and letters for grops names
     var allInputs = document.querySelectorAll('input');
-    for (var i = 0; i < allInputs.length; i++) {
-        allInputs[i].onkeypress = function(e){
-            if(this.classList.contains('table-name')){
-                //console.log(e.keyCode);
-                if (!(e.keyCode==95 || e.keyCode==45 || e.keyCode==1105 || e.keyCode==1025 || (e.keyCode>=1040 && e.keyCode<=1103) || (e.keyCode>=65 && e.keyCode<=90) || (e.keyCode>=65 && e.keyCode<=90) || (e.keyCode>=97 && e.keyCode<=122) || (e.keyCode>47 && e.keyCode<58))) return false;
-            } else {
-                //console.log(e.keyCode);
-                if (!(e.keyCode==8 || e.keyCode==46 || e.keyCode==44 ||(e.keyCode>47 && e.keyCode<58))) return false;
-            }
-        }
 
-        //changeSize(allInputs[i]);
+    //what is browser
+    function get_name_browser(){
+        // получаем данные userAgent
+        var ua = navigator.userAgent;
+        // с помощью регулярок проверяем наличие текста,
+        // соответствующие тому или иному браузеру
+        if (ua.search(/Chrome/) > 0) return 'Google Chrome';
+        if (ua.search(/Firefox/) > 0) return 'Firefox';
+        if (ua.search(/Opera/) > 0) return 'Opera';
+        if (ua.search(/Safari/) > 0) return 'Safari';
+        if (ua.search(/MSIE/) > 0) return 'Internet Explorer';
+        return 'Не определен';
+    }
+
+
+    if(get_name_browser() != 'Firefox'){
+        for (var i = 0; i < allInputs.length; i++) {
+            allInputs[i].onkeypress = function(e){
+                if(this.classList.contains('table-name')){
+                    //console.log(e.keyCode);
+                    if (!(e.keyCode==95 || e.keyCode==45 || e.keyCode==1105 || e.keyCode==1025 || e.keyCode==32 || (e.keyCode>=1040 && e.keyCode<=1103) || (e.keyCode>=65 && e.keyCode<=90) || (e.keyCode>=65 && e.keyCode<=90) || (e.keyCode>=97 && e.keyCode<=122) || (e.keyCode>47 && e.keyCode<58))) return false;
+                } else {
+                    //console.log(e.keyCode);
+                    if (!(e.keyCode==8 || e.keyCode==46 || e.keyCode==44 ||(e.keyCode>47 && e.keyCode<58))) return false;
+                }
+            }
+
+        }
+    } else {
+        for (var i = 0; i < allInputs.length; i++) {
+            allInputs[i].onkeypress = function(e){
+                if(this.classList.contains('table-name')){
+
+                    if (!(e.which==95 || e.which==45 || e.which==1105 || e.which==1025 || e.which==32 || (e.which>=1040 && e.which<=1103) || (e.which>=65 && e.which<=90) || (e.which>=65 && e.which<=90) || (e.which>=97 && e.which<=122) || (e.which>47 && e.which<58))) return false;
+                } else {
+                    //console.log(e.which);
+                    if (!(e.which==8 || e.which==46 || e.which==44 ||(e.which>47 && e.which<58))) return false;
+                }
+            }
+
+        }
     }
 
     //number format
@@ -154,15 +192,22 @@ document.addEventListener('DOMContentLoaded', function() {
     function changeSize(elem){
         return elem.style.width = ((elem.value.length) * 13) + 'px';
     }
+    function changeSizeSmall(elem){
+        return elem.style.width = ((elem.value.length) * 10) + 'px';
+    }
     function init(){
-        changeSize(konsultantNum);
+        //changeSize(konsultantNum);
+        changeSizeSmall(konsultantNum);
         changeSize(konsultantProfit);
-        changeSize(bigkonsultantNum);
+        //changeSize(bigkonsultantNum);
+        changeSizeSmall(bigkonsultantNum);
         changeSize(bigkonsultantDiscountDop);
-        changeSize(directorNum);
+        //changeSize(directorNum);
+        changeSizeSmall(directorNum);
         changeSize(director2Num1);
         changeSize(director2Num2);
         changeSize(bigdirectorProfit);
+        changeSize(bigdirectorProfitBig);
         changeSize(biggestdirector2Num2);
         changeSize(biggestdirector2Num3);
         changeSize(biggestdirector2NumAct);
@@ -186,10 +231,11 @@ document.addEventListener('DOMContentLoaded', function() {
             bigkonsultant.style.display = "none";
             director.style.display = "none";
             bigdirector.style.display = "none";
+            biggestdirector.style.display = "none";
             sailerStatus3Container.style.display = "none";
-            twoLine.style.display = "none";
-            thirdLine.style.display = "none";
-            firstTrNotBigDirector.style.display = "none";
+            //twoLine.style.display = "none";
+            //thirdLine.style.display = "none";
+            //firstTrNotBigDirector.style.display = "none";
         }
         if (this.value == 'sailer-2') {
             konsultant.style.display = "flex";
@@ -198,9 +244,10 @@ document.addEventListener('DOMContentLoaded', function() {
             director2.style.display = "none";
             bigdirector.style.display = "none";
             sailerStatus3Container.style.display = "none";
-            twoLine.style.display = "none";
-            thirdLine.style.display = "none";
-            firstTrNotBigDirector.style.display = "none";
+            biggestdirector.style.display = "none";
+            //twoLine.style.display = "none";
+            //thirdLine.style.display = "none";
+            //firstTrNotBigDirector.style.display = "none";
         }
         if (this.value == 'sailer-3') {
             konsultant.style.display = "flex";
@@ -208,10 +255,11 @@ document.addEventListener('DOMContentLoaded', function() {
             director.style.display = "block";
             director2.style.display = "block";
             bigdirector.style.display = "none";
+            biggestdirector.style.display = "none";
             sailerStatus3Container.style.display = "flex";
-            twoLine.style.display = "none";
-            thirdLine.style.display = "none";
-            firstTrNotBigDirector.style.display = "none";
+           // twoLine.style.display = "none";
+            //thirdLine.style.display = "none";
+           // firstTrNotBigDirector.style.display = "none";
         }
         if (this.value == 'sailer-4') {
             konsultant.style.display = "flex";
@@ -220,25 +268,25 @@ document.addEventListener('DOMContentLoaded', function() {
             director2.style.display = "block";
             bigdirector.style.display = "flex";
             biggestdirector.style.display = "none";
-            biggestdirector2.style.display = "none";
+            //biggestdirector2.style.display = "none";
             //hideThenKingDirector.style.display = "block";
             sailerStatus3Container.style.display = "flex";
-            twoLine.style.display = "none";
-            thirdLine.style.display = "none";
-            firstTrNotBigDirector.style.display = "table-row";
+           // twoLine.style.display = "none";
+           // thirdLine.style.display = "none";
+           // firstTrNotBigDirector.style.display = "table-row";
         }
         if (this.value == 'sailer-5') {
             konsultant.style.display = "flex";
             bigkonsultant.style.display = "flex";
             director.style.display = "flex";
             director2.style.display = "flex";
-            bigdirector.style.display = "flex";
-            biggestdirector.style.display = "block";
-            biggestdirector2.style.display = "block";
+            bigdirector.style.display = "none";
+            biggestdirector.style.display = "table";
+           // biggestdirector2.style.display = "block";
             sailerStatus3Container.style.display = "flex";
-            twoLine.style.display = "table-row";
-            thirdLine.style.display = "table-row";
-            firstTrNotBigDirector.style.display = "none";
+            //twoLine.style.display = "table-row";
+            //thirdLine.style.display = "table-row";
+            //firstTrNotBigDirector.style.display = "none";
 
             //hideThenKingDirector.style.display = "none";
         }
@@ -253,7 +301,7 @@ document.addEventListener('DOMContentLoaded', function() {
             labelFordirector2Num2.style.display = "block";
             director2Num2Span.style.display = "inline-block";
             stylesDouble.classList.add('mary-key-design-double');
-            stylesBorderDelete.style.borderBottom = "unset";
+            //stylesBorderDelete.style.borderBottom = "unset";
         } else if(nowSailerPosition == 11){
             for(var y = 0; y < showBiggestdirect.length; y++){
                 showBiggestdirect[y].style.display = "table-cell";
@@ -265,111 +313,18 @@ document.addEventListener('DOMContentLoaded', function() {
             director2Num2Span.style.display = "none";
             //console.log(bigdirectorVal.value);
             stylesDouble.classList.remove('mary-key-design-double');
-            stylesBorderDelete.style.borderBottom = "1px solid #e74783";
+            //stylesBorderDelete.style.borderBottom = "1px solid #e74783";
         }
         warning1ColorOfFields();
         warning2ColorOfFields();
         recalculatePersent(nowSailerPosition);
         changeHeart(nowSailerPosition);
-        calculatebigdirectorProfit();
+        //calculatebigdirectorProfit();
         changeItogLabel(nowSailerPosition);
         recalculate(nowSailerPosition);
     };
 
 
-    if(isIE){
-        rangeSailerStatus.onchange = function (){
-            if (+this.value == 1) {
-                konsultant.style.display = "flex";
-                bigkonsultant.style.display = "none";
-                director.style.display = "none";
-                bigdirector.style.display = "none";
-                sailerStatus3Container.style.display = "none";
-                twoLine.style.display = "none";
-                thirdLine.style.display = "none";
-                firstTrNotBigDirector.style.display = "none";
-            }
-            if (+this.value > 1 && +this.value <= 5) {
-                konsultant.style.display = "flex";
-                bigkonsultant.style.display = "flex";
-                director.style.display = "none";
-                director2.style.display = "none";
-                bigdirector.style.display = "none";
-                sailerStatus3Container.style.display = "none";
-                twoLine.style.display = "none";
-                thirdLine.style.display = "none";
-                firstTrNotBigDirector.style.display = "none";
-            }
-            if (+this.value == 6) {
-                konsultant.style.display = "flex";
-                bigkonsultant.style.display = "flex";
-                director.style.display = "block";
-                director2.style.display = "block";
-                bigdirector.style.display = "none";
-                sailerStatus3Container.style.display = "flex";
-                twoLine.style.display = "none";
-                thirdLine.style.display = "none";
-                firstTrNotBigDirector.style.display = "none";
-            }
-            if (+this.value > 6 && +this.value <= 10) {
-                konsultant.style.display = "flex";
-                bigkonsultant.style.display = "flex";
-                director.style.display = "block";
-                director2.style.display = "block";
-                bigdirector.style.display = "flex";
-                biggestdirector.style.display = "none";
-                biggestdirector2.style.display = "none";
-                sailerStatus3Container.style.display = "flex";
-                twoLine.style.display = "none";
-                thirdLine.style.display = "none";
-                firstTrNotBigDirector.style.display = "table-row";
-            }
-            if (this.value == 11) {
-                konsultant.style.display = "flex";
-                bigkonsultant.style.display = "flex";
-                director.style.display = "flex";
-                director2.style.display = "flex";
-                bigdirector.style.display = "flex";
-                biggestdirector.style.display = "block";
-                biggestdirector2.style.display = "block";
-                twoLine.style.display = "table-row";
-                thirdLine.style.display = "table-row";
-                firstTrNotBigDirector.style.display = "none";
-            }
-            nowSailerPosition = this.value;
-            var showBiggestdirect = document.querySelectorAll('.show-biggestdirect'); //table for biggest direct
-            if(nowSailerPosition < 11){
-                for(var y = 0; y < showBiggestdirect.length; y++){
-                    showBiggestdirect[y].style.display = "none";
-                }
-                warning2.style.display = "block";
-                warning1.style.display = "block";
-                director2Num2.style.display = "inline-block";
-                labelFordirector2Num2.style.display = "block";
-                director2Num2Span.style.display = "inline-block";
-                stylesDouble.classList.add('mary-key-design-double');
-                stylesBorderDelete.style.borderBottom = "unset";
-            } else{
-                for(var y = 0; y < showBiggestdirect.length; y++){
-                    showBiggestdirect[y].style.display = "table-cell";
-                }
-                warning2.style.display = "none";
-                warning1.style.display = "none";
-                director2Num2.style.display = "none";
-                labelFordirector2Num2.style.display = "none";
-                director2Num2Span.style.display = "none";
-                stylesDouble.classList.remove('mary-key-design-double');
-                stylesBorderDelete.style.borderBottom = "1px solid #e74783";
-            }
-            warning1ColorOfFields();
-            warning2ColorOfFields();
-            recalculatePersent(this.value);
-            changeHeart(this.value);
-            calculatebigdirectorProfit();
-            changeItogLabel(nowSailerPosition);
-            recalculate(this.value);
-        };
-    }
     //range-change
     rangeSailerStatus.oninput = function (){
         if (+this.value == 1) {
@@ -377,10 +332,11 @@ document.addEventListener('DOMContentLoaded', function() {
             bigkonsultant.style.display = "none";
             director.style.display = "none";
             bigdirector.style.display = "none";
+            biggestdirector.style.display = "none";
             sailerStatus3Container.style.display = "none";
-            twoLine.style.display = "none";
-            thirdLine.style.display = "none";
-            firstTrNotBigDirector.style.display = "none";
+            //twoLine.style.display = "none";
+            //thirdLine.style.display = "none";
+            //firstTrNotBigDirector.style.display = "none";
         }
         if (+this.value > 1 && +this.value <= 5) {
             konsultant.style.display = "flex";
@@ -389,9 +345,10 @@ document.addEventListener('DOMContentLoaded', function() {
             director2.style.display = "none";
             bigdirector.style.display = "none";
             sailerStatus3Container.style.display = "none";
-            twoLine.style.display = "none";
-            thirdLine.style.display = "none";
-            firstTrNotBigDirector.style.display = "none";
+            biggestdirector.style.display = "none";
+            //twoLine.style.display = "none";
+            //thirdLine.style.display = "none";
+            //firstTrNotBigDirector.style.display = "none";
         }
         if (+this.value == 6) {
             konsultant.style.display = "flex";
@@ -399,10 +356,11 @@ document.addEventListener('DOMContentLoaded', function() {
             director.style.display = "block";
             director2.style.display = "block";
             bigdirector.style.display = "none";
+            biggestdirector.style.display = "none";
             sailerStatus3Container.style.display = "flex";
-            twoLine.style.display = "none";
-            thirdLine.style.display = "none";
-            firstTrNotBigDirector.style.display = "none";
+            // twoLine.style.display = "none";
+            //thirdLine.style.display = "none";
+            // firstTrNotBigDirector.style.display = "none";
         }
         if (+this.value > 6 && +this.value <= 10) {
             konsultant.style.display = "flex";
@@ -411,23 +369,27 @@ document.addEventListener('DOMContentLoaded', function() {
             director2.style.display = "block";
             bigdirector.style.display = "flex";
             biggestdirector.style.display = "none";
-            biggestdirector2.style.display = "none";
+            //biggestdirector2.style.display = "none";
+            //hideThenKingDirector.style.display = "block";
             sailerStatus3Container.style.display = "flex";
-            twoLine.style.display = "none";
-            thirdLine.style.display = "none";
-            firstTrNotBigDirector.style.display = "table-row";
+            // twoLine.style.display = "none";
+            // thirdLine.style.display = "none";
+            // firstTrNotBigDirector.style.display = "table-row";
         }
         if (this.value == 11) {
             konsultant.style.display = "flex";
             bigkonsultant.style.display = "flex";
             director.style.display = "flex";
             director2.style.display = "flex";
-            bigdirector.style.display = "flex";
-            biggestdirector.style.display = "block";
-            biggestdirector2.style.display = "block";
-            twoLine.style.display = "table-row";
-            thirdLine.style.display = "table-row";
-            firstTrNotBigDirector.style.display = "none";
+            bigdirector.style.display = "none";
+            biggestdirector.style.display = "table";
+            // biggestdirector2.style.display = "block";
+            sailerStatus3Container.style.display = "flex";
+            //twoLine.style.display = "table-row";
+            //thirdLine.style.display = "table-row";
+            //firstTrNotBigDirector.style.display = "none";
+
+            //hideThenKingDirector.style.display = "none";
         }
         nowSailerPosition = this.value;
         var showBiggestdirect = document.querySelectorAll('.show-biggestdirect'); //table for biggest direct
@@ -441,7 +403,7 @@ document.addEventListener('DOMContentLoaded', function() {
             labelFordirector2Num2.style.display = "block";
             director2Num2Span.style.display = "inline-block";
             stylesDouble.classList.add('mary-key-design-double');
-            stylesBorderDelete.style.borderBottom = "unset";
+            //stylesBorderDelete.style.borderBottom = "unset";
         } else{
             for(var y = 0; y < showBiggestdirect.length; y++){
                 showBiggestdirect[y].style.display = "table-cell";
@@ -451,18 +413,119 @@ document.addEventListener('DOMContentLoaded', function() {
             director2Num2.style.display = "none";
             labelFordirector2Num2.style.display = "none";
             director2Num2Span.style.display = "none";
+            //console.log(bigdirectorVal.value);
             stylesDouble.classList.remove('mary-key-design-double');
-            stylesBorderDelete.style.borderBottom = "1px solid #e74783";
+            //stylesBorderDelete.style.borderBottom = "1px solid #e74783";
         }
-        warning1ColorOfFields();
-        warning2ColorOfFields();
-        recalculatePersent(this.value);
-        changeHeart(this.value);
-        calculatebigdirectorProfit();
-        changeItogLabel(nowSailerPosition);
-        recalculate(this.value);
+         warning1ColorOfFields();
+         warning2ColorOfFields();
+         recalculatePersent(this.value);
+         changeHeart(this.value);
+        // calculatebigdirectorProfit();
+         changeItogLabel(nowSailerPosition);
+         recalculate(this.value);
     };
+    if(isIE){
+        rangeSailerStatus.onchange = function (){
+            if (+this.value == 1) {
+                konsultant.style.display = "flex";
+                bigkonsultant.style.display = "none";
+                director.style.display = "none";
+                bigdirector.style.display = "none";
+                biggestdirector.style.display = "none";
+                sailerStatus3Container.style.display = "none";
+                //twoLine.style.display = "none";
+                //thirdLine.style.display = "none";
+                //firstTrNotBigDirector.style.display = "none";
+            }
+            if (+this.value > 1 && +this.value <= 5) {
+                konsultant.style.display = "flex";
+                bigkonsultant.style.display = "flex";
+                director.style.display = "none";
+                director2.style.display = "none";
+                bigdirector.style.display = "none";
+                sailerStatus3Container.style.display = "none";
+                biggestdirector.style.display = "none";
+                //twoLine.style.display = "none";
+                //thirdLine.style.display = "none";
+                //firstTrNotBigDirector.style.display = "none";
+            }
+            if (+this.value == 6) {
+                konsultant.style.display = "flex";
+                bigkonsultant.style.display = "flex";
+                director.style.display = "block";
+                director2.style.display = "block";
+                bigdirector.style.display = "none";
+                biggestdirector.style.display = "none";
+                sailerStatus3Container.style.display = "flex";
+                // twoLine.style.display = "none";
+                //thirdLine.style.display = "none";
+                // firstTrNotBigDirector.style.display = "none";
+            }
+            if (+this.value > 6 && +this.value <= 10) {
+                konsultant.style.display = "flex";
+                bigkonsultant.style.display = "flex";
+                director.style.display = "block";
+                director2.style.display = "block";
+                bigdirector.style.display = "flex";
+                biggestdirector.style.display = "none";
+                //biggestdirector2.style.display = "none";
+                //hideThenKingDirector.style.display = "block";
+                sailerStatus3Container.style.display = "flex";
+                // twoLine.style.display = "none";
+                // thirdLine.style.display = "none";
+                // firstTrNotBigDirector.style.display = "table-row";
+            }
+            if (this.value == 11) {
+                konsultant.style.display = "flex";
+                bigkonsultant.style.display = "flex";
+                director.style.display = "flex";
+                director2.style.display = "flex";
+                bigdirector.style.display = "none";
+                biggestdirector.style.display = "table";
+                // biggestdirector2.style.display = "block";
+                sailerStatus3Container.style.display = "flex";
+                //twoLine.style.display = "table-row";
+                //thirdLine.style.display = "table-row";
+                //firstTrNotBigDirector.style.display = "none";
 
+                //hideThenKingDirector.style.display = "none";
+            }
+            nowSailerPosition = this.value;
+            var showBiggestdirect = document.querySelectorAll('.show-biggestdirect'); //table for biggest direct
+            if(nowSailerPosition < 11){
+                for(var y = 0; y < showBiggestdirect.length; y++){
+                    showBiggestdirect[y].style.display = "none";
+                }
+                warning2.style.display = "block";
+                warning1.style.display = "block";
+                director2Num2.style.display = "inline-block";
+                labelFordirector2Num2.style.display = "block";
+                director2Num2Span.style.display = "inline-block";
+                stylesDouble.classList.add('mary-key-design-double');
+                //stylesBorderDelete.style.borderBottom = "unset";
+            } else{
+                for(var y = 0; y < showBiggestdirect.length; y++){
+                    showBiggestdirect[y].style.display = "table-cell";
+                }
+                warning2.style.display = "none";
+                warning1.style.display = "none";
+                director2Num2.style.display = "none";
+                labelFordirector2Num2.style.display = "none";
+                director2Num2Span.style.display = "none";
+                //console.log(bigdirectorVal.value);
+                stylesDouble.classList.remove('mary-key-design-double');
+                //stylesBorderDelete.style.borderBottom = "1px solid #e74783";
+            }
+            warning1ColorOfFields();
+            warning2ColorOfFields();
+            recalculatePersent(this.value);
+            changeHeart(this.value);
+            // calculatebigdirectorProfit();
+            changeItogLabel(nowSailerPosition);
+            recalculate(this.value);
+        };
+    }
 //re-calculate summ value than user change sail-level
     function recalculate(sailPosition){
         if(+sailPosition == 1){
@@ -480,18 +543,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 + returnNumFor(director2Num2.value)), 0, '.', ' ') + ' ₽';
         } else if(+sailPosition > 6 && +sailPosition <= 10){
             if(+konsultantVal.value == 0){
-                bigkonsultantDiscountDop.value = 0;
+               // bigkonsultantDiscountDop.value = 0;
             }
             if(directorVal.value < 100) {
                 bigdirectorProfit.value = 0;
             }
-            itog.value = numberFormat(Math.round(returnNumFor(konsultantProfit.value) + returnNumFor(bigkonsultantDiscountDop.value) + returnNumFor(director2Num1.value)
-                + returnNumFor(bigdirectorProfit.value) + returnNumFor(director2Num2.value)), 0, '.', ' ') + ' ₽';
+             itog.value = numberFormat(Math.round(returnNumFor(konsultantProfit.value) + returnNumFor(bigkonsultantDiscountDop.value) + returnNumFor(director2Num1.value)
+                 + returnNumFor(bigdirectorProfit.value) + returnNumFor(director2Num2.value)), 0, '.', ' ') + ' ₽';
         } else if(+sailPosition == 11){
             bigkonsultantDiscountDop.value = numberFormat(Math.round(returnNumFor(bigkonsultantNum.value) * bigkonsultantDiscount.value / 100 / tax * disc), 0, ',', ' ');
 
             itog.value = numberFormat(Math.round(returnNumFor(konsultantProfit.value) + returnNumFor(bigkonsultantDiscountDop.value) + returnNumFor(director2Num1.value)
-                + returnNumFor(bigdirectorProfit.value) + returnNumFor(biggestdirector2Num2.value) + returnNumFor(biggestdirector2Num3.value)
+                + returnNumFor(bigdirectorProfitBig.value) + returnNumFor(biggestdirector2Num2.value) + returnNumFor(biggestdirector2Num3.value)
                 + returnNumFor(director2Num2.value) + returnNumFor(biggestdirector2NumAct.value)
                 +returnNumFor(biggestdirectorBounusResult.value) ), 0, '.', ' ') + ' ₽';
         }
@@ -543,7 +606,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         } else{
             if(nowSailerPosition < 11){
-                bigdirectorProfit.value = Math.round(firstLineVolume.value * base.value * firstLinePercent.value / 100 / tax * disc);
+                //bigdirectorProfit.value = Math.round(firstLineVolume.value * base.value * firstLinePercent.value / 100 / tax * disc);
             }
             warning2.style.display = "none";
         }
@@ -597,7 +660,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function warning2ColorOfFields(){
         var directorVal = document.querySelector('#directorVal');
-        if(nowSailerPosition < 11 && nowSailerPosition > 7 && directorVal.value < 100){
+        if(nowSailerPosition < 11 && nowSailerPosition >= 7 && directorVal.value < 100){
             directorVal.style.background = "#f00";
         } else if(nowSailerPosition == 11 && directorVal.value >= 0){
             directorVal.style.background = "transparent";
@@ -680,7 +743,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         recalculate(nowSailerPosition);
         changeSize(bigkonsultantDiscountDop);
-        changeSize(konsultantNum);
+        changeSizeSmall(konsultantNum);
         changeSize(konsultantProfit);
     };
 
@@ -740,7 +803,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             bigkonsultantDiscountDop.value = 0;
         }
-        changeSize(bigkonsultantNum);
+        changeSizeSmall(bigkonsultantNum);
         changeSize(bigkonsultantDiscountDop);
     };
 
@@ -830,7 +893,7 @@ document.addEventListener('DOMContentLoaded', function() {
             director2Num2.value = 0;
         }
 
-        if(+this.value < 100 && nowSailerPosition < 11){
+        if(+this.value < 100 && nowSailerPosition < 11 && nowSailerPosition >= 7){
             warning2.style.display = "block";
             if(nowSailerPosition < 11) {
                 bigdirectorProfit.value = 0;
@@ -838,7 +901,12 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.background = '#f00';
         } else{
             if(nowSailerPosition < 11){
-                bigdirectorProfit.value = Math.round(firstLineVolume.value * base.value * firstLinePercent.value / 100 / tax * disc);
+                var tableVolumeSm = document.querySelectorAll('.table-volume-sm');
+                var groupItogS = 0;
+                for(var o = 0; o < tableVolumeSm.length; o++){
+                    groupItogS += +tableVolumeSm[o].value;
+                }
+              bigdirectorProfit.value = numberFormat(Math.round(groupItogS * base.value * +tableShortDiscount.value / 100 / tax * disc), 0, ',', ' ');
             }
             warning2.style.display = "none";
             this.style.background = 'transparent';
@@ -847,23 +915,23 @@ document.addEventListener('DOMContentLoaded', function() {
         director2Num1.value = numberFormat(Math.round(returnNumFor(directorNum.value) * directorDiscount.value / 100 / tax * disc), 0, ',', ' ');
 
         recalculate(nowSailerPosition);
-        changeSize(directorNum);
+        changeSizeSmall(directorNum);
         changeSize(director2Num1);
         changeSize(director2Num2);
         changeSize(bigdirectorProfit);
     };
 
     // //пересчет итога
-    // function tableCalculate() {
-    //     var groupItog = 0;
-    //     for(var o = 0; o < tableVolume.length; o++){
-    //         groupItog += +tableVolume[o].value;
-    //         //console.log(tableVolume[o].value);
-    //     }
-    //     if(+directorVal.value >= 100){
-    //         bigdirectorProfit.value = Math.round(groupItog * base.value * bigdirectorDiscount.value / 100 / tax * disc);
-    //     }
-    // };
+    function tableCalculate() {
+        var groupItog = 0;
+        for(var o = 0; o < tableVolumeSm.length; o++){
+            groupItog += +tableVolumeSm[o].value;
+            //console.log(tableVolume[o].value);
+        }
+        if(+directorVal.value >= 100){
+            bigdirectorProfit.value = Math.round(groupItog * base.value * bigdirectorDiscount.value / 100 / tax * disc);
+        }
+    };
     //
     // bigdirectorVal.oninput = function () {
     //     if(+this.value <= 2){
@@ -905,83 +973,83 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     //first line not big boss
-    firstLineAmount.oninput = function () {
-        if(+nowSailerPosition < 11) {
-            if (+this.value <= 2) {
-                firstLinePercent.value = 5;
-            } else if (+this.value > 2 && +this.value <= 4) {
-                firstLinePercent.value = 5.5;
-            } else if (+this.value > 4 && +this.value <= 7) {
-                firstLinePercent.value = 6;
-            } else if (+this.value >= 8) {
-                firstLinePercent.value = 6.5;
-            }
-        }
-
-        if(+this.value  <= 2 && +nowSailerPosition < 11){
-            nowSailerPosition = 7;
-            rangeSailerStatus.value = 7;
-            changeHeart(nowSailerPosition);
-        }
-        else if(+this.value  > 2 && +this.value  <= 4 && +nowSailerPosition < 11){
-            nowSailerPosition = 8;
-            rangeSailerStatus.value = 8;
-            changeHeart(nowSailerPosition);
-        }
-        else if(+this.value  > 4 && +this.value  <= 7 && +nowSailerPosition < 11){
-            nowSailerPosition = 9;
-            rangeSailerStatus.value = 9;
-            changeHeart(nowSailerPosition);
-        }
-        else if(+this.value  > 7 && +nowSailerPosition < 11){
-            nowSailerPosition = 10;
-            rangeSailerStatus.value = 10;
-            changeHeart(nowSailerPosition);
-        }
-
-        bigdirectorProfit.value = numberFormat(Math.round(+firstLineVolume.value * base.value * firstLinePercent.value / 100 / tax * disc), 0, ',', ' ');
-
-        recalculate(nowSailerPosition);
-        changeSize(bigdirectorProfit);
-    };
-
-    firstLineVolume.oninput = function () {
-        if(+nowSailerPosition < 11) {
-            if (+firstLineAmount <= 2) {
-                firstLinePercent.value = 5;
-            } else if (+firstLineAmount > 2 && +firstLineAmount <= 4) {
-                firstLinePercent.value = 5.5;
-            } else if (+firstLineAmount > 4 && +firstLineAmount <= 7) {
-                firstLinePercent.value = 6;
-            } else if (+firstLineAmount >= 8) {
-                firstLinePercent.value = 6.5;
-            }
-        }
-
-        if(+firstLinePercent  <= 2 && +nowSailerPosition < 11){
-            nowSailerPosition = 7;
-            rangeSailerStatus.value = 7;
-            changeHeart(nowSailerPosition);
-        }
-        else if(+firstLinePercent  > 2 && +firstLinePercent  <= 4 && +nowSailerPosition < 11){
-            nowSailerPosition = 8;
-            rangeSailerStatus.value = 8;
-            changeHeart(nowSailerPosition);
-        }
-        else if(+firstLinePercent  > 4 && +firstLinePercent  <= 7 && +nowSailerPosition < 11){
-            nowSailerPosition = 9;
-            rangeSailerStatus.value = 9;
-            changeHeart(nowSailerPosition);
-        }
-        else if(+firstLinePercent  > 7 && +firstLinePercent <=9 && +nowSailerPosition < 11){
-            nowSailerPosition = 10;
-            rangeSailerStatus.value = 10;
-            changeHeart(nowSailerPosition);
-        }
-        bigdirectorProfit.value = numberFormat(Math.round(+firstLineVolume.value * base.value * firstLinePercent.value / 100 / tax * disc), 0, ',', ' ');
-        recalculate(nowSailerPosition);
-        changeSize(bigdirectorProfit);
-    };
+    // firstLineAmount.oninput = function () {
+    //     if(+nowSailerPosition < 11) {
+    //         if (+this.value <= 2) {
+    //             firstLinePercent.value = 5;
+    //         } else if (+this.value > 2 && +this.value <= 4) {
+    //             firstLinePercent.value = 5.5;
+    //         } else if (+this.value > 4 && +this.value <= 7) {
+    //             firstLinePercent.value = 6;
+    //         } else if (+this.value >= 8) {
+    //             firstLinePercent.value = 6.5;
+    //         }
+    //     }
+    //
+    //     if(+this.value  <= 2 && +nowSailerPosition < 11){
+    //         nowSailerPosition = 7;
+    //         rangeSailerStatus.value = 7;
+    //         changeHeart(nowSailerPosition);
+    //     }
+    //     else if(+this.value  > 2 && +this.value  <= 4 && +nowSailerPosition < 11){
+    //         nowSailerPosition = 8;
+    //         rangeSailerStatus.value = 8;
+    //         changeHeart(nowSailerPosition);
+    //     }
+    //     else if(+this.value  > 4 && +this.value  <= 7 && +nowSailerPosition < 11){
+    //         nowSailerPosition = 9;
+    //         rangeSailerStatus.value = 9;
+    //         changeHeart(nowSailerPosition);
+    //     }
+    //     else if(+this.value  > 7 && +nowSailerPosition < 11){
+    //         nowSailerPosition = 10;
+    //         rangeSailerStatus.value = 10;
+    //         changeHeart(nowSailerPosition);
+    //     }
+    //
+    //     bigdirectorProfit.value = numberFormat(Math.round(+firstLineVolume.value * base.value * firstLinePercent.value / 100 / tax * disc), 0, ',', ' ');
+    //
+    //     recalculate(nowSailerPosition);
+    //     changeSize(bigdirectorProfit);
+    // };
+    //
+    // firstLineVolume.oninput = function () {
+    //     if(+nowSailerPosition < 11) {
+    //         if (+firstLineAmount <= 2) {
+    //             firstLinePercent.value = 5;
+    //         } else if (+firstLineAmount > 2 && +firstLineAmount <= 4) {
+    //             firstLinePercent.value = 5.5;
+    //         } else if (+firstLineAmount > 4 && +firstLineAmount <= 7) {
+    //             firstLinePercent.value = 6;
+    //         } else if (+firstLineAmount >= 8) {
+    //             firstLinePercent.value = 6.5;
+    //         }
+    //     }
+    //
+    //     if(+firstLinePercent  <= 2 && +nowSailerPosition < 11){
+    //         nowSailerPosition = 7;
+    //         rangeSailerStatus.value = 7;
+    //         changeHeart(nowSailerPosition);
+    //     }
+    //     else if(+firstLinePercent  > 2 && +firstLinePercent  <= 4 && +nowSailerPosition < 11){
+    //         nowSailerPosition = 8;
+    //         rangeSailerStatus.value = 8;
+    //         changeHeart(nowSailerPosition);
+    //     }
+    //     else if(+firstLinePercent  > 4 && +firstLinePercent  <= 7 && +nowSailerPosition < 11){
+    //         nowSailerPosition = 9;
+    //         rangeSailerStatus.value = 9;
+    //         changeHeart(nowSailerPosition);
+    //     }
+    //     else if(+firstLinePercent  > 7 && +firstLinePercent <=9 && +nowSailerPosition < 11){
+    //         nowSailerPosition = 10;
+    //         rangeSailerStatus.value = 10;
+    //         changeHeart(nowSailerPosition);
+    //     }
+    //     bigdirectorProfit.value = numberFormat(Math.round(+firstLineVolume.value * base.value * firstLinePercent.value / 100 / tax * disc), 0, ',', ' ');
+    //     recalculate(nowSailerPosition);
+    //     changeSize(bigdirectorProfit);
+    // };
     // bigdirectorVal.onblur = function () {
     //     var allGropFirstLineTr = document.querySelectorAll('.table-rows-group');
     //     // if(nowSailerPosition >= 7 || nowSailerPosition <= 10){
@@ -1037,35 +1105,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-    //first line big boss
-    for(var j = 0; j < tableVolume.length; j++){
-        tableVolume[j].oninput = function () {
-            if(+nowSailerPosition == 11) {
-                var comissionSum = 0;
-                var allComissions = document.querySelectorAll('.table-commission'); //комиссия у главного директора
-                var percent = this.parentNode.nextElementSibling.children[0]; // считаем процент
-                if (+this.value < 99) {
-                    percent.value = 5;
-                } else if (+this.value > 99 && +this.value <= 199) {
-                    percent.value = 6;
-                } else if (+this.value > 199 && +this.value < 499) {
-                    percent.value = 7;
-                } else if (+this.value > 499) {
-                    percent.value = 8;
-                }
-                this.parentNode.nextElementSibling.nextElementSibling.children[0].value = numberFormat(Math.round(+this.value * base.value * +percent.value / 100 / tax * disc), 0, ',', ' ');
-                for (var k = 0; k < allComissions.length; k++) {
-                    comissionSum += returnNumFor(allComissions[k].value);
-                }
-                bigdirectorProfit.value = numberFormat(comissionSum, 0, ',', ' ');
-                recalculate(nowSailerPosition);
-                changeSize(bigdirectorProfit);
-                changeSize(this.parentNode.nextElementSibling.nextElementSibling.children[0]);
-            };
-        };
-
-    }
-
+    
+    //
     biggestdirectorVal2.oninput = function () {
         var roubleVal = +this.value * +base.value;
         biggestdirectorNum21.value = numberFormat(Math.round(roubleVal), 0, ',', ' ');
@@ -1179,20 +1220,232 @@ document.addEventListener('DOMContentLoaded', function() {
         recalculate(nowSailerPosition);
         changeSize(biggestdirectorBounusResult);
     };
+    //
+    // function calculatebigdirectorProfit(){
+    //     if(+nowSailerPosition < 11){
+    //         bigdirectorProfit.value = Math.round(+firstLineVolume.value * base.value * firstLinePercent.value / 100 / tax * disc);
+    //     } else {
+    //         var summ = 0;
+    //         var tableComission = document.querySelectorAll('.table-commission');
+    //         for(var p = 0; p < tableComission.length; p++){
+    //             summ += returnNumFor(tableComission[p].value);
+    //         }
+    //         bigdirectorProfit.value = summ;
+    //     }
+    // }
 
-    function calculatebigdirectorProfit(){
-        if(+nowSailerPosition < 11){
-            bigdirectorProfit.value = Math.round(+firstLineVolume.value * base.value * firstLinePercent.value / 100 / tax * disc);
+
+
+    function insertAfter(elem, refElem) {
+        return refElem.parentNode.insertBefore(elem, refElem.nextSibling);
+    }
+
+    //таблица для обычных директоров (маленькая)
+    //добавить строку в таблицу
+    tableShortPlus.onclick = function(e){
+        e.preventDefault();
+        var tableShortChangeRowspan = document.querySelector('#tableShortChangeRowspan'); // добавляем значение rowspan
+        var thisRowspan = tableShortChangeRowspan.getAttribute('rowspan');
+        tableShortChangeRowspan.setAttribute('rowspan', thisRowspan + 1);
+
+        var allTrR = document.querySelectorAll('.table-rows-group-sm');
+        var dirCounter = allTrR.length + 1;
+        var innerContent = '<td class="notshowfrom768"></td><td><input type="text" value="Директор '+ dirCounter + ' " class="table-name change-inputs"></td>\n' +
+                     '<td><input type="text" value="" class="table-volume-sm change-inputs"></td>\n';
+        var lastTrtest1 = document.querySelector('.table-rows-group-sm:last-child');
+        var newTr = document.createElement('tr');
+                         newTr.className = "table-rows-group-sm";
+                         newTr.innerHTML = innerContent;
+                         insertAfter(newTr, lastTrtest1);
+                         
+                         
+        var allTr = document.querySelectorAll('.table-rows-group-sm');
+
+        //скидка в зависимости от количества директоров
+                    if (allTr.length <= 2) {
+                        tableShortDiscount.value = 5;
+                    } else if (allTr.length > 2 && allTr.length <= 4) {
+                        tableShortDiscount.value = 5.5;
+                    } else if (allTr.length > 4 && allTr.length <= 7) {
+                        tableShortDiscount.value = 6;
+                    } else if (allTr.length >= 8) {
+                        tableShortDiscount.value = 6.5;
+                    }
+        tableVolumeSm = document.querySelectorAll('.table-volume-sm');
+        for(var j = 0; j < tableVolumeSm.length; j++){
+            tableVolumeSm[j].addEventListener('input', calculatetableShort);
+        }
+        calculatetableShort();
+    }
+
+
+    //удалить строку из таблицы
+    tableShortMinus.onclick = function(e){
+        e.preventDefault();
+        var allTr = document.querySelectorAll('.table-rows-group-sm');
+        if(allTr.length >= 3) {
+            var deleteElement = document.querySelector('.table-rows-group-sm:last-child');
+            deleteElement.parentNode.removeChild(deleteElement);
+        }
+
+        //скидка в зависимости от количества директоров
+        if (allTr.length - 1 <= 2) {
+            tableShortDiscount.value = 5;
+        } else if (allTr.length - 1 > 2 && allTr.length - 1 <= 4) {
+            tableShortDiscount.value = 5.5;
+        } else if (allTr.length - 1 > 4 && allTr.length - 1 <= 7) {
+            tableShortDiscount.value = 6;
+        } else if (allTr.length - 1 >= 8) {
+            tableShortDiscount.value = 6.5;
+        }
+
+        tableVolumeSm = document.querySelectorAll('.table-volume');
+        for(var j = 0; j < tableVolumeSm.length; j++){
+            tableVolumeSm[j].addEventListener('input', calculatetableShort);
+        }
+        calculatetableShort();
+    }
+
+    //подсчет прибыли
+    for(var j = 0; j < tableVolumeSm.length; j++){
+        tableVolumeSm[j].addEventListener('input', calculatetableShort);
+    }
+
+    function calculatetableShort(){
+        var allVolumeSum = 0;
+        var amountOfKons = 0;
+        var allVolume = document.querySelectorAll('.table-volume-sm'); //объем всех заказов
+        for (var k = 0; k < allVolume.length; k++) {
+            allVolumeSum += +allVolume[k].value;
+            amountOfKons++;
+        }
+        if(+directorVal.value >= 100) {
+            bigdirectorProfit.value = numberFormat(Math.round(allVolumeSum * +base.value * +tableShortDiscount.value / 100 / tax * disc), 0, ',', ' ');
         } else {
-            var summ = 0;
-            var tableComission = document.querySelectorAll('.table-commission');
-            for(var p = 0; p < tableComission.length; p++){
-                summ += returnNumFor(tableComission[p].value);
-            }
-            bigdirectorProfit.value = summ;
+            bigdirectorProfit.value = 0;
+        }
+        // this.parentNode.nextElementSibling.nextElementSibling.children[0].value = numberFormat(Math.round(+this.value * base.value * +percent.value / 100 / tax * disc), 0, ',', ' ');
+        recalculate(nowSailerPosition);
+         changeSize(bigdirectorProfit);
+
+        if (amountOfKons <= 2) {
+            nowSailerPosition = 7;
+            rangeSailerStatus.value = 7;
+            changeHeart(nowSailerPosition);
+        }
+        else if (amountOfKons > 2 && amountOfKons <= 4) {
+            nowSailerPosition = 8;
+            rangeSailerStatus.value = 8;
+            changeHeart(nowSailerPosition);
+        }
+        else if (amountOfKons > 4 && amountOfKons <= 7) {
+            nowSailerPosition = 9;
+            rangeSailerStatus.value = 9;
+            changeHeart(nowSailerPosition);
+        }
+        else if (amountOfKons > 7) {
+            nowSailerPosition = 10;
+            rangeSailerStatus.value = 10;
+            changeHeart(nowSailerPosition);
+        }
+
+    }
+    
+    
+    
+    //таблица для НД большая
+    //добавить строку
+    tableFirstLineGroupsPlus.onclick = function(e){
+        e.preventDefault();
+        var allGropFirstLineTr = document.querySelectorAll('.table-rows-group');
+
+        var dirBigCounter = allGropFirstLineTr.length + 1;
+
+        var innerContent = '<td class="show-biggestdirect notshowfrom768"></td><td><input type="text" value="Директор '+ dirBigCounter +'" class="table-name change-inputs"></td>\n' +
+                    '                        <td><input type="text" value="" class="table-volume change-inputs"></td>\n' +
+                    '                        <td class="show-biggestdirect"><input type="text" disabled value="5" class="results-inputs table-percent"></td>\n' +
+                    '                        <td class="show-biggestdirect"><input type="text" disabled value="0" class="results-inputs table-commission"></td>';
+       // var lastTrtest2 = document.querySelector('.table-rows-group:last-child');
+        var newTr = document.createElement('tr');
+        newTr.className = "table-rows-group";
+        newTr.innerHTML = innerContent;
+        //console.log(lastTrtestBig);
+        //insertAfter(newTr, lastTrtestBig);
+        twoLine.parentNode.insertBefore(newTr, twoLine);
+        tableVolume = document.querySelectorAll('.table-volume');
+        for(var f = 0; f < tableVolume.length; f++){
+            tableVolume[f].addEventListener('input', calculatetableBig);
         }
     }
 
+    //удалить строку
+    tableFirstLineGroupsMinus.onclick = function(e){
+        e.preventDefault();
+        var allGropFirstLineTr = document.querySelectorAll('.table-rows-group');
+        if(allGropFirstLineTr.length >= 9) {
+            var deleteElement = document.querySelector('.table-rows-group:nth-child('+ (allGropFirstLineTr.length+1) +')');
+            deleteElement.parentNode.removeChild(deleteElement);
+        }
+
+        calculateBigTableAll();
+        bigdirectorProfitBig.value = numberFormat(calculateBigTableAll(), 0, ',', ' ');
+        recalculate(nowSailerPosition);
+    }
+
+    //подсчет большой таблицы
+    for(var f = 0; f < tableVolume.length; f++){
+        tableVolume[f].addEventListener('input', calculatetableBig);
+    }
+
+    function calculatetableBig(){
+        var thisPercentVal = this.parentNode.nextElementSibling.children[0];
+        var thisCommisVal = this.parentNode.nextElementSibling.nextElementSibling.children[0];
+        if(+this.value < 99){
+            persThis = 5;
+        } else if(+this.value >= 100 && +this.value < 200){
+            persThis = 6;
+        } else if(+this.value >= 200 && +this.value < 500){
+            persThis = 7;
+        } else if(+this.value >= 500){
+            persThis = 8;
+        }
+        thisPercentVal.value = persThis;
+        thisCommisVal.value = numberFormat(Math.round(+this.value * base.value * +thisPercentVal.value / 100 / tax * disc), 0, ',', ' ');
+
+        bigdirectorProfitBig.value = numberFormat(calculateBigTableAll(), 0, ',', ' ');
+
+        // bigdirectorProfit.value = Math.round(allVolumeSum * +base.value * +tableShortDiscount.value / 100 / tax * disc);
+        // // this.parentNode.nextElementSibling.nextElementSibling.children[0].value = numberFormat(Math.round(+this.value * base.value * +percent.value / 100 / tax * disc), 0, ',', ' ');
+        recalculate(nowSailerPosition);
+        changeSize(bigdirectorProfitBig);
+        changeSize(thisCommisVal);
+    }
+
+    //считаем всю большую таблицу
+    function calculateBigTableAll(){
+        var allCommissionsSum = 0;
+        var allComissions = document.querySelectorAll('.table-commission');
+        for (var k = 0; k < allComissions.length; k++) {
+            allCommissionsSum += returnNumFor(allComissions[k].value);
+        }
+        recalculate(nowSailerPosition);
+        return allCommissionsSum;
+    }
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     //меняем подпись в зависимости от newSailerPosition
     function changeItogLabel(pos){
         if(+pos == 1){

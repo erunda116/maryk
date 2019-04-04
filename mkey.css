@@ -29,6 +29,9 @@ body{
     padding-right: 0;
     /*width: 70px;*/
 }
+.results-inputs-small{
+    font-size: 18px;
+}
 .results-inputs-right{
     padding: 3px 0;
 }
@@ -38,8 +41,12 @@ body{
     padding: 5px 10px;
     font-size: 20px;
 }
+.table-volume.change-inputs{
+    width: 50px;
+}
 .b-ed{
     color: #ed7fa6;
+    padding-right: 10px;
 }
 label,
 .hev-rom{
@@ -122,6 +129,9 @@ label,
     width: 952px;
     position: relative;
     margin-top: 20px;
+}
+.range-sailer-status:hover{
+    cursor: pointer;
 }
 .range-container-small{
     width: 500px;
@@ -274,6 +284,7 @@ input#biggestdirectorAct[type=range]::-moz-range-thumb {
     cursor: pointer;
 }
 
+
 /*BUTTONS*/
 .buttons-container{
     display: flex;
@@ -420,7 +431,7 @@ input[name="radioBtn"]:checked + .mary-key-radiolabel::before{
 .table-percent-biggest,
 #firstLinePercent
 {
-    width: 50px;
+    width: 30px;
 }
 .table-mary-key{
     border-collapse: collapse;
@@ -443,6 +454,60 @@ input[name="radioBtn"]:checked + .mary-key-radiolabel::before{
     text-align: left;
     border: 1px solid #e74783;
 }
+.table-small-container .table-name,
+.table-big-container .table-name
+{
+    width: 120px;
+}
+
+
+
+.table-small-container,
+.table-big-container{
+    position: relative;
+}
+.table-btn-container{
+    position: absolute;
+    top: 0;
+    right: 20px;
+}
+.table-btn{
+    background: transparent;
+    border: 2px solid #e74783;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    color: #e74783;
+    font-size: 24px;
+    line-height: 0.5;
+    text-align: center;
+}
+.table-btn:hover{
+    cursor: pointer;
+}
+
+/*BIG TABLE*/
+
+.row-class{
+    display: table-row;
+}
+.cell-class{
+    display: table-cell;
+}
+.cell-class:first-child{
+    width: 65%;
+    border-right: 1px solid #e74783;
+}
+.cell-class:last-child{
+    width: 35%;
+}
+.border-bottom-class-table{
+    border-bottom: 1px solid #e74783;
+}
+
+
+
+
 
 /*last block*/
 .last-block-big-dir{
@@ -455,15 +520,18 @@ input[name="radioBtn"]:checked + .mary-key-radiolabel::before{
     padding: 20px;
     border-bottom: 1px solid #e74783;
 }
+#biggestdirector .last-block-big-dir-item {
+    padding: 14px;
+}
 .last-block-big-dir-item > p{
     padding-bottom: 0;
 }
 .last-block-big-dir-item-2{
-    padding: 40px 20px;
+    padding: 20px;
     /*border-bottom: 1px solid #e74783;*/
 }
 .last-block-big-dir-item2{
-    border-top: 1px solid #e74783;
+    /*border-top: 1px solid #e74783;*/
 }
 .last-block-big-dir-item-bonus{
     padding: 0 20px 20px;
@@ -481,7 +549,7 @@ input[name="radioBtn"]:checked + .mary-key-radiolabel::before{
     margin-bottom: 10px;
 }
 #biggestdirector{
-    padding: 80px 0 20px;
+    /*padding: 80px 0 20px;*/
     position: relative;
 }
 #biggestdirector:before{
@@ -490,11 +558,16 @@ input[name="radioBtn"]:checked + .mary-key-radiolabel::before{
     height: 1px;
     width: 900px;
     position: absolute;
-    top: 30px;
+    bottom: 270px;
     left: 25px;
     border-top: 1px dashed #e74783;
 }
-
+.top-big-table-result{
+    position: absolute;
+    top: 0;
+    width: calc(100% - 30px);
+    padding: 250px 15px 0px;
+}
 
 /*dop info*/
 #director{
@@ -525,6 +598,9 @@ input[name="radioBtn"]:checked + .mary-key-radiolabel::before{
 }
 #bigkonsultantDiscount{
     width: 30px;
+}
+.small-commiss{
+    padding: 0;
 }
 @media screen and (min-width: 768px) and (max-width: 1250px) {
     /*.wrapper{*/

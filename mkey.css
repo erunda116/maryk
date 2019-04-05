@@ -435,6 +435,10 @@ input[name="radioBtn"]:checked + .mary-key-radiolabel::before{
 #firstLinePercent
 {
     width: 30px;
+    text-align: center;
+}
+#tableShortDiscount{
+    text-align: center;
 }
 .table-mary-key{
     border-collapse: collapse;

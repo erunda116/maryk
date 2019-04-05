@@ -40,8 +40,11 @@ body{
     width: 35px;
     padding: 5px 10px;
     font-size: 20px;
+    text-align: center;
 }
-.table-volume.change-inputs{
+.table-volume.change-inputs,
+#biggestdirectorVal2,
+#biggestdirectorVal3{
     width: 50px;
 }
 .b-ed{
@@ -468,7 +471,7 @@ input[name="radioBtn"]:checked + .mary-key-radiolabel::before{
 }
 .table-btn-container{
     position: absolute;
-    top: 0;
+    top: -50px;
     right: 20px;
 }
 .table-btn{
@@ -598,9 +601,13 @@ input[name="radioBtn"]:checked + .mary-key-radiolabel::before{
 }
 #bigkonsultantDiscount{
     width: 30px;
+    text-align: center;
 }
 .small-commiss{
     padding: 0;
+}
+.mary-key-design-bonus-block > label.ie-label-bigdir{
+    padding-bottom: 10px;
 }
 @media screen and (min-width: 768px) and (max-width: 1250px) {
     /*.wrapper{*/

@@ -117,25 +117,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (ua.search(/Firefox/) > 0) return 'Firefox';
         if (ua.search(/Opera/) > 0) return 'Opera';
         if (ua.search(/Safari/) > 0) return 'Safari';
-        if (ua.search(/MSIE/) > 0) return 'Internet Explorer';
+        if (ua.search(/MSIE/) || ua.search(/Trident/) > 0) return 'Internet Explorer';
         return 'Не определен';
     }
 
 
-    if(get_name_browser() != 'Firefox'){
-        for (var i = 0; i < allInputs.length; i++) {
-            allInputs[i].onkeypress = function(e){
-                if(this.classList.contains('table-name')){
-                    //console.log(e.keyCode);
-                    if (!(e.keyCode==95 || e.keyCode==45 || e.keyCode==1105 || e.keyCode==1025 || e.keyCode==32 || (e.keyCode>=1040 && e.keyCode<=1103) || (e.keyCode>=65 && e.keyCode<=90) || (e.keyCode>=65 && e.keyCode<=90) || (e.keyCode>=97 && e.keyCode<=122) || (e.keyCode>47 && e.keyCode<58))) return false;
-                } else {
-                    //console.log(e.keyCode);
-                    if (!(e.keyCode==8 || e.keyCode==46 || e.keyCode==44 ||(e.keyCode>47 && e.keyCode<58))) return false;
-                }
-            }
-
-        }
-    } else {
+    if(get_name_browser() == 'Firefox'){
         for (var i = 0; i < allInputs.length; i++) {
             allInputs[i].onkeypress = function(e){
                 if(this.classList.contains('table-name')){
@@ -144,6 +131,30 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else {
                     //console.log(e.which);
                     if (!(e.which==8 || e.which==46 || e.which==44 ||(e.which>47 && e.which<58))) return false;
+                }
+            }
+
+        }
+    } else if(get_name_browser() == 'Internet Explorer'){
+        for (var i = 0; i < allInputs.length; i++) {
+            allInputs[i].onkeypress = function(e){
+                if(this.classList.contains('table-name')){
+                    //console.log(e.keyCode);
+                    if (!(e.keyCode==95 || e.keyCode==45 || e.keyCode==1105 || e.keyCode==1025 || e.keyCode==32 || (e.keyCode>=1040 && e.keyCode<=1103) || (e.keyCode>=65 && e.keyCode<=90) || (e.keyCode>=65 && e.keyCode<=90) || (e.keyCode>=97 && e.keyCode<=122) || (e.keyCode>47 && e.keyCode<58))) return false;
+                } else {
+                    if (!(e.keyCode==8 || e.keyCode==46 ||(e.keyCode>47 && e.keyCode<58))) return false;
+                }
+            }
+        }
+    } else {
+        for (var i = 0; i < allInputs.length; i++) {
+            allInputs[i].onkeypress = function(e){
+                if(this.classList.contains('table-name')){
+                    //console.log(e.keyCode);
+                    if (!(e.keyCode==95 || e.keyCode==45 || e.keyCode==1105 || e.keyCode==1025 || e.keyCode==32 || (e.keyCode>=1040 && e.keyCode<=1103) || (e.keyCode>=65 && e.keyCode<=90) || (e.keyCode>=65 && e.keyCode<=90) || (e.keyCode>=97 && e.keyCode<=122) || (e.keyCode>47 && e.keyCode<58))) return false;
+                } else {
+                    //console.log(e.keyCode);
+                    if (!(e.keyCode==8 || e.keyCode==46 ||(e.keyCode>47 && e.keyCode<58))) return false;
                 }
             }
 
@@ -182,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 //make constants
-    base.value = 3500;
+    base.value = "3 500";
     var tax = 1.2;
     var disc = 0.6;
     var bonusForNdNev = 210000;
@@ -671,7 +682,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     konsultantVal.oninput = function () {
-        var roubleVal = +this.value * +base.value;
+        var roubleVal = +this.value * returnNumFor(base.value);
         konsultantNum.value = numberFormat(Math.round(roubleVal), 0, ',', ' ');
         // var nowCheckedRadio = document.querySelector('input[name="radioBtn"]:checked');
         // if(nowCheckedRadio != null){
@@ -704,7 +715,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // selectDiscount3.disabled = true;
             // selectDiscount4.disabled = true;
         } else if(+this.value >= 8){
-            selectDiscount4.checked="checked";
+            //selectDiscount4.checked="checked";
             konsultantProfit.value = numberFormat(Math.round(returnNumFor(konsultantNum.value) * +selectDiscount4.value / 100), 0, '.', ' ');
             // selectDiscount1.disabled = false;
             // selectDiscount2.disabled = false;
@@ -751,7 +762,7 @@ document.addEventListener('DOMContentLoaded', function() {
         konsultantDiscountRadio[l].addEventListener('change', calcDiscoutRadio);
     }
     function calcDiscoutRadio(){
-        var roubleVal = +konsultantVal.value * +base.value;
+        var roubleVal = +konsultantVal.value * returnNumFor(base.value);
         konsultantNum.value = numberFormat(Math.round(roubleVal), 0, ',', ' ');
         if(+this.value != 45 && +konsultantVal.value < 8) {
             konsultantProfit.value = numberFormat(Math.round(returnNumFor(konsultantNum.value) * +this.value / 100), 0, ',', ' ');
@@ -791,7 +802,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     bigkonsultantVal.oninput = function () {
-        var roubleVal = +this.value * +base.value;
+        var roubleVal = +this.value * returnNumFor(base.value);
         bigkonsultantNum.value = numberFormat(Math.round(roubleVal), 0, ',', ' ');
 
         if(+konsultantVal.value >= 1 && +this.value >= 1 && +nowSailerPosition != 11) {
@@ -854,7 +865,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     directorVal.oninput = function () {
-        var roubleVal = +this.value * +base.value;
+        var roubleVal = +this.value * returnNumFor(base.value);
         directorNum.value = numberFormat(Math.round(roubleVal), 0, ',', ' ');
         if(nowSailerPosition < 11) {
             if (+this.value <= 99) {
@@ -906,7 +917,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 for(var o = 0; o < tableVolumeSm.length; o++){
                     groupItogS += +tableVolumeSm[o].value;
                 }
-              bigdirectorProfit.value = numberFormat(Math.round(groupItogS * base.value * +tableShortDiscount.value / 100 / tax * disc), 0, ',', ' ');
+              bigdirectorProfit.value = numberFormat(Math.round(groupItogS * returnNumFor(base.value) * +tableShortDiscount.value / 100 / tax * disc), 0, ',', ' ');
             }
             warning2.style.display = "none";
             this.style.background = 'transparent';
@@ -929,7 +940,7 @@ document.addEventListener('DOMContentLoaded', function() {
             //console.log(tableVolume[o].value);
         }
         if(+directorVal.value >= 100){
-            bigdirectorProfit.value = Math.round(groupItog * base.value * bigdirectorDiscount.value / 100 / tax * disc);
+            bigdirectorProfit.value = Math.round(groupItog * returnNumFor(base.value) * bigdirectorDiscount.value / 100 / tax * disc);
         }
     };
     //
@@ -1108,7 +1119,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     //
     biggestdirectorVal2.oninput = function () {
-        var roubleVal = +this.value * +base.value;
+        var roubleVal = +this.value * returnNumFor(base.value);
         biggestdirectorNum21.value = numberFormat(Math.round(roubleVal), 0, ',', ' ');
         biggestdirector2Num2.value = numberFormat(Math.round(returnNumFor(biggestdirectorNum21.value) / 100 * biggestdirectorNum22.value / tax * disc), 0, ',', ' ');
 
@@ -1118,7 +1129,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     biggestdirectorVal3.oninput = function () {
-        var roubleVal = +this.value * +base.value;
+        var roubleVal = +this.value * returnNumFor(base.value);
         biggestdirectorNum31.value = numberFormat(Math.round(roubleVal), 0, ',', ' ');
         biggestdirector2Num3.value = numberFormat(Math.round(returnNumFor(biggestdirectorNum31.value) / 100 * biggestdirectorNum32.value / tax * disc), 0, ',', ' ');
 
@@ -1320,7 +1331,7 @@ document.addEventListener('DOMContentLoaded', function() {
             amountOfKons++;
         }
         if(+directorVal.value >= 100) {
-            bigdirectorProfit.value = numberFormat(Math.round(allVolumeSum * +base.value * +tableShortDiscount.value / 100 / tax * disc), 0, ',', ' ');
+            bigdirectorProfit.value = numberFormat(Math.round(allVolumeSum * returnNumFor(base.value) * +tableShortDiscount.value / 100 / tax * disc), 0, ',', ' ');
         } else {
             bigdirectorProfit.value = 0;
         }
@@ -1410,7 +1421,7 @@ document.addEventListener('DOMContentLoaded', function() {
             persThis = 8;
         }
         thisPercentVal.value = persThis;
-        thisCommisVal.value = numberFormat(Math.round(+this.value * base.value * +thisPercentVal.value / 100 / tax * disc), 0, ',', ' ');
+        thisCommisVal.value = numberFormat(Math.round(+this.value * returnNumFor(base.value) * +thisPercentVal.value / 100 / tax * disc), 0, ',', ' ');
 
         bigdirectorProfitBig.value = numberFormat(calculateBigTableAll(), 0, ',', ' ');
 

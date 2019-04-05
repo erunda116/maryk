@@ -87,18 +87,18 @@
                                         <td>Скидка</td>
                                         <td>Заказ, б.е.</td>
                                     </tr>
-                                    <tr>
-                                        <td>0%</td>
-                                        <td>0 – 0.99</td>
-                                    </tr>
-                                    <tr>
-                                        <td>35%</td>
-                                        <td>1.00 – 2.99</td>
-                                    </tr>
-                                    <tr>
-                                        <td>40%</td>
-                                        <td>3.00 – 7.99</td>
-                                    </tr>
+                                    <!--<tr>-->
+                                        <!--<td>0%</td>-->
+                                        <!--<td>0 – 0.99</td>-->
+                                    <!--</tr>-->
+                                    <!--<tr>-->
+                                        <!--<td>35%</td>-->
+                                        <!--<td>1.00 – 2.99</td>-->
+                                    <!--</tr>-->
+                                    <!--<tr>-->
+                                        <!--<td>40%</td>-->
+                                        <!--<td>3.00 – 7.99</td>-->
+                                    <!--</tr>-->
                                     <tr>
                                         <td>45%</td>
                                         <td>От 8.00 при наличии заказа от 8.00 б.е. в прошлом месяце</td>
@@ -280,8 +280,8 @@
 
             <div id="biggestdirector" class="container-key border-bottom-class-table" style="display: none;">
                 <div class="row-class">
-                    <div class="cell-class table-header-p-container">
-                        <p class="hev-rom">Объем заказов дочерних<br> Бизнес-Групп</p>
+                    <div class="cell-class ">
+                        <p class="hev-rom" style="padding-left: 20px;">Объем заказов дочерних<br> Бизнес-Групп</p>
                     </div>
                     <div class="cell-class last-block-big-dir-item border-bottom-class-table" id="stylesBorderDelete">
                         <p class="hev-rom">Комиссионное вознаграждение от объема заказов дочерних Бизнес-Групп</p>
@@ -368,7 +368,7 @@
 
                                 <tr id="twoLine">
                                     <td class="notshowfrom768">2-ой<br>линии</td>
-                                    <td><input type="text" value="1" class="table-name change-inputs next-line"></td>
+                                    <td><input type="text" value="Директор 1" class="table-name change-inputs next-line"></td>
                                     <!--<td><input type="text" value="" class="change-inputs"></td>-->
                                     <td><input class="change-inputs" type="text" value="0" id="biggestdirectorVal2"></td>
                                     <td><input class="results-inputs table-percent-biggest" id="biggestdirectorNum22" value="3" type="text" disabled></td>
@@ -376,7 +376,7 @@
                                 </tr>
                                 <tr id="thirdLine">
                                     <td class="notshowfrom768">3-ей<br>линии</td>
-                                    <td><input type="text" value="1" class="table-name change-inputs next-line"></td>
+                                    <td><input type="text" value="Директор 1" class="table-name change-inputs next-line"></td>
                                     <!--<td><input type="text" value="" class="change-inputs"></td>-->
                                     <td><input class="change-inputs" type="text" value="0" id="biggestdirectorVal3"></td>
                                     <td><input class="results-inputs table-percent-biggest" id="biggestdirectorNum32" value="2" type="text" disabled></td>
@@ -414,7 +414,7 @@
                 <div class="row-class">
                     <div class="cell-class">
                         <div class="mary-key-design">
-                            <label for="biggestdirectorAct">Количество дебютировавших дочерних Директоров по продажам 1-ой линии</label>
+                            <label class="ie-label-bigdir" for="biggestdirectorAct">Количество дебютировавших дочерних Директоров по продажам 1-ой линии</label>
                             <div class="range-container-small">
                                 <span class="heart-range" id="amountDebut"></span>
                                 <input type="range" min="0" max="20" step="1" value="0" id="biggestdirectorAct">
@@ -436,7 +436,7 @@
                 <div class="row-class">
                     <div class="cell-class">
                         <div class="mary-key-design mary-key-design-bonus-block">
-                            <label class="ie-label-long" for="biggestdirectorBounusNd">Кол-во дочерних Директоров по продажам с совокупным объемом заказов Бизнес-Группы 1 500 б.е. и более за 12 месяцев с даты дебюта</label>
+                            <label class="ie-label-bigdir" for="biggestdirectorBounusNd">Кол-во дочерних Директоров по продажам с совокупным объемом заказов Бизнес-Группы 1 500 б.е. и более за 12 месяцев с даты дебюта</label>
                             <input class="change-inputs" type="text" id="biggestdirectorBounusNd">
                         </div>
                     </div>

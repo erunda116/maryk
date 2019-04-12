@@ -152,7 +152,19 @@ label,
 #amountDebut.heart-range{
     left: 5px;
 }
+#amountDebutBonus.heart-range{
+    left: 5px;
+}
 #biggestdirectorActVall{
+    position: absolute;
+    bottom: -10px;
+    left: 3px;
+    font-family: 'HevRoman';
+    display: inline-block;
+    width: 14px;
+    text-align: center;
+}
+#biggestdirectorActVallBonus{
     position: absolute;
     bottom: -10px;
     left: 3px;
@@ -255,13 +267,15 @@ input[type=range]:focus::-ms-fill-upper {
 
 /*biggest director range*/
 
-input#biggestdirectorAct[type='range'] {
+input#biggestdirectorAct[type='range'],
+input#biggestdirectorBounusNd[type='range']{
     overflow: hidden;
     border-radius: 50px;
 }
 
 
-input#biggestdirectorAct[type='range']::-webkit-slider-thumb {
+input#biggestdirectorAct[type='range']::-webkit-slider-thumb,
+input#biggestdirectorBounusNd[type='range']::-webkit-slider-thumb{
     width: 10px;
     -webkit-appearance: none;
     height: 10px;
@@ -271,13 +285,16 @@ input#biggestdirectorAct[type='range']::-webkit-slider-thumb {
     background: #ed7fa6;
 }
 
-input#biggestdirectorAct[type='range']::-webkit-slider-thumb {
+input#biggestdirectorAct[type='range']::-webkit-slider-thumb,
+input#biggestdirectorBounusNd[type='range']::-webkit-slider-thumb{
     width: 20px;
 }
-input#biggestdirectorAct[type=range]::-ms-thumb {
+input#biggestdirectorAct[type='range']::-ms-thumb,
+input#biggestdirectorBounusNd[type='range']::-ms-thumb{
     width: 20px;
 }
-input#biggestdirectorAct[type=range]::-moz-range-thumb {
+input#biggestdirectorAct[type='range']::-moz-range-thumb,
+input#biggestdirectorBounusNd[type='range']::-moz-range-thumb{
     box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
     border: 0px solid #000000;
     height: 10px;
@@ -406,7 +423,7 @@ input[name="radioBtn"]:checked + .mary-key-radiolabel::before{
 }
 #itogLabel{
     font-family: 'MaryKay';
-    font-size: 26px;
+    font-size: 25px;
     color: #e74783;
     padding-right: 10px;
 }
@@ -414,6 +431,7 @@ input[name="radioBtn"]:checked + .mary-key-radiolabel::before{
     width: 200px;
     font-family: 'MaryKay';
     font-size: 26px;
+    color: #e74783;
 }
 
 /*warning*/
@@ -435,10 +453,6 @@ input[name="radioBtn"]:checked + .mary-key-radiolabel::before{
 #firstLinePercent
 {
     width: 30px;
-    text-align: center;
-}
-#tableShortDiscount{
-    text-align: center;
 }
 .table-mary-key{
     border-collapse: collapse;
@@ -475,7 +489,7 @@ input[name="radioBtn"]:checked + .mary-key-radiolabel::before{
 }
 .table-btn-container{
     position: absolute;
-    top: -50px;
+    bottom: 0;
     right: 20px;
 }
 .table-btn{
@@ -612,6 +626,15 @@ input[name="radioBtn"]:checked + .mary-key-radiolabel::before{
 }
 .mary-key-design-bonus-block > label.ie-label-bigdir{
     padding-bottom: 10px;
+}
+#bigkonsultantAct{
+    margin-right: 100px;
+}
+.sumOfAllDiectorsLabel{
+    padding: 0 20px 0 0;
+}
+.sumOfAllDiectors-container{
+    padding: 20px 20px 0;
 }
 @media screen and (min-width: 768px) and (max-width: 1250px) {
     /*.wrapper{*/

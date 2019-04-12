@@ -22,6 +22,22 @@ input[type=range]::-ms-track {
     border-width: 0;
     color: transparent;
 }
+.table-btn{
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+}
+#biggestdirectorActVall,
+#biggestdirectorActVallBonus{
+    bottom: 15px;
+}
+#amountDebut,
+#amountDebutBonus{
+    top: 0;
+}
+#biggestdirector:before{
+    bottom: 310px;
+}
 /*.row-class .cell-class:first-child{*/
     /*width: 500px;*/
     /*margin-right: 20px;*/

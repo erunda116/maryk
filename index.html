@@ -17,7 +17,7 @@
             </a>
         </div>
         <div>
-            <a class="header-downloadplan" href="#" download="plan.pdf">
+            <a class="header-downloadplan" href="https://www.marykayintouch.ru/NewsPage?newsID=1348" download="plan.pdf">
                 <img src="image/pdficon.png" alt="">
                 <p>Маркетинговый план</p>
             </a>
@@ -52,9 +52,6 @@
             <!--<input class="results-inputs" type="text" id="itog" value="0 ₽" disabled>-->
             <!--&lt;!&ndash;<span class="currency-rouble">₽</span>&ndash;&gt;-->
             <!--</div>-->
-        </div>
-        <div>
-            <p>* Для расчета дополнительной скидки/комиссионного вознаграждения берется средняя скидка на продукцию 40%</p>
         </div>
         <div class="calculate-wrapper">
             <div id="konsultant" class="container-key">
@@ -126,7 +123,7 @@
             <div id="bigkonsultant" class="container-key" style="display: none;">
                 <div class="container-key-item">
                     <div class="mary-key-design mary-key-design-first-column">
-                        <label for="bigkonsultantVal">Объем заказов личной группы</label>
+                        <label for="bigkonsultantVal">Объем заказов<br>личной группы</label>
                         <div>
                             <input type="text" class="change-inputs" value="0" id="bigkonsultantVal">
                             <span class="b-ed">б.е.</span>
@@ -135,11 +132,11 @@
                         </div>
                     </div>
                     <div class="mary-key-design">
-                        <label for="bigkonsultantAct">Количество активных Консультантов</label>
+                        <label for="bigkonsultantAct">Количество активных<br>Консультантов</label>
                         <div>
                             <input type="text" class="change-inputs" value="0" id="bigkonsultantAct">
                             <input type="text" class="results-inputs" value="0" id="bigkonsultantDiscount" disabled>
-                            <label for="bigkonsultantDiscount"> % скидки</label>
+                            <label for="bigkonsultantDiscount"> %</label>
                         </div>
                     </div>
                     <!--<input type="text" class="results-inputs" value="0" id="bigkonsultantDiscount" disabled>-->
@@ -163,13 +160,13 @@
                 </div>
                 <div class="container-key-item">
                     <div class="mary-key-design">
-                        <label for="bigkonsultantDiscountDop" class="ie-labels">Дополнительная скидка от объёма заказов личной группы</label>
+                        <label for="bigkonsultantDiscountDop" class="ie-labels"><span id="labelChange1">Дополнительная скидка</span> от объёма заказов личной группы</label>
                         <div>
                             <input class="results-inputs results-inputs-right" id="bigkonsultantDiscountDop" type="text" value="0" disabled>
                             <span class="currency-rouble">₽</span>
                         </div>
                     </div>
-                    <span id="warning1" style="display: block;">* Объем личных заказов должен быть не менее 1 б.е.</span>
+                    <span id="warning1" style="display: none;">* Объем личных заказов должен быть не менее 1 б.е.</span>
 
 
                     <!--<div id="director2">-->
@@ -205,7 +202,7 @@
                 <div class="container-key-item">
                     <div id="director2">
                         <div class="mary-key-design mary-key-design-double" id="stylesDouble">
-                            <label for="director2Num1" class="ie-labels">Дополнительная скидка от объёма заказов Бизнес-Группы</label>
+                            <label for="director2Num1" class="ie-labels">Комиссионное вознаграждение от объёма заказов Бизнес-Группы</label>
                             <div>
                                 <input class="results-inputs results-inputs-right" id="director2Num1" type="text" value="0" disabled>
                                 <span class="currency-rouble">₽</span>
@@ -257,6 +254,11 @@
                         <button class="table-btn" id="tableShortMinus">-</button>
                         </div>
                     </div>
+                    <div class="sumOfAllDiectors-container">
+                        <label class="sumOfAllDiectorsLabel" for="sumOfAllDiectors">Общая сумма объема заказов всех Директоров</label>
+                        <input id="sumOfAllDiectors" class="results-inputs" type="text" value="0" disabled>
+                        <span class="currency-rouble">₽</span>
+                    </div>
 
                 </div>
 
@@ -271,7 +273,7 @@
                     <input class="results-inputs results-inputs-right" id="bigdirectorProfit" disabled type="text" value="0">
                     <span class="currency-rouble">₽</span>
                 </div>
-                <p id="warning2" style="display: block;">* Объем заказов личной Бизнес-Группы должен быть не менее 100 б.е.</p>
+                <p id="warning2" style="display: none;">* Объем заказов личной Бизнес-Группы должен быть не менее 100 б.е.</p>
                 </div>
             </div>
 
@@ -368,7 +370,7 @@
 
                                 <tr id="twoLine">
                                     <td class="notshowfrom768">2-ой<br>линии</td>
-                                    <td><input type="text" value="Директор 1" class="table-name change-inputs next-line"></td>
+                                    <td><input type="text" value="2-ой линии" class="table-name change-inputs next-line"></td>
                                     <!--<td><input type="text" value="" class="change-inputs"></td>-->
                                     <td><input class="change-inputs" type="text" value="0" id="biggestdirectorVal2"></td>
                                     <td><input class="results-inputs table-percent-biggest" id="biggestdirectorNum22" value="3" type="text" disabled></td>
@@ -376,7 +378,7 @@
                                 </tr>
                                 <tr id="thirdLine">
                                     <td class="notshowfrom768">3-ей<br>линии</td>
-                                    <td><input type="text" value="Директор 1" class="table-name change-inputs next-line"></td>
+                                    <td><input type="text" value="3-ей линии" class="table-name change-inputs next-line"></td>
                                     <!--<td><input type="text" value="" class="change-inputs"></td>-->
                                     <td><input class="change-inputs" type="text" value="0" id="biggestdirectorVal3"></td>
                                     <td><input class="results-inputs table-percent-biggest" id="biggestdirectorNum32" value="2" type="text" disabled></td>
@@ -437,7 +439,11 @@
                     <div class="cell-class">
                         <div class="mary-key-design mary-key-design-bonus-block">
                             <label class="ie-label-bigdir" for="biggestdirectorBounusNd">Кол-во дочерних Директоров по продажам с совокупным объемом заказов Бизнес-Группы 1 500 б.е. и более за 12 месяцев с даты дебюта</label>
-                            <input class="change-inputs" type="text" id="biggestdirectorBounusNd">
+                            <div class="range-container-small">
+                                <span class="heart-range" id="amountDebutBonus"></span>
+                            <input class="" type="range" min="0" max="20" step="1" value="0" id="biggestdirectorBounusNd">
+                                <span id="biggestdirectorActVallBonus">0</span>
+                            </div>
                         </div>
                     </div>
                     <div class="cell-class">
@@ -625,6 +631,7 @@
 
     </form>
     <div>
+        <p id="snoskaNum1" style="display: none;">* Расчет представленной в Калькуляторе дополнительной скидки/комиссионного вознаграждения производится по средней скидке на продукцию в 40%</p>
         <p>** Доход не гарантирован Компанией и полностью зависит от активности и усилий отдельного Независимого Консультанта по красоте. Суммы дохода, представленные в Калькуляторе, являются примерными и основаны на средних статистических данных Компании. Данный Калькулятор создан исключительно как обучающий и мотивационный инструмент для развития бизнеса Независимых Консультантов по красоте.</p>
         <p>*** Обращаем ваше внимание, что суммы вашего вознаграждения за конкретный месяц будут рассчитываться с учетом всех дифференцированных скидок, программ и иных факторов, применимых к вашим бизнес-результатам и результатам деятельности каждого члена вашей Бизнес-Группы. В связи с этим, сумма вашего комиссионного вознаграждения может отличаться в большую или меньшую сторону от примерных сумм дохода, рассчитанных при помощи данного Калькулятора.</p>
         <p>**** % дополнительной скидки/комиссионного вознаграждения начисляется от объема заказов в оптовых ценах</p>

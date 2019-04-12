@@ -22,6 +22,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var radioBtnContainer = document.querySelector('#radioBtnContainer'); // контейнер радиокнопок
     var radioBtnContainerTooltip = document.querySelector('#radioBtnContainer .radioBtn-container-tooltip'); //подсказка радиокнопок
     var tooltipSmall = document.querySelector('#tooltipSmall'); // подсказка менее 8 б.е.
+    var snoskaNum1 = document.querySelector('#snoskaNum1'); //сноска убираем для консультанта
+
 
 //from master-konsultant to pre-director
     var bigkonsultant = document.querySelector('#bigkonsultant'); //блок для показать\скрыть
@@ -43,6 +45,9 @@ document.addEventListener('DOMContentLoaded', function() {
     var director2Num2 = document.querySelector('#director2Num2'); //директор расчетное значение 1
     var labelFordirector2Num2 = document.querySelector('#labelFordirector2Num2'); //директор расчетное значение label
     var sailerStatus3Container = document.querySelector('#sailerStatus3Container'); //контейнер директор
+    //var labelChange2 = document.querySelector('#labelChange2'); //подпись скидок для директора и выше
+    var labelChange1 = document.querySelector('#labelChange1'); //подпись скидок для директора и выше
+
 
 //bigdirector
      var bigdirector = document.querySelector('#bigdirector'); //супердиректор блок для показать\скрыть
@@ -52,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
      var bigdirectorProfit = document.querySelector('#bigdirectorProfit'); //директор 1 линия
      var tableVolumeSm = document.querySelectorAll('.table-volume-sm'); //table объем
      var tableShortDiscount = document.querySelector('#tableShortDiscount'); //скидка
+     var sumOfAllDiectors = document.querySelector('#sumOfAllDiectors'); // сумма всех директоров
 //     //var bigdirectorVal = document.querySelector('#bigdirectorVal'); //вводимое значение
 //     //var bigdirectorDiscount = document.querySelector('#bigdirectorDiscount'); //директор скидка
 
@@ -80,7 +86,8 @@ document.addEventListener('DOMContentLoaded', function() {
 //     var director2Num2Span = document.querySelector('#director2Num2Span'); //стили span
      var biggestdirectorBounusNd = document.querySelector('#biggestdirectorBounusNd'); //бонус количество конс супер директор
      var biggestdirectorBounusResult = document.querySelector('#biggestdirectorBounusResult'); //бонус супер директор
-
+     var amountDebutBonus = document.querySelector('#amountDebutBonus'); //значения ползунка
+     var biggestdirectorActVallBonus = document.querySelector('#biggestdirectorActVallBonus'); //последний ползунок значения
 
     var sailerStatus = document.querySelectorAll('.sailer-status'); //sailer status
 
@@ -223,7 +230,7 @@ document.addEventListener('DOMContentLoaded', function() {
         changeSize(biggestdirector2Num3);
         changeSize(biggestdirector2NumAct);
         changeSize(biggestdirectorBounusResult);
-        //changeSize(itog);
+        changeSize(sumOfAllDiectors);
     }
     init();
 
@@ -244,6 +251,7 @@ document.addEventListener('DOMContentLoaded', function() {
             bigdirector.style.display = "none";
             biggestdirector.style.display = "none";
             sailerStatus3Container.style.display = "none";
+            snoskaNum1.style.display = "none";
             //twoLine.style.display = "none";
             //thirdLine.style.display = "none";
             //firstTrNotBigDirector.style.display = "none";
@@ -256,6 +264,7 @@ document.addEventListener('DOMContentLoaded', function() {
             bigdirector.style.display = "none";
             sailerStatus3Container.style.display = "none";
             biggestdirector.style.display = "none";
+            snoskaNum1.style.display = "block";
             //twoLine.style.display = "none";
             //thirdLine.style.display = "none";
             //firstTrNotBigDirector.style.display = "none";
@@ -268,6 +277,7 @@ document.addEventListener('DOMContentLoaded', function() {
             bigdirector.style.display = "none";
             biggestdirector.style.display = "none";
             sailerStatus3Container.style.display = "flex";
+            snoskaNum1.style.display = "block";
            // twoLine.style.display = "none";
             //thirdLine.style.display = "none";
            // firstTrNotBigDirector.style.display = "none";
@@ -282,6 +292,7 @@ document.addEventListener('DOMContentLoaded', function() {
             //biggestdirector2.style.display = "none";
             //hideThenKingDirector.style.display = "block";
             sailerStatus3Container.style.display = "flex";
+            snoskaNum1.style.display = "block";
            // twoLine.style.display = "none";
            // thirdLine.style.display = "none";
            // firstTrNotBigDirector.style.display = "table-row";
@@ -295,6 +306,7 @@ document.addEventListener('DOMContentLoaded', function() {
             biggestdirector.style.display = "table";
            // biggestdirector2.style.display = "block";
             sailerStatus3Container.style.display = "flex";
+            snoskaNum1.style.display = "block";
             //twoLine.style.display = "table-row";
             //thirdLine.style.display = "table-row";
             //firstTrNotBigDirector.style.display = "none";
@@ -306,8 +318,8 @@ document.addEventListener('DOMContentLoaded', function() {
             for(var y = 0; y < showBiggestdirect.length; y++){
                 showBiggestdirect[y].style.display = "none";
             }
-            warning2.style.display = "block";
-            warning1.style.display = "block";
+            //warning2.style.display = "block";
+            //warning1.style.display = "block";
             director2Num2.style.display = "inline-block";
             labelFordirector2Num2.style.display = "block";
             director2Num2Span.style.display = "inline-block";
@@ -317,8 +329,8 @@ document.addEventListener('DOMContentLoaded', function() {
             for(var y = 0; y < showBiggestdirect.length; y++){
                 showBiggestdirect[y].style.display = "table-cell";
             }
-            warning2.style.display = "none";
-            warning1.style.display = "none";
+            //warning2.style.display = "none";
+            //warning1.style.display = "none";
             director2Num2.style.display = "none";
             labelFordirector2Num2.style.display = "none";
             director2Num2Span.style.display = "none";
@@ -326,8 +338,10 @@ document.addEventListener('DOMContentLoaded', function() {
             stylesDouble.classList.remove('mary-key-design-double');
             //stylesBorderDelete.style.borderBottom = "1px solid #e74783";
         }
-        warning1ColorOfFields();
-        warning2ColorOfFields();
+        //warning1ColorOfFields();
+        warning1ColorOfFHide();
+        warning2ColorOfFHide();
+        //warning2ColorOfFields();
         recalculatePersent(nowSailerPosition);
         changeHeart(nowSailerPosition);
         //calculatebigdirectorProfit();
@@ -345,6 +359,7 @@ document.addEventListener('DOMContentLoaded', function() {
             bigdirector.style.display = "none";
             biggestdirector.style.display = "none";
             sailerStatus3Container.style.display = "none";
+            snoskaNum1.style.display = "none";
             //twoLine.style.display = "none";
             //thirdLine.style.display = "none";
             //firstTrNotBigDirector.style.display = "none";
@@ -357,6 +372,7 @@ document.addEventListener('DOMContentLoaded', function() {
             bigdirector.style.display = "none";
             sailerStatus3Container.style.display = "none";
             biggestdirector.style.display = "none";
+            snoskaNum1.style.display = "block";
             //twoLine.style.display = "none";
             //thirdLine.style.display = "none";
             //firstTrNotBigDirector.style.display = "none";
@@ -369,6 +385,7 @@ document.addEventListener('DOMContentLoaded', function() {
             bigdirector.style.display = "none";
             biggestdirector.style.display = "none";
             sailerStatus3Container.style.display = "flex";
+            snoskaNum1.style.display = "block";
             // twoLine.style.display = "none";
             //thirdLine.style.display = "none";
             // firstTrNotBigDirector.style.display = "none";
@@ -383,6 +400,7 @@ document.addEventListener('DOMContentLoaded', function() {
             //biggestdirector2.style.display = "none";
             //hideThenKingDirector.style.display = "block";
             sailerStatus3Container.style.display = "flex";
+            snoskaNum1.style.display = "block";
             // twoLine.style.display = "none";
             // thirdLine.style.display = "none";
             // firstTrNotBigDirector.style.display = "table-row";
@@ -396,6 +414,7 @@ document.addEventListener('DOMContentLoaded', function() {
             biggestdirector.style.display = "table";
             // biggestdirector2.style.display = "block";
             sailerStatus3Container.style.display = "flex";
+            snoskaNum1.style.display = "block";
             //twoLine.style.display = "table-row";
             //thirdLine.style.display = "table-row";
             //firstTrNotBigDirector.style.display = "none";
@@ -408,8 +427,8 @@ document.addEventListener('DOMContentLoaded', function() {
             for(var y = 0; y < showBiggestdirect.length; y++){
                 showBiggestdirect[y].style.display = "none";
             }
-            warning2.style.display = "block";
-            warning1.style.display = "block";
+            //warning2.style.display = "block";
+            //warning1.style.display = "block";
             director2Num2.style.display = "inline-block";
             labelFordirector2Num2.style.display = "block";
             director2Num2Span.style.display = "inline-block";
@@ -419,8 +438,8 @@ document.addEventListener('DOMContentLoaded', function() {
             for(var y = 0; y < showBiggestdirect.length; y++){
                 showBiggestdirect[y].style.display = "table-cell";
             }
-            warning2.style.display = "none";
-            warning1.style.display = "none";
+           // warning2.style.display = "none";
+            //warning1.style.display = "none";
             director2Num2.style.display = "none";
             labelFordirector2Num2.style.display = "none";
             director2Num2Span.style.display = "none";
@@ -428,8 +447,10 @@ document.addEventListener('DOMContentLoaded', function() {
             stylesDouble.classList.remove('mary-key-design-double');
             //stylesBorderDelete.style.borderBottom = "1px solid #e74783";
         }
-         warning1ColorOfFields();
-         warning2ColorOfFields();
+         //warning1ColorOfFields();
+         //warning2ColorOfFields();
+        warning1ColorOfFHide();
+        warning2ColorOfFHide();
          recalculatePersent(this.value);
          changeHeart(this.value);
         // calculatebigdirectorProfit();
@@ -437,6 +458,7 @@ document.addEventListener('DOMContentLoaded', function() {
          recalculate(this.value);
     };
     if(isIE){
+        //range-change
         rangeSailerStatus.onchange = function (){
             if (+this.value == 1) {
                 konsultant.style.display = "flex";
@@ -445,6 +467,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 bigdirector.style.display = "none";
                 biggestdirector.style.display = "none";
                 sailerStatus3Container.style.display = "none";
+                snoskaNum1.style.display = "none";
                 //twoLine.style.display = "none";
                 //thirdLine.style.display = "none";
                 //firstTrNotBigDirector.style.display = "none";
@@ -457,6 +480,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 bigdirector.style.display = "none";
                 sailerStatus3Container.style.display = "none";
                 biggestdirector.style.display = "none";
+                snoskaNum1.style.display = "block";
                 //twoLine.style.display = "none";
                 //thirdLine.style.display = "none";
                 //firstTrNotBigDirector.style.display = "none";
@@ -469,6 +493,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 bigdirector.style.display = "none";
                 biggestdirector.style.display = "none";
                 sailerStatus3Container.style.display = "flex";
+                snoskaNum1.style.display = "block";
                 // twoLine.style.display = "none";
                 //thirdLine.style.display = "none";
                 // firstTrNotBigDirector.style.display = "none";
@@ -483,6 +508,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 //biggestdirector2.style.display = "none";
                 //hideThenKingDirector.style.display = "block";
                 sailerStatus3Container.style.display = "flex";
+                snoskaNum1.style.display = "block";
                 // twoLine.style.display = "none";
                 // thirdLine.style.display = "none";
                 // firstTrNotBigDirector.style.display = "table-row";
@@ -496,6 +522,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 biggestdirector.style.display = "table";
                 // biggestdirector2.style.display = "block";
                 sailerStatus3Container.style.display = "flex";
+                snoskaNum1.style.display = "block";
                 //twoLine.style.display = "table-row";
                 //thirdLine.style.display = "table-row";
                 //firstTrNotBigDirector.style.display = "none";
@@ -508,8 +535,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 for(var y = 0; y < showBiggestdirect.length; y++){
                     showBiggestdirect[y].style.display = "none";
                 }
-                warning2.style.display = "block";
-                warning1.style.display = "block";
+                //warning2.style.display = "block";
+                //warning1.style.display = "block";
                 director2Num2.style.display = "inline-block";
                 labelFordirector2Num2.style.display = "block";
                 director2Num2Span.style.display = "inline-block";
@@ -519,8 +546,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 for(var y = 0; y < showBiggestdirect.length; y++){
                     showBiggestdirect[y].style.display = "table-cell";
                 }
-                warning2.style.display = "none";
-                warning1.style.display = "none";
+                // warning2.style.display = "none";
+                //warning1.style.display = "none";
                 director2Num2.style.display = "none";
                 labelFordirector2Num2.style.display = "none";
                 director2Num2Span.style.display = "none";
@@ -528,8 +555,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 stylesDouble.classList.remove('mary-key-design-double');
                 //stylesBorderDelete.style.borderBottom = "1px solid #e74783";
             }
-            warning1ColorOfFields();
-            warning2ColorOfFields();
+            //warning1ColorOfFields();
+            //warning2ColorOfFields();
+            warning1ColorOfFHide();
+            warning2ColorOfFHide();
             recalculatePersent(this.value);
             changeHeart(this.value);
             // calculatebigdirectorProfit();
@@ -554,7 +583,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 + returnNumFor(director2Num2.value)), 0, '.', ' ') + ' ₽';
         } else if(+sailPosition > 6 && +sailPosition <= 10){
             if(+konsultantVal.value == 0){
-               // bigkonsultantDiscountDop.value = 0;
+                bigkonsultantDiscountDop.value = 0;
             }
             if(directorVal.value < 100) {
                 bigdirectorProfit.value = 0;
@@ -570,6 +599,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 +returnNumFor(biggestdirectorBounusResult.value) ), 0, '.', ' ') + ' ₽';
         }
         //changeSize(itog);
+        init();
     }
 
     function recalculatePersent(sailPosition){
@@ -611,7 +641,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if(+directorVal.value < 100 && sailPosition < 11){
-            warning2.style.display = "block";
+            //warning2.style.display = "block";
             if(nowSailerPosition < 11) {
                 bigdirectorProfit.value = 0;
             }
@@ -619,12 +649,12 @@ document.addEventListener('DOMContentLoaded', function() {
             if(nowSailerPosition < 11){
                 //bigdirectorProfit.value = Math.round(firstLineVolume.value * base.value * firstLinePercent.value / 100 / tax * disc);
             }
-            warning2.style.display = "none";
+            //warning2.style.display = "none";
         }
         if(+konsultantVal.value < 1 && sailPosition < 11){
-            warning1.style.display = "block";
+            //warning1.style.display = "block";
         } else{
-            warning1.style.display = "none";
+            //warning1.style.display = "none";
         }
 
         director2Num1.value = numberFormat(Math.round(returnNumFor(directorNum.value) * directorDiscount.value / 100 / tax * disc), 0, ',', ' ');
@@ -662,10 +692,23 @@ document.addEventListener('DOMContentLoaded', function() {
         var konsultantVal = document.querySelector('#konsultantVal');
         if(nowSailerPosition < 11 && nowSailerPosition > 1 && konsultantVal.value < 1){
             konsultantVal.style.background = "#f00";
+            warning1.style.display = "block";
         } else if((nowSailerPosition == 11 || nowSailerPosition == 1) && konsultantVal.value >= 0){
             konsultantVal.style.background = "transparent";
+            warning1.style.display = "none";
         } else {
             konsultantVal.style.background = "transparent";
+            warning1.style.display = "none";
+        }
+    }
+
+    function warning1ColorOfFHide(){
+        warning1.style.display = "none";
+        konsultantVal.style.background = "transparent";
+        if(nowSailerPosition < 11 && konsultantVal.value < 1) {
+            // bigkonsultantVal.value = 0;
+            // bigkonsultantNum.value = 0;
+            changeSize(bigkonsultantNum);
         }
     }
 
@@ -673,10 +716,21 @@ document.addEventListener('DOMContentLoaded', function() {
         var directorVal = document.querySelector('#directorVal');
         if(nowSailerPosition < 11 && nowSailerPosition >= 7 && directorVal.value < 100){
             directorVal.style.background = "#f00";
+            warning2.style.display = "block";
         } else if(nowSailerPosition == 11 && directorVal.value >= 0){
             directorVal.style.background = "transparent";
+            warning2.style.display = "none";
         } else {
             directorVal.style.background = "transparent";
+            warning2.style.display = "none";
+        }
+    }
+
+    function warning2ColorOfFHide(){
+        warning2.style.display = "none";
+        directorVal.style.background = "transparent";
+        if(nowSailerPosition < 11 && directorVal.value < 100) {
+
         }
     }
 
@@ -715,7 +769,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // selectDiscount3.disabled = true;
             // selectDiscount4.disabled = true;
         } else if(+this.value >= 8){
-            //selectDiscount4.checked="checked";
+            selectDiscount4.checked="checked";
             konsultantProfit.value = numberFormat(Math.round(returnNumFor(konsultantNum.value) * +selectDiscount4.value / 100), 0, '.', ' ');
             // selectDiscount1.disabled = false;
             // selectDiscount2.disabled = false;
@@ -733,18 +787,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if(+this.value < 1 && nowSailerPosition != 11){
             bigkonsultantDiscountDop.value = 0;
-            warning1.style.display = "inline-block";
-            if(nowSailerPosition != 1) {
-                this.style.background = '#f00';
-            }
+            //warning1.style.display = "inline-block";
+            // if(nowSailerPosition != 1) {
+            //     this.style.background = '#f00';
+            // }
         } else if(+this.value >= 0 && nowSailerPosition == 11) {
             bigkonsultantDiscountDop.value = numberFormat(Math.round(returnNumFor(bigkonsultantNum.value) * bigkonsultantDiscount.value / 100 / tax * disc), 0, '.', ' ');
-            warning1.style.display = "none";
-            this.style.background = 'transparent';
+            // warning1.style.display = "none";
+            // this.style.background = 'transparent';
         } else {
             bigkonsultantDiscountDop.value = numberFormat(Math.round(returnNumFor(bigkonsultantNum.value) * bigkonsultantDiscount.value / 100 / tax * disc), 0, '.', ' ');
-            warning1.style.display = "none";
-            this.style.background = 'transparent';
+            // warning1.style.display = "none";
+            // this.style.background = 'transparent';
         }
 
         if(+this.value < 8 && selectDiscount4.checked == "checked"){
@@ -814,9 +868,19 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             bigkonsultantDiscountDop.value = 0;
         }
+
         changeSizeSmall(bigkonsultantNum);
         changeSize(bigkonsultantDiscountDop);
     };
+
+    bigkonsultantVal.onfocus = function (){
+        warning1ColorOfFields();
+    };
+
+    bigkonsultantVal.onblur = function (){
+        warning1ColorOfFHide();
+    };
+
 
     bigkonsultantAct.oninput = function () {
         if(+this.value == 0){
@@ -905,11 +969,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if(+this.value < 100 && nowSailerPosition < 11 && nowSailerPosition >= 7){
-            warning2.style.display = "block";
+            //warning2.style.display = "block";
             if(nowSailerPosition < 11) {
                 bigdirectorProfit.value = 0;
+                sumOfAllDiectors.value = 0;
             }
-            this.style.background = '#f00';
+            //this.style.background = '#f00';
         } else{
             if(nowSailerPosition < 11){
                 var tableVolumeSm = document.querySelectorAll('.table-volume-sm');
@@ -918,9 +983,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     groupItogS += +tableVolumeSm[o].value;
                 }
               bigdirectorProfit.value = numberFormat(Math.round(groupItogS * returnNumFor(base.value) * +tableShortDiscount.value / 100 / tax * disc), 0, ',', ' ');
+                sumOfAllDiectors.value = numberFormat(Math.round(groupItogS * returnNumFor(base.value)), 0, ',', ' ');
             }
-            warning2.style.display = "none";
-            this.style.background = 'transparent';
+            //warning2.style.display = "none";
+            //this.style.background = 'transparent';
         }
 
         director2Num1.value = numberFormat(Math.round(returnNumFor(directorNum.value) * directorDiscount.value / 100 / tax * disc), 0, ',', ' ');
@@ -929,6 +995,7 @@ document.addEventListener('DOMContentLoaded', function() {
         changeSizeSmall(directorNum);
         changeSize(director2Num1);
         changeSize(director2Num2);
+        changeSize(sumOfAllDiectors);
         changeSize(bigdirectorProfit);
     };
 
@@ -1205,6 +1272,73 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    function changeBonusRange(pos){
+        if(pos == 0){
+            amountDebutBonus.style.left = "5px";
+            biggestdirectorActVallBonus.style.left = "3px";
+        } else if(pos == 1){
+            amountDebutBonus.style.left = "25px";
+            biggestdirectorActVallBonus.style.left = "23px";
+        } else if(pos == 2){
+            amountDebutBonus.style.left = "50px";
+            biggestdirectorActVallBonus.style.left = "50px";
+        } else if(pos == 3){
+            amountDebutBonus.style.left = "75px";
+            biggestdirectorActVallBonus.style.left = "74px";
+        } else if(pos == 4){
+            amountDebutBonus.style.left = "100px";
+            biggestdirectorActVallBonus.style.left = "98px";
+        } else if(pos == 5){
+            amountDebutBonus.style.left = "123px";
+            biggestdirectorActVallBonus.style.left = "122px";
+        } else if(pos == 6){
+            amountDebutBonus.style.left = "147px";
+            biggestdirectorActVallBonus.style.left = "146px";
+        } else if(pos == 7){
+            amountDebutBonus.style.left = "172px";
+            biggestdirectorActVallBonus.style.left = "170px";
+        } else if(pos == 8){
+            amountDebutBonus.style.left = "195px";
+            biggestdirectorActVallBonus.style.left = "194px";
+        } else if(pos == 9){
+            amountDebutBonus.style.left = "217px";
+            biggestdirectorActVallBonus.style.left = "216px";
+        } else if(pos == 10){
+            amountDebutBonus.style.left = "242px";
+            biggestdirectorActVallBonus.style.left = "239px";
+        } else if(pos == 11){
+            amountDebutBonus.style.left = "265px";
+            biggestdirectorActVallBonus.style.left = "262px";
+        } else if(pos == 12){
+            amountDebutBonus.style.left = "290px";
+            biggestdirectorActVallBonus.style.left = "287px";
+        } else if(pos == 13){
+            amountDebutBonus.style.left = "313px";
+            biggestdirectorActVallBonus.style.left = "310px";
+        } else if(pos == 14){
+            amountDebutBonus.style.left = "337px";
+            biggestdirectorActVallBonus.style.left = "334px";
+        } else if(pos == 15){
+            amountDebutBonus.style.left = "362px";
+            biggestdirectorActVallBonus.style.left = "359px";
+        } else if(pos == 16){
+            amountDebutBonus.style.left = "385px";
+            biggestdirectorActVallBonus.style.left = "382px";
+        } else if(pos == 17){
+            amountDebutBonus.style.left = "408px";
+            biggestdirectorActVallBonus.style.left = "405px";
+        } else if(pos == 18){
+            amountDebutBonus.style.left = "433px";
+            biggestdirectorActVallBonus.style.left = "430px";
+        } else if(pos == 19){
+            amountDebutBonus.style.left = "457px";
+            biggestdirectorActVallBonus.style.left = "454px";
+        } else if(pos == 20){
+            amountDebutBonus.style.left = "483px";
+            biggestdirectorActVallBonus.style.left = "481px";
+        }
+    }
+
     if(isIE){
         biggestdirectorAct.onchange = function () {
             biggestdirector2NumAct.value = numberFormat((+this.value * bonusForNdNev), 0, ',', ' ');
@@ -1213,6 +1347,14 @@ document.addEventListener('DOMContentLoaded', function() {
             changeBottomRange(this.value);
             recalculate(nowSailerPosition);
             changeSize(biggestdirector2NumAct);
+        };
+
+        biggestdirectorBounusNd.onchange = function () {
+            biggestdirectorBounusResult.value = numberFormat((+this.value * bonusForNdDev), 0, ',', ' ');
+            biggestdirectorActVallBonus.innerHTML = this.value;
+            changeBonusRange(this.value);
+            recalculate(nowSailerPosition);
+            changeSize(biggestdirectorBounusResult);
         };
     }
 
@@ -1228,6 +1370,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     biggestdirectorBounusNd.oninput = function () {
         biggestdirectorBounusResult.value = numberFormat((+this.value * bonusForNdDev), 0, ',', ' ');
+        biggestdirectorActVallBonus.innerHTML = this.value;
+        changeBonusRange(this.value);
         recalculate(nowSailerPosition);
         changeSize(biggestdirectorBounusResult);
     };
@@ -1320,7 +1464,10 @@ document.addEventListener('DOMContentLoaded', function() {
     //подсчет прибыли
     for(var j = 0; j < tableVolumeSm.length; j++){
         tableVolumeSm[j].addEventListener('input', calculatetableShort);
+        tableVolumeSm[j].addEventListener('focus', warning2ColorOfFields);
+        tableVolumeSm[j].addEventListener('blur', warning2ColorOfFHide);
     }
+
 
     function calculatetableShort(){
         var allVolumeSum = 0;
@@ -1332,12 +1479,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         if(+directorVal.value >= 100) {
             bigdirectorProfit.value = numberFormat(Math.round(allVolumeSum * returnNumFor(base.value) * +tableShortDiscount.value / 100 / tax * disc), 0, ',', ' ');
+            sumOfAllDiectors.value = numberFormat(Math.round(allVolumeSum * returnNumFor(base.value)), 0, ',', ' ');
         } else {
             bigdirectorProfit.value = 0;
+            sumOfAllDiectors.value = 0;
         }
         // this.parentNode.nextElementSibling.nextElementSibling.children[0].value = numberFormat(Math.round(+this.value * base.value * +percent.value / 100 / tax * disc), 0, ',', ' ');
         recalculate(nowSailerPosition);
          changeSize(bigdirectorProfit);
+        changeSize(sumOfAllDiectors);
 
         if (amountOfKons <= 2) {
             nowSailerPosition = 7;
@@ -1461,12 +1611,16 @@ document.addEventListener('DOMContentLoaded', function() {
     function changeItogLabel(pos){
         if(+pos == 1){
             itogLabel.innerHTML = 'Сумма дохода от личного бизнеса';
+            labelChange1.innerHTML = 'Дополнительная скидка';
         } else if(+pos > 1 && +pos <= 5){
-            itogLabel.innerHTML = 'Сумма дополнительной скидки и дохода от личного бизнеса';
+            itogLabel.innerHTML = 'Общая сумма дополнительной скидки и дохода от личного бизнеса';
+            labelChange1.innerHTML = 'Дополнительная скидка';
         } else if(+pos > 5 && +pos <= 11){
-            itogLabel.innerHTML = 'Сумма комиссионного вознаграждения и дохода от личного бизнеса';
+            itogLabel.innerHTML = 'Общая сумма комиссионного вознаграждения и дохода от личного бизнеса';
+            labelChange1.innerHTML = 'Комиссионное вознаграждение';
         }
     }
+
 });
 
 

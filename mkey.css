@@ -466,8 +466,8 @@ input[name="radioBtn"]:checked + .mary-key-radiolabel::before{
     padding: 10px;
     font-family: 'HevRoman';
 }
-.table-mary-key td:first-child,
-.table-mary-key th:first-child{
+.table-big-container .table-mary-key td:first-child,
+.table-big-container .table-mary-key th:first-child{
     border: none;
     padding-left: 0;
 }
@@ -489,8 +489,13 @@ input[name="radioBtn"]:checked + .mary-key-radiolabel::before{
 }
 .table-btn-container{
     position: absolute;
-    bottom: 0;
     right: 20px;
+    top: calc(50% - 15px);
+}
+.table-btn-container-small{
+    position: absolute;
+    right: 210px;
+    top: calc(50% - 15px);
 }
 .table-btn{
     background: transparent;
@@ -502,6 +507,16 @@ input[name="radioBtn"]:checked + .mary-key-radiolabel::before{
     font-size: 24px;
     line-height: 0.5;
     text-align: center;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    background-position: 50% 50% !important;
+    padding: 0;
+}
+.table-btn-minus{
+    background: url('image/minus.png');
+}
+.table-btn-plus{
+    background: url('image/plus.png');
 }
 .table-btn:hover{
     cursor: pointer;

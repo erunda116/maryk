@@ -19,8 +19,9 @@ document.addEventListener('DOMContentLoaded', function() {
     var selectDiscount3 = document.querySelector('#select-discount3'); // консультант radio скидка 40%
     var selectDiscount4 = document.querySelector('#select-discount4'); // консультант radio скидка 45%
     var konsultantProfit = document.querySelector('#konsultantProfit'); //консультант доход
-    var radioBtnContainer = document.querySelector('#radioBtnContainer'); // контейнер радиокнопок
-    var radioBtnContainerTooltip = document.querySelector('#radioBtnContainer .radioBtn-container-tooltip'); //подсказка радиокнопок
+  //  var radioBtnContainer = document.querySelector('#radioBtnContainer'); // контейнер радиокнопок
+//    var radioBtnContainerTooltip = document.querySelector('#radioBtnContainer .radioBtn-container-tooltip'); //подсказка радиокнопок
+    var tooltipMoreEight = document.querySelector('#tooltipMoreEight'); //скидка более 8 б.е.
     var tooltipSmall = document.querySelector('#tooltipSmall'); // подсказка менее 8 б.е.
     var snoskaNum1 = document.querySelector('#snoskaNum1'); //сноска убираем для консультанта
 
@@ -137,7 +138,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (!(e.which==95 || e.which==45 || e.which==1105 || e.which==1025 || e.which==32 || (e.which>=1040 && e.which<=1103) || (e.which>=65 && e.which<=90) || (e.which>=65 && e.which<=90) || (e.which>=97 && e.which<=122) || (e.which>47 && e.which<58))) return false;
                 } else {
                     //console.log(e.which);
-                    if (!(e.which==8 || e.which==46 || e.which==44 ||(e.which>47 && e.which<58))) return false;
+                    if(this.id == 'bigkonsultantAct') {
+                        if (!(e.which==8 ||(e.which>47 && e.which<58))) return false;
+                    } else {
+                        if (!(e.which==8 || e.which==46 ||(e.which>47 && e.which<58))) return false;
+                    }
+                    //if (!(e.which==8 || e.which==46 || e.which==44 ||(e.which>47 && e.which<58))) return false;
                 }
             }
 
@@ -149,7 +155,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     //console.log(e.keyCode);
                     if (!(e.keyCode==95 || e.keyCode==45 || e.keyCode==1105 || e.keyCode==1025 || e.keyCode==32 || (e.keyCode>=1040 && e.keyCode<=1103) || (e.keyCode>=65 && e.keyCode<=90) || (e.keyCode>=65 && e.keyCode<=90) || (e.keyCode>=97 && e.keyCode<=122) || (e.keyCode>47 && e.keyCode<58))) return false;
                 } else {
-                    if (!(e.keyCode==8 || e.keyCode==46 ||(e.keyCode>47 && e.keyCode<58))) return false;
+                    if(this.id == 'bigkonsultantAct') {
+                        if (!(e.keyCode == 8 || (e.keyCode > 47 && e.keyCode < 58))) return false;
+                    } else {
+                        if (!(e.keyCode == 8 || e.keyCode == 46 || (e.keyCode > 47 && e.keyCode < 58))) return false;
+                    }
+                    //if (!(e.keyCode==8 || e.keyCode==46 ||(e.keyCode>47 && e.keyCode<58))) return false;
                 }
             }
         }
@@ -161,7 +172,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     if (!(e.keyCode==95 || e.keyCode==45 || e.keyCode==1105 || e.keyCode==1025 || e.keyCode==32 || (e.keyCode>=1040 && e.keyCode<=1103) || (e.keyCode>=65 && e.keyCode<=90) || (e.keyCode>=65 && e.keyCode<=90) || (e.keyCode>=97 && e.keyCode<=122) || (e.keyCode>47 && e.keyCode<58))) return false;
                 } else {
                     //console.log(e.keyCode);
-                    if (!(e.keyCode==8 || e.keyCode==46 ||(e.keyCode>47 && e.keyCode<58))) return false;
+                    if(this.id == 'bigkonsultantAct') {
+                        if (!(e.keyCode == 8 || (e.keyCode > 47 && e.keyCode < 58))) return false;
+                    } else {
+                        if (!(e.keyCode == 8 || e.keyCode == 46 || (e.keyCode > 47 && e.keyCode < 58))) return false;
+                    }
                 }
             }
 
@@ -754,6 +769,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // selectDiscount2.disabled = true;
             // selectDiscount3.disabled = true;
             // selectDiscount4.disabled = true;
+            tooltipMoreEight.style.display = "none";
         } else if(+this.value >= 1 && +this.value < 3){
             selectDiscount2.checked="checked";
             konsultantProfit.value = numberFormat(Math.round(returnNumFor(konsultantNum.value) * +selectDiscount2.value / 100), 0, '.', ' ');
@@ -761,6 +777,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // selectDiscount2.disabled = true;
             // selectDiscount3.disabled = true;
             // selectDiscount4.disabled = true;
+            tooltipMoreEight.style.display = "none";
         } else if(+this.value >= 3 && +this.value < 8){
             selectDiscount3.checked="checked";
             konsultantProfit.value = numberFormat(Math.round(returnNumFor(konsultantNum.value) * +selectDiscount3.value / 100), 0, '.', ' ');
@@ -768,9 +785,11 @@ document.addEventListener('DOMContentLoaded', function() {
             // selectDiscount2.disabled = true;
             // selectDiscount3.disabled = true;
             // selectDiscount4.disabled = true;
+            tooltipMoreEight.style.display = "none";
         } else if(+this.value >= 8){
             selectDiscount4.checked="checked";
             konsultantProfit.value = numberFormat(Math.round(returnNumFor(konsultantNum.value) * +selectDiscount4.value / 100), 0, '.', ' ');
+            tooltipMoreEight.style.display = "block";
             // selectDiscount1.disabled = false;
             // selectDiscount2.disabled = false;
             // selectDiscount3.disabled = false;
@@ -812,6 +831,11 @@ document.addEventListener('DOMContentLoaded', function() {
         changeSize(konsultantProfit);
     };
 
+    konsultantVal.onblur = function(){
+        tooltipMoreEight.style.display = "none";
+    };
+
+
     for(var l = 0; l < konsultantDiscountRadio.length; l++){
         konsultantDiscountRadio[l].addEventListener('change', calcDiscoutRadio);
     }
@@ -846,14 +870,14 @@ document.addEventListener('DOMContentLoaded', function() {
     //     + +director2Num2.value + +biggestdirector2NumAct.value;
     //};
 
-    radioBtnContainer.onmouseover = function () {
-        if(+konsultantVal.value >= 8){
-            radioBtnContainerTooltip.style.display = "block";
-        }
-    };
-    radioBtnContainer.onmouseleave = function () {
-        radioBtnContainerTooltip.style.display = "none";
-    };
+    // radioBtnContainer.onmouseover = function () {
+    //     if(+konsultantVal.value >= 8){
+    //         radioBtnContainerTooltip.style.display = "block";
+    //     }
+    // };
+    // radioBtnContainer.onmouseleave = function () {
+    //     radioBtnContainerTooltip.style.display = "none";
+    // };
 
     bigkonsultantVal.oninput = function () {
         var roubleVal = +this.value * returnNumFor(base.value);
@@ -932,10 +956,10 @@ document.addEventListener('DOMContentLoaded', function() {
         var roubleVal = +this.value * returnNumFor(base.value);
         directorNum.value = numberFormat(Math.round(roubleVal), 0, ',', ' ');
         if(nowSailerPosition < 11) {
-            if (+this.value <= 99) {
+            if (+this.value < 100) {
                 directorDiscount.value = 5;
                 director2Num2.value = 0;
-            } else if (+this.value > 99 && +this.value <= 124) {
+            } else if (+this.value >= 100 && +this.value <= 124) {
                 directorDiscount.value = 11;
                 director2Num2.value = 0;
             } else if (+this.value > 124 && +this.value <= 149) {
@@ -1405,7 +1429,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         var allTrR = document.querySelectorAll('.table-rows-group-sm');
         var dirCounter = allTrR.length + 1;
-        var innerContent = '<td class="notshowfrom768"></td><td><input type="text" value="Директор '+ dirCounter + ' " class="table-name change-inputs"></td>\n' +
+        var innerContent = '<td><input type="text" value="Директор '+ dirCounter + ' " class="table-name change-inputs"></td>\n' +
                      '<td><input type="text" value="" class="table-volume-sm change-inputs"></td>\n';
         var lastTrtest1 = document.querySelector('.table-rows-group-sm:last-child');
         var newTr = document.createElement('tr');
